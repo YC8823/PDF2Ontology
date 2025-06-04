@@ -1,0 +1,10 @@
+region_id,region_type,x,y,width,height,confidence,content_description,reading_order
+region_1,title,50,30,800,40,0.98,Table 7: Dimensions and weights for Type 3371 Pneumatic Actuator,1
+region_2,table,50,80,800,150,0.95,Table with actuator dimensions and weights,2
+region_3,image,50,250,600,300,0.97,Diagram of pneumatic control valves,3
+region_4,caption,50,560,600,40,0.96,Caption for pneumatic control valve diagrams,4
+region_5,title,50,620,800,40,0.98,Table 8: Dimensions and weights for Type 5827 and Type 3374 Electric Actuators,5
+region_6,table,50,670,800,100,0.95,Table with electric actuator dimensions and weights,6
+region_7,image,50,790,600,300,0.97,Diagram of electric control valves,7
+region_8,caption,50,1100,600,40,0.96,Caption for electric control valve diagrams,8
+region_9,footer,50,2000,800,40,0.99,Footer with document number and page number,9

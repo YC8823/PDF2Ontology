@@ -1,0 +1,18 @@
+{
+  "test_id": "test_20250604_161334",
+  "timestamp": "2025-06-04T16:13:58.381204",
+  "timing_breakdown": {
+    "initialization": 0.7421956062316895,
+    "preprocessing": 0.00601959228515625,
+    "structured_analysis": 24.092346668243408,
+    "total_processing": 24.840614557266235,
+    "results_processing": 7.152557373046875e-07
+  },
+  "performance_metrics": {
+    "regions_detected": 7,
+    "analysis_time_seconds": 24.092346668243408,
+    "total_time_seconds": 24.840614557266235,
+    "regions_per_second": 0.29054869981706,
+    "average_confidence": 0.9714285714285714
+  }
+}

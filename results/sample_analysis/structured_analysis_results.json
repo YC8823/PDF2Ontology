@@ -1,0 +1,162 @@
+{
+  "layout_analysis": {
+    "document_id": "doc_20250604_135433",
+    "regions": [
+      {
+        "region_id": "region_1",
+        "region_type": "title",
+        "bbox": {
+          "x": 50,
+          "y": 30,
+          "width": 800,
+          "height": 40
+        },
+        "confidence": 0.98,
+        "content_description": "Table 7: Dimensions and weights for Type 3371 Pneumatic Actuator",
+        "page_number": 0,
+        "reading_order": 1,
+        "metadata": null
+      },
+      {
+        "region_id": "region_2",
+        "region_type": "table",
+        "bbox": {
+          "x": 50,
+          "y": 80,
+          "width": 800,
+          "height": 150
+        },
+        "confidence": 0.95,
+        "content_description": "Table with actuator dimensions and weights",
+        "page_number": 0,
+        "reading_order": 2,
+        "metadata": null
+      },
+      {
+        "region_id": "region_3",
+        "region_type": "image",
+        "bbox": {
+          "x": 50,
+          "y": 250,
+          "width": 600,
+          "height": 300
+        },
+        "confidence": 0.97,
+        "content_description": "Diagram of pneumatic control valves",
+        "page_number": 0,
+        "reading_order": 3,
+        "metadata": null
+      },
+      {
+        "region_id": "region_4",
+        "region_type": "caption",
+        "bbox": {
+          "x": 50,
+          "y": 560,
+          "width": 600,
+          "height": 40
+        },
+        "confidence": 0.96,
+        "content_description": "Caption for pneumatic control valve diagrams",
+        "page_number": 0,
+        "reading_order": 4,
+        "metadata": null
+      },
+      {
+        "region_id": "region_5",
+        "region_type": "title",
+        "bbox": {
+          "x": 50,
+          "y": 620,
+          "width": 800,
+          "height": 40
+        },
+        "confidence": 0.98,
+        "content_description": "Table 8: Dimensions and weights for Type 5827 and Type 3374 Electric Actuators",
+        "page_number": 0,
+        "reading_order": 5,
+        "metadata": null
+      },
+      {
+        "region_id": "region_6",
+        "region_type": "table",
+        "bbox": {
+          "x": 50,
+          "y": 670,
+          "width": 800,
+          "height": 100
+        },
+        "confidence": 0.95,
+        "content_description": "Table with electric actuator dimensions and weights",
+        "page_number": 0,
+        "reading_order": 6,
+        "metadata": null
+      },
+      {
+        "region_id": "region_7",
+        "region_type": "image",
+        "bbox": {
+          "x": 50,
+          "y": 790,
+          "width": 600,
+          "height": 300
+        },
+        "confidence": 0.97,
+        "content_description": "Diagram of electric control valves",
+        "page_number": 0,
+        "reading_order": 7,
+        "metadata": null
+      },
+      {
+        "region_id": "region_8",
+        "region_type": "caption",
+        "bbox": {
+          "x": 50,
+          "y": 1100,
+          "width": 600,
+          "height": 40
+        },
+        "confidence": 0.96,
+        "content_description": "Caption for electric control valve diagrams",
+        "page_number": 0,
+        "reading_order": 8,
+        "metadata": null
+      },
+      {
+        "region_id": "region_9",
+        "region_type": "footer",
+        "bbox": {
+          "x": 50,
+          "y": 2000,
+          "width": 800,
+          "height": 40
+        },
+        "confidence": 0.99,
+        "content_description": "Footer with document number and page number",
+        "page_number": 0,
+        "reading_order": 9,
+        "metadata": null
+      }
+    ],
+    "page_layout": "Single-column layout with tables and diagrams",
+    "total_pages": 1,
+    "image_dimensions": {
+      "width": 1448,
+      "height": 2048
+    },
+    "processing_metadata": {
+      "analysis_method": "structured_output",
+      "document_type": "technical_document",
+      "reading_flow": "top_to_bottom",
+      "complexity_score": 0.7,
+      "processing_time_seconds": 1.2,
+      "model_version": "1.0"
+    },
+    "timestamp": "2023-10-05 12:00:00+00:00"
+  },
+  "metadata": {
+    "analysis_method": "structured_output",
+    "timestamp": "2025-06-04T13:54:57.762631",
+    "model_used": "gpt-4o"
+  }
+}

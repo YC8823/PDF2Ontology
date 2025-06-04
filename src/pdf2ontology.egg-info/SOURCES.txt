@@ -1,0 +1,8 @@
+setup.py
+src/pdf2ontology.egg-info/PKG-INFO
+src/pdf2ontology.egg-info/SOURCES.txt
+src/pdf2ontology.egg-info/dependency_links.txt
+src/pdf2ontology.egg-info/top_level.txt
+tests/test_classifier.py
+tests/test_loader.py
+tests/test_visual_analyzer.py
