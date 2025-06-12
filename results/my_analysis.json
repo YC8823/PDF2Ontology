@@ -1,7 +1,0 @@
-{
-  "success": false,
-  "error": "'dict' object has no attribute 'width'",
-  "timestamp": "2025-06-04T15:51:03.918210",
-  "input_file": "samples/page_2.png",
-  "processing_time": 19.420233964920044
-}
