@@ -25,7 +25,7 @@ def test_imports_fixed():
     
     try:
         # Test core imports
-        from src.core.models import RegionType, BoundingBox, DocumentRegion
+        from core.models import RegionType, BoundingBox, DocumentRegion
         print("✅ Core models imported")
         
         from src.core.region_detector import RegionDetector

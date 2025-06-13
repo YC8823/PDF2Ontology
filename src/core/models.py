@@ -68,11 +68,11 @@ class DocumentRegion(BaseModel):
     region_id: str = Field(..., description="Unique identifier for the region")
     region_type: RegionType = Field(..., description="Type of the detected region")
     bbox: BoundingBox = Field(..., description="Bounding box coordinates")
-    confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence score for detection")
+    confidence: float = Field(..., ge=0.0, le=1.0, description="Confidence score for detection") # confidence 的必要性？哪里来的？
     content_description: str = Field(..., description="Brief description of region content")
     page_number: int = Field(..., ge=0, description="Page number (0-indexed)")
-    reading_order: Optional[int] = Field(None, description="Reading order sequence")
-    metadata: Optional[RegionMetadata] = Field(None, description="Additional structured metadata for this region")
+    reading_order: Optional[int] = Field(None, description="Reading order sequence") # 有没有用？
+    #metadata: Optional[RegionMetadata] = Field(None, description="Additional structured metadata for this region") # metadata examples
 
     model_config = {
         "extra": "forbid",  
@@ -84,20 +84,20 @@ class DocumentRegion(BaseModel):
                 "confidence": 0.95,
                 "content_description": "Main body paragraph discussing quarterly financial results",
                 "page_number": 0,
-                "reading_order": 2,
-                "metadata": {}
+                "reading_order": 2, # 建议的reading order 还是他读的order？ 
+                #"metadata": {}
             }
         }
     }
 
 class ProcessingMetadata(BaseModel):
     """Specific processing metadata - OpenAI compatible"""
-    analysis_method: str = Field(..., description="Method used for analysis")
+    analysis_method: str = Field(..., description="Method used for analysis") #保留
     document_type: Optional[str] = Field(None, description="Inferred document type")
-    reading_flow: Optional[str] = Field(None, description="Reading flow pattern")
-    complexity_score: Optional[float] = Field(None, ge=0.0, le=1.0, description="Layout complexity score")
-    processing_time_seconds: Optional[float] = Field(None, description="Processing time in seconds")
-    model_version: Optional[str] = Field(None, description="Model version used")
+    reading_flow: Optional[str] = Field(None, description="Reading flow pattern") #保留
+    complexity_score: Optional[float] = Field(None, ge=0.0, le=1.0, description="Layout complexity score") #可以看看复杂度其他的参数之间的关系
+    processing_time_seconds: Optional[float] = Field(None, description="Processing time in seconds") #保留
+    # model_version: Optional[str] = Field(None, description="Model version used") 
 
 class ImageDimensions(BaseModel):
     """Image dimensions - OpenAI compatible"""
@@ -108,7 +108,7 @@ class DocumentAnalysisResult(BaseModel):
     """Complete analysis result - OpenAI structured output compatible"""
     document_id: str = Field(..., description="Unique document identifier")
     regions: List[DocumentRegion] = Field(..., description="List of all detected regions in reading order")
-    page_layout: str = Field(..., description="Overall description of page layout and structure")
+    page_layout: str = Field(..., description="Overall description of page layout and structure") #做成后台。
     total_pages: int = Field(..., ge=1, description="Total number of pages analyzed")
     image_dimensions: ImageDimensions = Field(..., description="Original image dimensions")
     # Fixed: Use specific metadata model instead of Dict[str, Any]
@@ -164,49 +164,49 @@ class DocumentProcessingState(BaseModel):
 
 # Additional specialized models for specific LLM tasks
 
-# class TableCell(BaseModel):
-#     """Individual table cell for structured output"""
-#     row: int = Field(..., description="Row index (0-based)", ge=0)
-#     column: int = Field(..., description="Column index (0-based)", ge=0)
-#     content: str = Field(..., description="Text content of the cell")
-#     is_header: bool = Field(False, description="True if this cell is a header cell")
-#     rowspan: int = Field(1, description="Number of rows this cell spans", ge=1)
-#     colspan: int = Field(1, description="Number of columns this cell spans", ge=1)
+class TableCell(BaseModel):
+    """Individual table cell for structured output"""
+    row: int = Field(..., description="Row index (0-based)", ge=0)
+    column: int = Field(..., description="Column index (0-based)", ge=0)
+    content: str = Field(..., description="Text content of the cell")
+    is_header: bool = Field(False, description="True if this cell is a header cell")
+    rowspan: int = Field(1, description="Number of rows this cell spans", ge=1)
+    colspan: int = Field(1, description="Number of columns this cell spans", ge=1)
 
-# class TableStructure(BaseModel):
-#     """Table structure analysis result for LLM structured output"""
-#     table_id: str = Field(..., description="Unique identifier for this table")
-#     bbox: BoundingBox = Field(..., description="Table bounding box coordinates")
-#     rows: int = Field(..., description="Total number of rows", gt=0)
-#     columns: int = Field(..., description="Total number of columns", gt=0)
-#     has_headers: bool = Field(..., description="Whether table has header row(s) or column(s)")
-#     cells: List[TableCell] = Field(..., description="All table cells with their content and position")
-#     table_caption: Optional[str] = Field(None, description="Table caption or title if present")
-#     confidence: float = Field(..., description="Confidence in table structure detection", ge=0.0, le=1.0)
+class TableStructure(BaseModel):
+    """Table structure analysis result for LLM structured output"""
+    table_id: str = Field(..., description="Unique identifier for this table")
+    bbox: BoundingBox = Field(..., description="Table bounding box coordinates")
+    rows: int = Field(..., description="Total number of rows", gt=0)
+    columns: int = Field(..., description="Total number of columns", gt=0)
+    has_headers: bool = Field(..., description="Whether table has header row(s) or column(s)")
+    cells: List[TableCell] = Field(..., description="All table cells with their content and position")
+    table_caption: Optional[str] = Field(None, description="Table caption or title if present")
+    confidence: float = Field(..., description="Confidence in table structure detection", ge=0.0, le=1.0)
     
-#      model_config = {  # Fixed for Pydantic V2
-#         "json_schema_extra": {
-#             "example": {
-#                 "table_id": "table_1",
-#                 "bbox": {"x": 50, "y": 200, "width": 400, "height": 150},
-#                 "rows": 4,
-#                 "columns": 3,
-#                 "has_headers": True,
-#                 "cells": [
-#                     {
-#                         "row": 0,
-#                         "column": 0,
-#                         "content": "Quarter",
-#                         "is_header": True,
-#                         "rowspan": 1,
-#                         "colspan": 1
-#                     }
-#                 ],
-#                 "table_caption": "Quarterly Financial Results",
-#                 "confidence": 0.92
-#             }
-#         }
-#     }
+    model_config = {  # Fixed for Pydantic V2
+        "json_schema_extra": {
+            "example": {
+                "table_id": "table_1",
+                "bbox": {"x": 50, "y": 200, "width": 400, "height": 150},
+                "rows": 4,
+                "columns": 3,
+                "has_headers": True,
+                "cells": [
+                    {
+                        "row": 0,
+                        "column": 0,
+                        "content": "Quarter",
+                        "is_header": True,
+                        "rowspan": 1,
+                        "colspan": 1
+                    }
+                ],
+                "table_caption": "Quarterly Financial Results",
+                "confidence": 0.92
+            }
+        }
+    }
 
 # class ExtractedText(BaseModel):
 #     """Extracted text content from a region"""

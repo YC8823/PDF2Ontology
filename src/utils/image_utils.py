@@ -90,7 +90,7 @@ class ImageProcessor:
             return output_path
     
     @staticmethod
-    def resize_if_needed(image_path: str, max_dimension: int = 2048) -> str:
+    def resize_if_needed(image_path: str, max_dimension: int = 4096) -> str:
         """Resize image if it exceeds maximum dimensions"""
         
         with Image.open(image_path) as img:

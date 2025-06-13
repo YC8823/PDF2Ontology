@@ -22,7 +22,8 @@ from .models import (
     DocumentAnalysisResult, 
     DocumentRegion,
     BoundingBox,
-    RegionType
+    RegionType,
+    TableStructure
 )
 
 logger = logging.getLogger(__name__)
@@ -41,9 +42,8 @@ class RegionDetector:
         #self.parser = JsonOutputParser(pydantic_object=DocumentAnalysisResult)
 
         # Create structured output LLM chains for different tasks
-
         self.layout_analyzer = self.llm.with_structured_output(DocumentAnalysisResult)
-        #self.table_analyzer = self.llm.with_structured_output(TableStructure)
+        self.table_analyzer = self.llm.with_structured_output(TableStructure)
         #self.content_extractor = self.llm.with_structured_output(ContentExtractionResult)
         
     def detect_regions(self, image_path: str, page_number: int = 0, 
@@ -90,6 +90,7 @@ class RegionDetector:
         with open(image_path, "rb") as image_file:
             return base64.b64encode(image_file.read()).decode('utf-8')
     
+    # 后续跟着读到的文献修改
     def _create_region_detection_prompt(self, image_dimensions: Dict[str, int], page_number: int) -> str:
         """Create prompt for region detection with structured output"""
         
@@ -151,7 +152,7 @@ The response must conform exactly to the DocumentAnalysisResult schema.
             result: DocumentAnalysisResult = self.layout_analyzer.invoke([message])
             
             # Post-process the result
-            result.document_id = document_id or result.document_id
+            result.document_id = document_id
             result.image_dimensions = image_dimensions
             
             # Validate all bounding boxes
@@ -171,32 +172,6 @@ The response must conform exactly to the DocumentAnalysisResult schema.
             logger.error(f"Structured layout analysis failed: {str(e)}")
             raise ValueError(f"Layout analysis error: {str(e)}")
         
-    # def _analyze_with_llm(self, base64_image: str, prompt: str) -> Dict[str, Any]:
-    #     """Send analysis request to GPT-4o"""
-        
-    #     message = HumanMessage(
-    #         content=[
-    #             {"type": "text", "text": prompt},
-    #             {
-    #                 "type": "image_url",
-    #                 "image_url": {"url": f"data:image/jpeg;base64,{base64_image}"}
-    #             }
-    #         ]
-    #     )
-        
-    #     try:
-    #         response = self.llm.invoke([message])
-    #         result = json.loads(response.content)
-    #         return result
-            
-    #     except json.JSONDecodeError as e:
-    #         logger.error(f"Failed to parse LLM response: {str(e)}")
-    #         logger.debug(f"Raw response: {response.content}")
-    #         raise ValueError(f"Invalid JSON response from LLM: {str(e)}")
-    #     except Exception as e:
-    #         logger.error(f"LLM analysis failed: {str(e)}")
-    #         raise
-    
     # def _process_analysis_result(self, raw_result: Dict[str, Any], 
     #                            document_id: str, image_dimensions: Dict[str, int],
     #                            page_number: int) -> DocumentAnalysisResult:
@@ -262,62 +237,62 @@ The response must conform exactly to the DocumentAnalysisResult schema.
         if bbox.y + bbox.height > height:
             raise ValueError(f"Bbox extends beyond image height: {bbox.y + bbox.height} > {height}")
         
-#     def analyze_table_structure(self, image_path: str, table_region: DocumentRegion) -> TableStructure:
-#         """Analyze table structure using structured output"""
+    def analyze_table_structure(self, image_path: str, table_region: DocumentRegion) -> TableStructure:
+        """Analyze table structure using structured output"""
         
-#         # Crop table region from image
-#         image = Image.open(image_path)
-#         bbox = table_region.bbox
-#         table_image = image.crop((bbox.x, bbox.y, bbox.x + bbox.width, bbox.y + bbox.height))
+        # Crop table region from image
+        image = Image.open(image_path)
+        bbox = table_region.bbox
+        table_image = image.crop((bbox.x, bbox.y, bbox.x + bbox.width, bbox.y + bbox.height))
         
-#         # Convert cropped image to base64
-#         import io
-#         buffer = io.BytesIO()
-#         table_image.save(buffer, format='PNG')
-#         table_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
+        # Convert cropped image to base64
+        import io
+        buffer = io.BytesIO()
+        table_image.save(buffer, format='PNG')
+        table_base64 = base64.b64encode(buffer.getvalue()).decode('utf-8')
         
-#         # Create table analysis prompt
-#         prompt = f"""
-# Analyze this table image and extract its complete structure and content.
+        # Create table analysis prompt
+        prompt = f"""
+Analyze this table image and extract its complete structure and content.
 
-# Task requirements:
-# 1. Determine exact number of rows and columns
-# 2. Extract text content from each cell
-# 3. Identify header rows/columns if present
-# 4. Handle merged cells (rowspan/colspan > 1)
-# 5. Provide accurate cell coordinates
-# 6. Assess extraction confidence
+Task requirements:
+1. Determine exact number of rows and columns
+2. Extract text content from each cell
+3. Identify header rows/columns if present
+4. Handle merged cells (rowspan/colspan > 1)
+5. Provide accurate cell coordinates
+6. Assess extraction confidence
 
-# Table information:
-# - Source region ID: {table_region.region_id}
-# - Original description: {table_region.content_description}
+Table information:
+- Source region ID: {table_region.region_id}
+- Original description: {table_region.content_description}
 
-# The response must conform to the TableStructure schema with complete cell data.
-# """
+The response must conform to the TableStructure schema with complete cell data.
+"""
         
-#         message = HumanMessage(
-#             content=[
-#                 {"type": "text", "text": prompt},
-#                 {
-#                     "type": "image_url", 
-#                     "image_url": {"url": f"data:image/png;base64,{table_base64}"}
-#                 }
-#             ]
-#         )
+        message = HumanMessage(
+            content=[
+                {"type": "text", "text": prompt},
+                {
+                    "type": "image_url", 
+                    "image_url": {"url": f"data:image/png;base64,{table_base64}"}
+                }
+            ]
+        )
         
-#         try:
-#             # Get structured table result
-#             table_result: TableStructure = self.table_analyzer.invoke([message])
+        try:
+            # Get structured table result
+            table_result: TableStructure = self.table_analyzer.invoke([message])
             
-#             # Update table ID and bbox to match source region
-#             table_result.table_id = table_region.region_id
-#             table_result.bbox = table_region.bbox
+            # Update table ID and bbox to match source region
+            table_result.table_id = table_region.region_id
+            table_result.bbox = table_region.bbox
             
-#             return table_result
+            return table_result
             
-#         except Exception as e:
-#             logger.error(f"Table structure analysis failed: {str(e)}")
-#             raise ValueError(f"Table analysis error: {str(e)}")
+        except Exception as e:
+            logger.error(f"Table structure analysis failed: {str(e)}")
+            raise ValueError(f"Table analysis error: {str(e)}")
     
 #     def extract_content_structured(self, image_path: str, 
 #                                  text_regions: List[DocumentRegion]) -> ContentExtractionResult:

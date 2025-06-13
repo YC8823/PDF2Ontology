@@ -1,0 +1,173 @@
+{
+  "document_id": null,
+  "regions": [
+    {
+      "region_id": "region_1",
+      "region_type": "title",
+      "bbox": {
+        "x": 50,
+        "y": 30,
+        "width": 400,
+        "height": 50
+      },
+      "confidence": 0.98,
+      "content_description": "Document title: DATA SHEET",
+      "page_number": 0,
+      "reading_order": 1
+    },
+    {
+      "region_id": "region_2",
+      "region_type": "header",
+      "bbox": {
+        "x": 50,
+        "y": 90,
+        "width": 600,
+        "height": 100
+      },
+      "confidence": 0.95,
+      "content_description": "Header with document number and valve series information",
+      "page_number": 0,
+      "reading_order": 2
+    },
+    {
+      "region_id": "region_3",
+      "region_type": "text",
+      "bbox": {
+        "x": 50,
+        "y": 200,
+        "width": 600,
+        "height": 150
+      },
+      "confidence": 0.96,
+      "content_description": "Application and specifications text",
+      "page_number": 0,
+      "reading_order": 3
+    },
+    {
+      "region_id": "region_4",
+      "region_type": "text",
+      "bbox": {
+        "x": 50,
+        "y": 360,
+        "width": 600,
+        "height": 300
+      },
+      "confidence": 0.95,
+      "content_description": "Main body text discussing valve types and materials",
+      "page_number": 0,
+      "reading_order": 4
+    },
+    {
+      "region_id": "region_5",
+      "region_type": "image",
+      "bbox": {
+        "x": 700,
+        "y": 200,
+        "width": 300,
+        "height": 300
+      },
+      "confidence": 0.97,
+      "content_description": "Image of valve with label Fig. 1: Type 3321-IP",
+      "page_number": 0,
+      "reading_order": 5
+    },
+    {
+      "region_id": "region_6",
+      "region_type": "image",
+      "bbox": {
+        "x": 1050,
+        "y": 200,
+        "width": 300,
+        "height": 300
+      },
+      "confidence": 0.97,
+      "content_description": "Image of valve with label Fig. 2: Type 3321-PP",
+      "page_number": 0,
+      "reading_order": 6
+    },
+    {
+      "region_id": "region_7",
+      "region_type": "image",
+      "bbox": {
+        "x": 700,
+        "y": 520,
+        "width": 300,
+        "height": 300
+      },
+      "confidence": 0.97,
+      "content_description": "Image of valve with label Fig. 3: Type 3321-IP up to NPS 2 with Type 3725 Positioner",
+      "page_number": 0,
+      "reading_order": 7
+    },
+    {
+      "region_id": "region_8",
+      "region_type": "image",
+      "bbox": {
+        "x": 1050,
+        "y": 520,
+        "width": 300,
+        "height": 300
+      },
+      "confidence": 0.97,
+      "content_description": "Image of valve with label Fig. 4: Type 3321-IP for NPS 2½ and larger with Type 3725 Positioner",
+      "page_number": 0,
+      "reading_order": 8
+    },
+    {
+      "region_id": "region_9",
+      "region_type": "image",
+      "bbox": {
+        "x": 700,
+        "y": 840,
+        "width": 300,
+        "height": 300
+      },
+      "confidence": 0.97,
+      "content_description": "Image of valve with label Fig. 5: Type 3321-E1",
+      "page_number": 0,
+      "reading_order": 9
+    },
+    {
+      "region_id": "region_10",
+      "region_type": "image",
+      "bbox": {
+        "x": 1050,
+        "y": 840,
+        "width": 300,
+        "height": 300
+      },
+      "confidence": 0.97,
+      "content_description": "Image of valve with label Fig. 6: Type 3321-E3",
+      "page_number": 0,
+      "reading_order": 10
+    },
+    {
+      "region_id": "region_11",
+      "region_type": "footer",
+      "bbox": {
+        "x": 50,
+        "y": 1900,
+        "width": 1348,
+        "height": 100
+      },
+      "confidence": 0.95,
+      "content_description": "Footer with company information and contact details",
+      "page_number": 0,
+      "reading_order": 11
+    }
+  ],
+  "page_layout": "Single-column layout with images on the right side",
+  "total_pages": 1,
+  "image_dimensions": {
+    "width": 1448,
+    "height": 2048
+  },
+  "processing_metadata": {
+    "analysis_method": "structured_output",
+    "document_type": "technical_data_sheet",
+    "reading_flow": "left-to-right, top-to-bottom",
+    "complexity_score": 0.7,
+    "processing_time_seconds": 2.5
+  },
+  "timestamp": "2023-10-05 12:35:00+00:00"
+}

@@ -32,7 +32,7 @@ def analyze_sample_image():
         return False
     
     # File paths
-    sample_image = "samples/page_9.png"
+    sample_image = "samples/page_3.png"
     output_dir = "results/sample_analysis"
     
     # Check if sample exists
@@ -60,9 +60,10 @@ def analyze_sample_image():
             input_path=sample_image,
             output_dir=output_dir,
             enhance_image=True,
-            annotation_style="detailed"
+            annotation_style="detailed",
+            extract_tables=True
         )
-        #     extract_tables=True,
+     
         #     extract_content=True
         # )
         
@@ -109,16 +110,16 @@ def analyze_sample_image():
             print()
         
         # Table analysis results
-        # if result["table_analysis"]:
-        #     print("📋 TABLE ANALYSIS")
-        #     print("-" * 30)
-        #     tables = result["table_analysis"]
-        #     print(f"Tables found: {len(tables)}")
-        #     for table_id, table_data in tables.items():
-        #         print(f"• {table_id}: {table_data['rows']} rows × {table_data['columns']} columns")
-        #         if table_data.get('table_caption'):
-        #             print(f"  Caption: {table_data['table_caption']}")
-        #         print(f"  Confidence: {table_data['confidence']:.3f}")
+        if result["table_analysis"]:
+            print("📋 TABLE ANALYSIS")
+            print("-" * 30)
+            tables = result["table_analysis"]
+            print(f"Tables found: {len(tables)}")
+            for table_id, table_data in tables.items():
+                print(f"• {table_id}: {table_data['rows']} rows × {table_data['columns']} columns")
+                if table_data.get('table_caption'):
+                    print(f"  Caption: {table_data['table_caption']}")
+                print(f"  Confidence: {table_data['confidence']:.3f}")
         
         # Content extraction results
         # if result["content_extraction"]:

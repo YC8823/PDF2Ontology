@@ -38,9 +38,10 @@ class DocumentAnalyzer:
     
     def analyze_document(self, input_path: str, output_dir: str,
                         enhance_image: bool = True,
-                        annotation_style: str = "detailed") -> Dict[str, Any]:
-
-                        #extract_tables: bool = False,
+                        annotation_style: str = "detailed",
+                        extract_tables: bool = False
+                        ) -> Dict[str, Any]:
+                       
                         #extract_content: bool = False
         """Analyze document using structured output for improved reliability"""
         
@@ -76,11 +77,11 @@ class DocumentAnalyzer:
             })
             
             # Step 4: Table analysis (optional)
-            # table_results = {}
-            # if extract_tables:
-            #     self._update_step("table_analysis", "running")
-            #     table_results = self._analyze_tables_structured(processed_image_path, analysis_result.regions)
-            #     self._update_step("table_analysis", "completed", {"tables_analyzed": len(table_results)})
+            table_results = {}
+            if extract_tables:
+                self._update_step("table_analysis", "running")
+                table_results = self._analyze_tables_structured(processed_image_path, analysis_result.regions)
+                self._update_step("table_analysis", "completed", {"tables_analyzed": len(table_results)})
             
             # # Step 5: Content extraction (optional)
             # content_results = {}
@@ -99,13 +100,13 @@ class DocumentAnalyzer:
             # Step 7: Save results
             self._update_step("output_generation", "running")
             #output_paths = self._save_results(analysis_result, table_results, content_results, output_dir)
-            output_paths = self._save_results(analysis_result, output_dir)
+            output_paths = self._save_results(analysis_result, table_results, output_dir)
             self._update_step("output_generation", "completed", output_paths)
             
             # Compile final results
             final_result = {
                 "analysis_result": analysis_result.model_dump(),
-                #"table_analysis": table_results,
+                "table_analysis": table_results,
                 #"content_extraction": content_results,
                 "processing_state": self.current_state.model_dump(),
                 "output_files": {**output_paths, **visualization_paths},
@@ -126,22 +127,22 @@ class DocumentAnalyzer:
             logger.error(f"Enhanced analysis failed: {str(e)}")
             raise
     
-    # def _analyze_tables_structured(self, image_path: str, regions: List[DocumentRegion]) -> Dict[str, Any]:
-    #     """Analyze table structures using structured output"""
+    def _analyze_tables_structured(self, image_path: str, regions: List[DocumentRegion]) -> Dict[str, Any]:
+        """Analyze table structures using structured output"""
         
-    #     table_results = {}
-    #     table_regions = [r for r in regions if r.region_type.value == "table"]
+        table_results = {}
+        table_regions = [r for r in regions if r.region_type.value == "table"]
         
-    #     for i, table_region in enumerate(table_regions):
-    #         try:
-    #             table_structure = self.region_detector.analyze_table_structure(image_path, table_region)
-    #             table_results[f"table_{i}"] = table_structure.dict()
+        for i, table_region in enumerate(table_regions):
+            try:
+                table_structure = self.region_detector.analyze_table_structure(image_path, table_region)
+                table_results[f"table_{i}"] = table_structure.dict()
                 
-    #         except Exception as e:
-    #             logger.warning(f"Failed to analyze table {i}: {str(e)}")
-    #             continue
+            except Exception as e:
+                logger.warning(f"Failed to analyze table {i}: {str(e)}")
+                continue
         
-    #     return table_results
+        return table_results
     
     # def _extract_content_structured(self, image_path: str, regions: List[DocumentRegion]) -> Dict[str, Any]:
     #     """Extract content using structured output"""
@@ -171,11 +172,6 @@ class DocumentAnalyzer:
             self.current_state.steps.append(step)
         
         # Update step
-        step.status = status
-        if status == "running" and step.start_time is None:
-            step.start_time = datetime.now()
-        elif status in ["completed", "failed"]:
-            step.end_time = datetime.now()
             if result is not None:
                 step.result = result
             if error_message is not None:
@@ -212,7 +208,7 @@ class DocumentAnalyzer:
         if not enhance:
             return input_path
         
-        # Resize if needed
+        # Resize if image too large, now size for A4; wrong annotation
         resized_path = ImageProcessor.resize_if_needed(input_path)
         
         # Enhance quality
@@ -221,17 +217,6 @@ class DocumentAnalyzer:
             return enhanced_path
         
         return resized_path
-    
-    # def _detect_regions(self, image_path: str) -> DocumentAnalysisResult:
-    #     """Detect regions in the document"""
-        
-    #     result = self.region_detector.detect_regions(
-    #         image_path=image_path,
-    #         page_number=0,
-    #         document_id=self.current_state.document_id
-    #     )
-        
-    #     return result
     
     def _create_visualizations(self, image_path: str, analysis_result: DocumentAnalysisResult,
                              output_dir: str, style: str) -> Dict[str, str]:
@@ -257,8 +242,8 @@ class DocumentAnalyzer:
         
         return visualization_paths
     
-    def _save_results(self, analysis_result: DocumentAnalysisResult, output_dir: str) -> Dict[str, str]:
-                     #table_results: Dict, content_results: Dict, 
+    def _save_results(self, analysis_result: DocumentAnalysisResult, table_results: Dict,output_dir: str) -> Dict[str, str]:
+                     # content_results: Dict, 
         """Save all results"""
         output_paths = {}
         
@@ -266,7 +251,7 @@ class DocumentAnalyzer:
         json_path = os.path.join(output_dir, "structured_analysis_results.json")
         results_data = {
             "layout_analysis": analysis_result.model_dump(),
-            #"table_analysis": table_results,
+            "table_analysis": table_results,
             #"content_extraction": content_results,
             "metadata": {
                 "analysis_method": "structured_output",
@@ -286,6 +271,7 @@ class DocumentAnalyzer:
         
         return output_paths
     
+    # 论文专用 
     def _save_regions_csv(self, regions: List[DocumentRegion], csv_path: str):
         """Save regions to CSV"""
         import csv
