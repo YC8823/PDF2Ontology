@@ -104,6 +104,22 @@ class ImageDimensions(BaseModel):
     width: int = Field(..., description="Image width in pixels", gt=0)
     height: int = Field(..., description="Image height in pixels", gt=0)
 
+# an alternative model for TableStructure for table processor
+class StructuredTable(BaseModel):
+    """
+    Represents the final, structured output of a table.
+    The data is organized into a list of rows, where each row is a dictionary
+    mapping header keys to cell values. This format is ideal for downstream tasks
+    like ontology building.
+    """
+    table_id: str
+    # A clean list of column headers
+    headers: List[str]
+    # List of rows, with each row being a dictionary
+    rows: List[Dict[str, Any]]
+    # Optional metadata for context
+    metadata: Dict[str, Any] = Field(default_factory=dict)
+
 class DocumentAnalysisResult(BaseModel):
     """Complete analysis result - OpenAI structured output compatible"""
     document_id: str = Field(..., description="Unique document identifier")
@@ -112,6 +128,8 @@ class DocumentAnalysisResult(BaseModel):
     total_pages: int = Field(..., ge=1, description="Total number of pages analyzed")
     image_dimensions: ImageDimensions = Field(..., description="Original image dimensions")
     # Fixed: Use specific metadata model instead of Dict[str, Any]
+    source_id: str
+    tables: List[StructuredTable] = Field(default_factory=list)
     processing_metadata: ProcessingMetadata = Field(..., description="Processing information and statistics")
     timestamp: datetime = Field(default_factory=datetime.now, description="Analysis timestamp")
 
@@ -165,13 +183,26 @@ class DocumentProcessingState(BaseModel):
 # Additional specialized models for specific LLM tasks
 
 class TableCell(BaseModel):
-    """Individual table cell for structured output"""
-    row: int = Field(..., description="Row index (0-based)", ge=0)
-    column: int = Field(..., description="Column index (0-based)", ge=0)
-    content: str = Field(..., description="Text content of the cell")
-    is_header: bool = Field(False, description="True if this cell is a header cell")
-    rowspan: int = Field(1, description="Number of rows this cell spans", ge=1)
-    colspan: int = Field(1, description="Number of columns this cell spans", ge=1)
+    """
+    Represents a single cell within a recognized table structure.
+    """
+    bbox: BoundingBox
+    row_index: int
+    col_index: int
+    row_span: int = 1
+    col_span: int = 1
+    text: str = ""
+    confidence: float = 0.0
+
+class RawTable(BaseModel):
+    """
+    Represents a detected table with its location and raw structural/textual content.
+    """
+    bbox: BoundingBox
+    cells: List[TableCell]
+    # The raw HTML-like structure token list from the structure recognition model
+    structure_tokens: List[str] = Field(default_factory=list)
+    confidence: float = 0.0
 
 class TableStructure(BaseModel):
     """Table structure analysis result for LLM structured output"""

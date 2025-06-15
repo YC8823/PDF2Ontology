@@ -7,10 +7,14 @@ from PIL import Image, ImageDraw, ImageFont
 from transformers import AutoImageProcessor, TableTransformerForObjectDetection
 from typing import Optional, List, Dict, Any
 
+# Disable the Decompression Bomb check in Pillow
+# Image.MAX_IMAGE_PIXELS = None
+
 class TableProcessor:
     """
     A specialized processor that uses a two-stage pipeline to detect, structure,
     and extract text from tables in images for maximum robustness.
+    It includes a fallback to programmatically generate cells if the model fails to detect them.
     """
 
     def __init__(self,
@@ -36,7 +40,7 @@ class TableProcessor:
         ocr_lang: str = 'eng+deu',
         detection_threshold: float = 0.8,
         structure_threshold: float = 0.6,
-        debug_image_path: Optional[str] = None
+        debug_prefix: Optional[str] = None
     ) -> Optional[pd.DataFrame]:
         """
         Processes an image using a two-stage pipeline to find and structure a table.
@@ -46,10 +50,7 @@ class TableProcessor:
             ocr_lang (str): The language(s) for Tesseract OCR.
             detection_threshold (float): Confidence threshold for the initial table detection.
             structure_threshold (float): Confidence threshold for detecting rows, columns, and cells.
-            debug_image_path (Optional[str]): If provided, saves a debug image.
-
-        Returns:
-            Optional[pd.DataFrame]: A structured DataFrame of the table content.
+            debug_prefix (Optional[str]): If provided, saves debug images with this prefix.
         """
         print("--- Stage 1: Detecting main table area ---")
         table_box = self._detect_main_table(image, threshold=detection_threshold)
@@ -57,19 +58,31 @@ class TableProcessor:
             print("No table detected on the page.")
             return None
 
-        # Crop the image to the detected table area for the next stage
+        # --- Verification Step 1: Visualize the detected table area ---
+        if debug_prefix:
+            debug_img_stage1 = image.copy()
+            draw = ImageDraw.Draw(debug_img_stage1)
+            draw.rectangle(table_box, outline="red", width=3)
+            path_stage1 = f"{debug_prefix}_stage1_detection.png"
+            print(f"Saving Stage 1 verification image to: {path_stage1}")
+            debug_img_stage1.save(path_stage1)
+        # --- End Verification Step ---
+
         table_image = image.crop(table_box)
         print("Table area detected and cropped.")
 
         print("\n--- Stage 2: Recognizing structure within the cropped table ---")
         detection_results = self._recognize_structure(table_image, threshold=structure_threshold)
         if not detection_results:
-            print("No structural elements (rows, cols, cells) detected in the cropped table.")
+            print("No structural elements detected in the cropped table.")
             return None
 
-        if debug_image_path:
-            print(f"Saving debug image to: {debug_image_path}")
-            self._visualize_detections(table_image.copy(), detection_results, debug_image_path)
+        # --- Verification Step 2: Visualize the detected rows and columns ---
+        if debug_prefix:
+            path_stage2 = f"{debug_prefix}_stage2_structure.png"
+            print(f"Saving Stage 2 verification image to: {path_stage2}")
+            self._visualize_detections(table_image.copy(), detection_results, path_stage2)
+        # --- End Verification Step ---
 
         table_grid = self._reconstruct_grid(detection_results)
         cells = table_grid.get('cells', [])
