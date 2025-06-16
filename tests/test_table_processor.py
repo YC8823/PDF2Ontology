@@ -16,7 +16,7 @@ if project_root not in sys.path:
 #     print("Error: Could not import TableProcessor.")
 #     print("Please make sure 'src/processors/table_processor.py' exists and the script is run from the project root.")
 #     sys.exit(1)
-from src.processors.table_processor import TableProcessor
+from table_processors.table_transformer import TableTransformerProcessor
 from src.utils.image_utils import convert_pdf_to_images
 
 def run_test():
@@ -29,7 +29,7 @@ def run_test():
     print("\n[Step 1/4] Initializing TableProcessor...")
     try:
         # Instantiate the processor. This will load the ML models into memory.
-        table_processor = TableProcessor()
+        table_processor = TableTransformerProcessor()
     except Exception as e:
         print(f"Failed to initialize TableProcessor: {e}")
         return

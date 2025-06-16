@@ -238,20 +238,3 @@ class TableStructure(BaseModel):
             }
         }
     }
-
-# class ExtractedText(BaseModel):
-#     """Extracted text content from a region"""
-#     region_id: str = Field(..., description="Reference to the source region ID")
-#     extracted_text: str = Field(..., description="Complete extracted text content")
-#     language: str = Field("en", description="Detected language code (ISO 639-1)")
-#     text_quality: float = Field(..., description="Text extraction quality assessment", ge=0.0, le=1.0)
-#     word_count: int = Field(..., description="Number of words in extracted text", ge=0)
-#     formatting_preserved: bool = Field(..., description="Whether original text formatting was preserved")
-
-# class ContentExtractionResult(BaseModel):
-#     """Complete content extraction result"""
-#     text_regions: List[ExtractedText] = Field(..., description="Extracted text from all text regions")
-#     total_text_length: int = Field(..., description="Total character count across all regions", ge=0)
-#     total_word_count: int = Field(..., description="Total word count across all regions", ge=0)
-#     primary_language: str = Field("en", description="Primary language detected in document")
-#     extraction_timestamp: datetime = Field(default_factory=datetime.now, description="When extraction was performed")
