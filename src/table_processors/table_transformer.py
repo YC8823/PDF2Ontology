@@ -488,9 +488,9 @@ def example_usage_pdf():
                 table_bboxes = [
                     {
                         'x': 0.1,   # Left margin
-                        'y': 0.1,   # Top margin
-                        'width': 0.9,   # 80% of page width
-                        'height': 0.9   # 30% of page height
+                        'y': 0.05,   # Top margin
+                        'width': 0.8,   # 80% of page width
+                        'height': 0.6   # 30% of page height
                     },
                     # You can add more table regions if needed
                     # {
@@ -589,120 +589,126 @@ def example_usage_pdf():
     except Exception as e:
         print(f"Error processing PDF: {e}")
 
-def example_usage_with_visual_analyzer():
-    """Advanced example using visual analyzer to detect table regions first"""
+# def example_usage_with_visual_analyzer():
+#     """Advanced example using visual analyzer to detect table regions first"""
     
-    from ..utils.image_utils import convert_pdf_to_images
-    from ..core.document_analyzer import DocumentAnalyzer
-    from ..pydantic_models.enums import RegionType
-    import tempfile
-    import os
+#     from ..utils.image_utils import convert_pdf_to_images
+#     from ..core.document_analyzer import DocumentAnalyzer
+#     from ..core.region_detector import RegionDetector
+#     from ..pydantic_models.enums import RegionType
+#     import tempfile
+#     import os
 
-    from dotenv import load_dotenv
-    load_dotenv()
+#     from dotenv import load_dotenv
+#     load_dotenv()
     
-    # Configuration
-    api_key = os.getenv('OPENAI_API_KEY')
-    if not api_key:
-        print("❌ Error: OPENAI_API_KEY environment variable required")
-        print("   Set it with: export OPENAI_API_KEY='your-api-key-here'")
-        return False
+#     # Configuration
+#     api_key = os.getenv('OPENAI_API_KEY')
+#     if not api_key:
+#         print("❌ Error: OPENAI_API_KEY environment variable required")
+#         print("   Set it with: export OPENAI_API_KEY='your-api-key-here'")
+#         return False
     
-    # Initialize processors
-    table_processor = TableTransformerProcessor()
-    visual_analyzer = DocumentAnalyzer("your-openai-api-key")  # Replace with actual API key
+#     # Initialize processors
+#     table_processor = TableTransformerProcessor()
+#     visual_analyzer = DocumentAnalyzer(api_key)  
     
-    pdf_path = "data/inputs/sample02.pdf"  # Replace with actual PDF path
+#     pdf_path = "data/inputs/sample_Datenblatt.pdf"  
     
-    print("Converting PDF to images...")
-    pdf_images = convert_pdf_to_images(pdf_path, dpi=300)
+#     print("Converting PDF to images...")
+#     pdf_images = convert_pdf_to_images(pdf_path, dpi=300)
     
-    if not pdf_images:
-        print("Failed to convert PDF")
-        return
+#     # Initialize converter and convert PDF
+#     converter = PDFConverter()
+#     image_paths = converter.convert_pdf_to_images(pdf_path, dpi=300)
     
-    all_results = []
+#     if not image_paths:
+#         print("❌ Failed to convert PDF to images")
+#         return
     
-    for page_num, page_image in enumerate(pdf_images, 1):
-        print(f"\n--- Processing Page {page_num} ---")
+#     print(f"Successfully converted {len(image_paths)} pages.")
+    
+#     # Initialize region detector
+#     region_detector = RegionDetector(api_key)
+    
+#     # Process each page
+#     for page_num, image_path in enumerate(image_paths, 1):
+#         print(f"\n--- Processing Page {page_num} ---")
+#         print("  Detecting document regions...")
         
-        with tempfile.NamedTemporaryFile(suffix='.png', delete=False) as temp_file:
-            page_image.save(temp_file.name, 'PNG')
-            temp_image_path = temp_file.name
-        
-        try:
-            # Step 1: Use visual analyzer to detect table regions
-            print("  Detecting document regions...")
-            layout = visual_analyzer.analyze_document(
-                input_path="data/inputs/sample02.pdf",
-                output_dir="data/outputs/analysis_results",
-                extract_tables=True,
-                create_visualizations=True
-            )
-
-            # Step 2: Filter table regions
-            table_regions = [region for region in layout.regions if region.type == RegionType.TABLE]
-            print(f"  Found {len(table_regions)} table regions")
+#         try:
+#             # Analyze document layout - this returns a DocumentLayout object
+#             layout: DocumentLayout = region_detector.analyze_document(
+#                 image_path=image_path, 
+#                 page_number=page_num
+#             )
             
-            # Step 3: Process each detected table region
-            page_results = []
-            for table_idx, table_region in enumerate(table_regions):
-                print(f"  Processing table {table_idx + 1}...")
-                
-                # Convert region bbox to dict format
-                table_bbox = {
-                    'x': table_region.bbox.x,
-                    'y': table_region.bbox.y,
-                    'width': table_region.bbox.width,
-                    'height': table_region.bbox.height
-                }
-                
-                # Use table transformer for detailed structure analysis
-                table_structure = table_processor.detect_table_structure(
-                    image_path=temp_image_path,
-                    bbox=table_bbox,
-                    page_number=page_num
-                )
-                
-                result = {
-                    'page': page_num,
-                    'table_index': table_idx + 1,
-                    'visual_detection': table_region,
-                    'structure_analysis': table_structure,
-                    'combined_confidence': (table_region.confidence + table_structure.structure_confidence) / 2
-                }
-                
-                page_results.append(result)
-                all_results.append(result)
-                
-                print(f"    Structure: {table_structure.rows}x{table_structure.cols}")
-                print(f"    Combined confidence: {result['combined_confidence']:.2f}")
+#             print(f"  ✅ Detected {len(layout.regions)} regions")
             
-        finally:
-            if os.path.exists(temp_image_path):
-                os.unlink(temp_image_path)
+#             # Extract table regions using the correct attribute name
+#             table_regions = [region for region in layout.regions if region.type == RegionType.TABLE]
+            
+#             if not table_regions:
+#                 print("  ℹ️  No table regions detected on this page")
+#                 continue
+            
+#             print(f"  📊 Found {len(table_regions)} table region(s)")
+            
+#             # Process each table region
+#             for i, table_region in enumerate(table_regions):
+#                 print(f"\n  Table {i+1}:")
+#                 print(f"    Region ID: {table_region.id}")
+#                 print(f"    Confidence: {table_region.confidence:.2f}")
+#                 print(f"    Description: {table_region.content_description}")
+#                 print(f"    Bbox: ({table_region.bbox.x:.3f}, {table_region.bbox.y:.3f}, "
+#                       f"{table_region.bbox.width:.3f}, {table_region.bbox.height:.3f})")
+                
+#                 # Analyze table structure if needed
+#                 try:
+#                     table_structure = region_detector.analyze_table_structure(image_path, table_region)
+#                     print(f"    Structure: {table_structure.rows}x{table_structure.cols} table")
+#                     print(f"    Has headers: {table_structure.headers}")
+#                     print(f"    Structure confidence: {table_structure.structure_confidence:.2f}")
+                    
+#                     # Display some cell content if available
+#                     if table_structure.cells:
+#                         print(f"    Sample cells:")
+#                         for j, cell in enumerate(table_structure.cells[:3]):  # Show first 3 cells
+#                             print(f"      Cell {j+1}: '{cell.content}' at ({cell.row}, {cell.col})")
+                        
+#                         if len(table_structure.cells) > 3:
+#                             print(f"      ... and {len(table_structure.cells) - 3} more cells")
+                    
+#                 except Exception as e:
+#                     print(f"    ❌ Table structure analysis failed: {e}")
+            
+#             # Show summary of all regions detected
+#             print(f"\n  📋 Region Summary for Page {page_num}:")
+#             region_counts = {}
+#             for region in layout.regions:
+#                 region_type = region.type.value
+#                 region_counts[region_type] = region_counts.get(region_type, 0) + 1
+            
+#             for region_type, count in sorted(region_counts.items()):
+#                 print(f"    {region_type}: {count}")
+                
+#         except Exception as e:
+#             print(f"  ❌ Failed to process page {page_num}: {e}")
+#             import traceback
+#             traceback.print_exc()
+#             continue
     
-    print(f"\n=== Final Results ===")
-    print(f"Total tables processed: {len(all_results)}")
-    
-    # Show best detected tables
-    if all_results:
-        best_tables = sorted(all_results, key=lambda x: x['combined_confidence'], reverse=True)[:3]
-        print(f"\nTop 3 tables by confidence:")
-        for i, result in enumerate(best_tables, 1):
-            struct = result['structure_analysis']
-            print(f"{i}. Page {result['page']}, Table {result['table_index']}: "
-                  f"{struct.rows}x{struct.cols}, confidence: {result['combined_confidence']:.2f}")
+#     print("\n🎉 Processing completed!")
 
-if __name__ == "__main__":
-    # print("Running base table detection example for png...")
-    # example_usage()
+# if __name__ == "__main__":
+#     # print("Running base table detection example for png...")
+#     # example_usage()
     
-    # print("Runing PDF table detection example...")
-    # example_usage_pdf 
-    # print("\n" + "="*50)
-    print("Running advanced example with visual analyzer...")
-    example_usage_with_visual_analyzer()
+#     # print("Runing PDF table detection example...")
+#     # example_usage_pdf 
+#     # print("\n" + "="*50)
+#     print("Running advanced example with visual analyzer...")
+#     example_usage_with_visual_analyzer()
 
 # # src/processors/table_processor.py
 

@@ -33,7 +33,7 @@ def test_region_detector():
         print("🔧 Initializing RegionDetector...")
         detector = RegionDetector(api_key)
 
-        image_path = "data/inputs/sample_Datenblatt.png"  
+        image_path = "sample/page_3.png"  
         
         if not os.path.exists(image_path):
             print(f"❌ Test image not found: {image_path}")
