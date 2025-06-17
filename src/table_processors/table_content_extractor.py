@@ -25,7 +25,8 @@ class TableContentExtractor:
         self.semantic_analyzer = self.llm.with_structured_output(SemanticTableExtraction)
     
     def extract_table_content(self, image_path: str, bbox: Dict[str, float], 
-                            page_number: int = 1) -> TableData:
+                            page_number: int = 1, save_response: bool = False, 
+                            output_dir: Optional[str] = None) -> TableData:
         """
         Extract table content with structured output for reliable results
         
@@ -33,6 +34,8 @@ class TableContentExtractor:
             image_path: Path to the document image
             bbox: Relative bounding box coordinates (0.0-1.0)
             page_number: Page number for metadata
+            save_response: Whether to save the raw LLM response as JSON
+            output_dir: Directory to save the response (if save_response=True)
             
         Returns:
             TableData: Structured table data with semantic relationships
@@ -57,11 +60,17 @@ class TableContentExtractor:
             
             logger.info(f"Successfully extracted {len(semantic_result.tables)} table(s) with confidence {semantic_result.extraction_metadata.confidence:.2f}")
             
+            # Save raw response if requested
+            if save_response and output_dir:
+                self._save_llm_response(semantic_result, output_dir, page_number)
+            
             # Convert to TableData format for compatibility
             return self._convert_semantic_to_table_data(semantic_result, bbox, page_number)
             
         except Exception as e:
             logger.error(f"Structured table extraction failed: {e}")
+            logger.debug(f"Exception type: {type(e)}")
+            logger.debug(f"Exception details: {str(e)}")
             # Simplified fallback
             return self._create_simple_fallback(bbox, page_number)
     
@@ -215,8 +224,18 @@ Focus on creating accurate data relationships that match the actual table struct
                                       page_number: int) -> TableData:
         """Convert SemanticTableExtraction to TableData for compatibility"""
         
+        # Debug: log the structure we received
+        logger.debug(f"Received semantic result with {len(semantic_result.tables)} table(s)")
+        
         # Use the first table (can be extended for multi-table support)
         main_table = semantic_result.tables[0]
+        logger.debug(f"Main table has {len(main_table.data_relationships)} data relationships")
+        
+        # Debug first relationship structure
+        if main_table.data_relationships:
+            first_rel = main_table.data_relationships[0]
+            logger.debug(f"First relationship: row_header='{first_rel.row_header}'")
+            logger.debug(f"First relationship attributes: {dir(first_rel)}")
         
         # Create cell objects from semantic relationships
         cells = []
@@ -237,8 +256,8 @@ Focus on creating accurate data relationships that match the actual table struct
         # Add data from relationships
         for row_idx, relationship in enumerate(main_table.data_relationships, start=1):
             row_header = relationship.row_header
-            values = relationship.values
-            single_value = relationship.single_value
+            values = getattr(relationship, 'values', {})
+            single_value = getattr(relationship, 'single_value', None)
             
             # Add row header cell
             row_cell = TableCell(
@@ -306,16 +325,190 @@ Focus on creating accurate data relationships that match the actual table struct
             row_data = {"row_header": relationship.row_header}
             
             # Handle different value formats
-            if relationship.single_value and not relationship.values:
+            single_value = getattr(relationship, 'single_value', None)
+            values = getattr(relationship, 'values', {})
+            
+            if single_value and not values:
                 # Simple parameter → value format
-                row_data["value"] = relationship.single_value
+                row_data["value"] = single_value
             else:
                 # Multi-column format
-                row_data.update(relationship.values)
+                row_data.update(values)
             
             # Add notes if present
-            if relationship.row_notes:
-                row_data["notes"] = relationship.row_notes
+            row_notes = getattr(relationship, 'row_notes', None)
+            if row_notes:
+                row_data["notes"] = row_notes
+                
+            data_rows.append(row_data)
+        
+        return TableData(
+            structure=structure,
+            data_rows=data_rows,
+            metadata={
+                "extraction_approach": "structured_semantic",
+                "bbox": bbox,
+                "page_number": page_number,
+                "semantic_result": semantic_result.model_dump(),  # Store complete result
+                "main_topic": semantic_result.table_summary.main_topic
+            }
+        )
+        
+    def _save_llm_response(self, semantic_result: SemanticTableExtraction, 
+                          output_dir: str, page_number: int):
+        """Save the raw LLM response as JSON for analysis"""
+        import json
+        import os
+        from datetime import datetime
+        
+        # Create output directory if it doesn't exist
+        os.makedirs(output_dir, exist_ok=True)
+        
+        # Generate filename with timestamp
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"llm_response_page_{page_number}_{timestamp}.json"
+        filepath = os.path.join(output_dir, filename)
+        
+        # Convert Pydantic object to dict for JSON serialization
+        response_data = {
+            "extraction_timestamp": timestamp,
+            "page_number": page_number,
+            "raw_semantic_result": semantic_result.model_dump(),
+            "model_info": {
+                "model_name": "gpt-4o",
+                "extraction_method": "structured_output",
+                "langchain_version": "with_structured_output"
+            }
+        }
+        
+        # Save to JSON file
+        try:
+            with open(filepath, 'w', encoding='utf-8') as f:
+                json.dump(response_data, f, indent=2, ensure_ascii=False)
+            logger.info(f"Saved LLM response to: {filepath}")
+        except Exception as e:
+            logger.warning(f"Failed to save LLM response: {e}")
+    
+    def _convert_semantic_to_table_data(self, semantic_result: SemanticTableExtraction, 
+                                      bbox: Dict[str, float], 
+                                      page_number: int) -> TableData:
+        """Convert SemanticTableExtraction to TableData for compatibility"""
+        
+        # Debug: log the structure we received
+        logger.debug(f"Received semantic result with {len(semantic_result.tables)} table(s)")
+        
+        # Use the first table (can be extended for multi-table support)
+        main_table = semantic_result.tables[0]
+        logger.debug(f"Main table has {len(main_table.data_relationships)} data relationships")
+        
+        # Debug first relationship structure
+        if main_table.data_relationships:
+            first_rel = main_table.data_relationships[0]
+            logger.debug(f"First relationship: row_header='{first_rel.row_header}'")
+            logger.debug(f"First relationship attributes: {dir(first_rel)}")
+        
+        # Create cell objects from semantic relationships
+        cells = []
+        
+        # Add column headers
+        column_headers = main_table.headers.get("column_headers", [])
+        for col_idx, header in enumerate(column_headers):
+            cell = TableCell(
+                id=f"header_col_{col_idx}",
+                row=0,
+                col=col_idx + 1,  # Offset for row header column
+                content=header,
+                cell_type="header",
+                confidence=0.9
+            )
+            cells.append(cell)
+        
+        # Add data from relationships
+        for row_idx, relationship in enumerate(main_table.data_relationships, start=1):
+            row_header = relationship.row_header
+            values = getattr(relationship, 'values', {})
+            single_value = getattr(relationship, 'single_value', None)
+            
+            # Add row header cell
+            row_cell = TableCell(
+                id=f"header_row_{row_idx}",
+                row=row_idx,
+                col=0,
+                content=row_header,
+                cell_type="header", 
+                confidence=0.9
+            )
+            cells.append(row_cell)
+            
+            # Handle different value formats
+            if single_value and not values:
+                # Simple parameter → value table
+                data_cell = TableCell(
+                    id=f"data_{row_idx}_1",
+                    row=row_idx,
+                    col=1,
+                    content=single_value,
+                    cell_type="data",
+                    confidence=0.85
+                )
+                cells.append(data_cell)
+            else:
+                # Multi-column table with values dict
+                for col_idx, (col_header, value) in enumerate(values.items(), start=1):
+                    data_cell = TableCell(
+                        id=f"data_{row_idx}_{col_idx}",
+                        row=row_idx,
+                        col=col_idx,
+                        content=str(value) if value else "",
+                        cell_type="data",
+                        confidence=0.85
+                    )
+                    cells.append(data_cell)
+        
+        # Create table structure
+        structure = TableStructure(
+            id=main_table.table_id,
+            rows=main_table.structure.rows,
+            cols=main_table.structure.columns,
+            cells=cells,
+            headers=column_headers,
+            caption=main_table.title,
+            page_number=page_number,
+            bbox=bbox,
+            extraction_method="gpt-4o",  # Use valid enum value
+            structure_confidence=semantic_result.extraction_metadata.confidence,
+            metadata={
+                "semantic_extraction": True,
+                "table_type": main_table.table_type,
+                "detected_language": semantic_result.extraction_metadata.detected_language,
+                "data_types": semantic_result.extraction_metadata.data_types,
+                "complexity_level": semantic_result.extraction_metadata.complexity_level,
+                "total_tables": semantic_result.table_summary.total_tables,
+                "document_type": semantic_result.table_summary.document_type,
+                "notes": main_table.notes
+            }
+        )
+        
+        # Create data rows from relationships
+        data_rows = []
+        for relationship in main_table.data_relationships:
+            row_data = {"row_header": relationship.row_header}
+            
+            # Handle different value formats
+            single_value = getattr(relationship, 'single_value', None)
+            values = getattr(relationship, 'values', {})
+            
+            if single_value and not values:
+                # Simple parameter → value format
+                row_data["value"] = single_value
+            else:
+                # Multi-column format
+                row_data.update(values)
+            
+            # Add notes if present
+            row_notes = getattr(relationship, 'row_notes', None)
+            if row_notes:
+                row_data["notes"] = row_notes
                 
             data_rows.append(row_data)
         
@@ -509,11 +702,13 @@ def example_usage():
                         'height': table_region.bbox.height
                     }
                     
-                    # Extract table content
+                    # Extract table content using structured output with response saving
                     result = extractor.extract_table_content(
                         image_path=image_path,
                         bbox=bbox_dict,
-                        page_number=page_num
+                        page_number=page_num,
+                        save_response=True,  # Enable saving LLM responses
+                        output_dir=os.path.join(output_dir, "llm_responses")  # Save to subdirectory
                     )
                     
                     # Display extraction results
@@ -527,7 +722,7 @@ def example_usage():
                     
                     # Show semantic data relationships
                     print("\n=== Data Relationships ===")
-                    for row_idx, row in enumerate(result.data_rows[:3]):  # Show first 3 rows
+                    for row_idx, row in enumerate(result.data_rows[:5]):  # Show first 3 rows
                         row_header = row.get('row_header', f'Row {row_idx+1}')
                         print(f"  {row_header}:")
                         for col_header, value in row.items():
@@ -543,7 +738,7 @@ def example_usage():
                         print(f"\n=== Sub-tables Detected: {total_tables} ===")
                         semantic_result = result.metadata.get('semantic_result', {})
                         all_tables = semantic_result.get('tables', [])
-                        for j, sub_table in enumerate(all_tables[:3]):  # Show first 3 sub-tables
+                        for j, sub_table in enumerate(all_tables[:5]):  # Show first 3 sub-tables
                             print(f"  Sub-table {j+1}: {sub_table.get('title', 'Untitled')}")
                             print(f"    Type: {sub_table.get('table_type', 'unknown')}")
                             structure = sub_table.get('structure', {})
@@ -617,7 +812,8 @@ def example_usage():
         
         # Optional: Clean up temporary images
         print(f"\nTemporary images saved in: {output_dir}")
-        print("To clean up: remove the temp_images directory")
+        print(f"LLM responses saved in: {os.path.join(output_dir, 'llm_responses')}")
+        print("To clean up: remove the temp_images directory and llm_responses subdirectory")
         
         return all_results
         

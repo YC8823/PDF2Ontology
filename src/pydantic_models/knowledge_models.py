@@ -217,3 +217,54 @@ class KnowledgeGraph(BaseModel):
         description="Additional metadata", 
         default_factory=dict
     )
+
+class ExtractedEntity(BaseModel):
+    """Entity extraction result for structured output"""
+    name: str = Field(description="Entity name or identifier")
+    entity_type: EntityType = Field(description="Type of entity")
+    value: Optional[str] = Field(default=None, description="Entity value if applicable")
+    unit: Optional[str] = Field(default=None, description="Unit of measurement if applicable")
+    aliases: List[str] = Field(default_factory=list, description="Alternative names")
+    description: Optional[str] = Field(default=None, description="Entity description")
+    confidence: float = Field(ge=0.0, le=1.0, description="Extraction confidence")
+    source_location: str = Field(description="Location in source data (row/column reference)")
+
+
+class ExtractedRelation(BaseModel):
+    """Relation extraction result for structured output"""
+    subject_name: str = Field(description="Name of subject entity")
+    predicate: RelationType = Field(description="Type of relation")
+    object_name: str = Field(description="Name of object entity")
+    confidence: float = Field(ge=0.0, le=1.0, description="Relation confidence")
+    evidence: str = Field(description="Supporting evidence from source")
+    context: Optional[str] = Field(default=None, description="Additional context")
+
+
+class TripletExtractionOutput(BaseModel):
+    """Structured output for triplet extraction"""
+    document_type: str = Field(description="Type of document analyzed")
+    extraction_summary: str = Field(description="Brief summary of extraction")
+    
+    entities: List[ExtractedEntity] = Field(
+        description="All entities extracted from the data",
+        min_items=0
+    )
+    
+    relations: List[ExtractedRelation] = Field(
+        description="All relations extracted from the data", 
+        min_items=0
+    )
+    
+    quality_assessment: Dict[str, float] = Field(
+        description="Quality metrics for the extraction",
+        default_factory=dict
+    )
+    
+    extraction_notes: Optional[str] = Field(
+        default=None,
+        description="Additional notes about the extraction process"
+    )
+    
+    class Config:
+        use_enum_values = True
+        validate_assignment = True
