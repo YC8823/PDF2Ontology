@@ -140,7 +140,41 @@ ANALYSIS TASKS:
    }
    ```
 
-4. **QUALITY ASSESSMENT**:
+   **SPECIAL CASE - Option Selection Tables**:
+   When you see multiple columns that appear to be options/choices, and one is marked with "X" or similar:
+   ```
+   Zustand Eintritt | X flüssig | dampfförmig | gasförmig
+                    |     X     |             |          
+   ```
+   This means "Zustand Eintritt" has the value "flüssig" (the marked option).
+   Output as:
+   ```
+   {
+     "row_header": "Zustand Eintritt",
+     "single_value": "flüssig",
+     "values": {},
+     "row_notes": "Selected from options: flüssig, dampfförmig, gasförmig"
+   }
+   ```
+
+4. **HANDLING OPTION SELECTION PATTERNS**:
+   - Look for column headers that represent choices/states (e.g., "flüssig", "dampfförmig", "gasförmig")
+   - Check for markers like "X", "✓", "●", or filled cells indicating selection
+   - When found, extract the selected option as the single_value
+   - List all available options in row_notes for context
+   - Common German option patterns:
+     * Physical states: "flüssig", "dampfförmig", "gasförmig", "fest"
+     * Yes/No: "ja", "nein", "yes", "no"
+     * Materials: different material types or grades
+     * Standards: different norm/standard options
+
+5. **HANDLING EMPTY CELLS**:
+   - For empty or unclear cells, use empty string "" instead of null
+   - For missing column headers, use descriptive names like "Column_1", "Column_2"
+   - Always provide string values, never null in the values dictionary
+   - If an entire row of options is empty, check for subtle markers or patterns
+
+6. **QUALITY ASSESSMENT**:
    - confidence: 0.0-1.0 based on text clarity
    - detected_language: "de", "en", or "mixed"  
    - complexity_level: "simple", "moderate", or "complex"
@@ -152,6 +186,14 @@ CRITICAL REQUIREMENTS:
 - If table structure is unclear, simplify to parameter-value pairs using single_value
 - Ensure ALL required fields are present in the output
 - If you see parameter names like "Stellort", "MSR-Aufgabe", etc., treat as parameter-description table
+- NEVER use null values in the values dictionary - use empty strings instead
+- Pay special attention to selection patterns and option markers
+
+SELECTION PATTERN RECOGNITION:
+1. **Identify option columns**: Look for columns with similar naming patterns (e.g., states, materials, yes/no)
+2. **Find selection markers**: Look for "X", checkmarks, filled cells, or other indicators
+3. **Extract selected value**: Use the column header of the marked option as the value
+4. **Document alternatives**: List all available options in row_notes
 
 EXAMPLE OUTPUT STRUCTURE:
 ```json
@@ -167,35 +209,37 @@ EXAMPLE OUTPUT STRUCTURE:
     "table_type": "specification_table",
     "structure": {
       "rows": 3,
-      "columns": 2,
+      "columns": 4,
       "has_row_headers": true,
       "has_column_headers": true,
       "header_levels": 1
     },
     "headers": {
-      "row_headers": ["Parameter1", "Parameter2"],
-      "column_headers": ["Parameter", "Value"]
+      "row_headers": ["Zustand Eintritt"],
+      "column_headers": ["Parameter", "X flüssig", "dampfförmig", "gasförmig"]
     },
     "data_relationships": [
       {
-        "row_header": "Stellort",
+        "row_header": "Zustand Eintritt",
         "values": {},
-        "single_value": "Kesselhaus",
-        "row_notes": null
+        "single_value": "flüssig",
+        "row_notes": "Selected from options: flüssig, dampfförmig, gasförmig"
       }
     ],
-    "notes": "Technical parameter table"
+    "notes": "Technical parameter table with option selections"
   }],
   "extraction_metadata": {
     "confidence": 0.9,
     "detected_language": "de", 
-    "data_types": ["text"],
-    "complexity_level": "simple"
+    "data_types": ["text", "selections"],
+    "complexity_level": "moderate"
   }
 }
 ```
 
 Focus on creating accurate data relationships that match the actual table structure.
+Remember: Use empty strings "" for empty cells, never null in values dictionaries.
+Pay special attention to option selection patterns indicated by markers or filled cells.
 """
     
     def _crop_and_encode_table(self, image_path: str, bbox: Dict[str, float]) -> str:
@@ -475,7 +519,7 @@ Focus on creating accurate data relationships that match the actual table struct
             caption=main_table.title,
             page_number=page_number,
             bbox=bbox,
-            extraction_method="gpt-4o",  # Use valid enum value
+            extraction_method="gpt4v_visual",  # Use valid enum value
             structure_confidence=semantic_result.extraction_metadata.confidence,
             metadata={
                 "semantic_extraction": True,
@@ -634,7 +678,7 @@ def example_usage():
     
     # Configuration
     api_key = os.getenv("OPENAI_API_KEY", "your-openai-api-key")
-    pdf_path = "data/inputs/sample_Datenblatt.pdf"  # Path to your PDF file
+    pdf_path = "data/inputs/var3.pdf"  # Path to your PDF file
     output_dir = "data/outputs/temp_images"  # Temporary directory for images
     
     # Initialize components
@@ -648,6 +692,7 @@ def example_usage():
             pdf_path=pdf_path,
             # output_dir=output_dir,
             dpi=300,  # High resolution for better OCR
+            # format='PNG'
         )
         
         print(f"Converted PDF to {len(images)} image(s)")
@@ -720,17 +765,32 @@ def example_usage():
                     print(f"Complexity: {result.structure.metadata.get('complexity_level', 'unknown')}")
                     print(f"Document Type: {result.structure.metadata.get('document_type', 'unknown')}")
                     
-                    # Show semantic data relationships
+                    # Show semantic data relationships with improved formatting
                     print("\n=== Data Relationships ===")
-                    for row_idx, row in enumerate(result.data_rows[:5]):  # Show first 3 rows
+                    for row_idx, row in enumerate(result.data_rows[:30]):  # Show first 30 rows
                         row_header = row.get('row_header', f'Row {row_idx+1}')
-                        print(f"  {row_header}:")
-                        for col_header, value in row.items():
-                            if col_header != 'row_header':
-                                print(f"    {col_header} → {value}")
+                        
+                        # Remove row_header from the row data to get just the values
+                        row_values = {k: v for k, v in row.items() if k != 'row_header' and k != 'notes'}
+                        
+                        if len(row_values) == 1 and 'value' in row_values:
+                            # Single value case - display more compactly
+                            value = row_values['value']
+                            print(f"  {row_header} (contains information)")
+                            print(f"                  (has value)  {value}")
+                        elif row_values:
+                            # Multiple values case - display hierarchically
+                            print(f"  {row_header} (contains information)")
+                            for col_header, value in row_values.items():
+                                if value:  # Only show non-empty values
+                                    print(f"    {col_header} (has value) {value}")
+                        else:
+                            # No values case
+                            print(f"  {row_header} (contains information)")
+                            print(f"                  (has value)  [no data]")
                     
-                    if len(result.data_rows) > 3:
-                        print(f"    ... and {len(result.data_rows) - 3} more rows")
+                    if len(result.data_rows) > 30:
+                        print(f"    ... and {len(result.data_rows) - 30} more rows")
                     
                     # Check for sub-tables from structured output
                     total_tables = result.structure.metadata.get('total_tables', 1)
@@ -738,7 +798,7 @@ def example_usage():
                         print(f"\n=== Sub-tables Detected: {total_tables} ===")
                         semantic_result = result.metadata.get('semantic_result', {})
                         all_tables = semantic_result.get('tables', [])
-                        for j, sub_table in enumerate(all_tables[:5]):  # Show first 3 sub-tables
+                        for j, sub_table in enumerate(all_tables[:3]):  # Show first 3 sub-tables
                             print(f"  Sub-table {j+1}: {sub_table.get('title', 'Untitled')}")
                             print(f"    Type: {sub_table.get('table_type', 'unknown')}")
                             structure = sub_table.get('structure', {})

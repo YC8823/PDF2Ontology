@@ -24,6 +24,7 @@ ENV/
 env/
 build/
 develop-eggs/
+.env
 
 # Pytest cache
 .pytest_cache/
