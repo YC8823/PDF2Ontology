@@ -1,0 +1,2714 @@
+@prefix : <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26> a owl:Ontology .
+
+:BallValve a owl:Class ;
+    rdfs:subClassOf :ValveBody .
+
+:Bonnet a owl:Class ;
+    rdfs:subClassOf :ValveTrim .
+
+:ButterflyValve a owl:Class ;
+    rdfs:subClassOf :ValveBody .
+
+:CableAssembly a owl:Class ;
+    rdfs:subClassOf :ElectricalInterface .
+
+:Cage a owl:Class ;
+    rdfs:subClassOf :ValveTrim .
+
+:DiaphragmValve a owl:Class ;
+    rdfs:subClassOf :ValveBody .
+
+:ElectricActuatorComponent a owl:Class ;
+    rdfs:subClassOf :ValveActuator .
+
+:ElectricalConnector a owl:Class ;
+    rdfs:subClassOf :ElectricalInterface .
+
+:ElectropneumaticActuatorComponent a owl:Class ;
+    rdfs:subClassOf :ValveActuator .
+
+:FlowDivider a owl:Class ;
+    rdfs:subClassOf :ValveTrim .
+
+:Flowmeter a owl:Class ;
+    rdfs:subClassOf :MeasuringSystem .
+
+:Housing a owl:Class ;
+    rdfs:subClassOf :DeviceComponent .
+
+:Plug a owl:Class ;
+    rdfs:subClassOf :ValveTrim .
+
+:PneumaticActuatorComponent a owl:Class ;
+    rdfs:subClassOf :ValveActuator .
+
+:ProcessConnection a owl:Class ;
+    rdfs:subClassOf :DeviceComponent .
+
+:Seal a owl:Class ;
+    rdfs:subClassOf :ValveTrim .
+
+:Seat a owl:Class ;
+    rdfs:subClassOf :ValveTrim .
+
+:Sensor a owl:Class ;
+    rdfs:subClassOf :DeviceComponent .
+
+:hasCompatibleValveActuator a owl:ObjectProperty ;
+    rdfs:domain :ValveActuator ;
+    rdfs:range :ValveBody ;
+    owl:inverseOf :hasCompatibleValveBody .
+
+:hasDimension a owl:ObjectProperty ;
+    rdfs:domain :DeviceComponent,
+        :FieldDevice ;
+    rdfs:range :Dimension .
+
+:hasDimensionDecimalValue a owl:DatatypeProperty ;
+    rdfs:comment "The specific numerical value of the size, for example, 130, 222, 0.25, skip if it's a string." ;
+    rdfs:domain :Dimension ;
+    rdfs:range xsd:decimal .
+
+:hasDimensionEndAnchorX a owl:DatatypeProperty ;
+    rdfs:domain :Dimension ;
+    rdfs:range xsd:decimal .
+
+:hasDimensionEndAnchorY a owl:DatatypeProperty ;
+    rdfs:domain :Dimension ;
+    rdfs:range xsd:decimal .
+
+:hasDimensionParameterName a owl:DatatypeProperty ;
+    rdfs:domain :Dimension ;
+    rdfs:range xsd:string .
+
+:hasDimensionStartAnchorX a owl:DatatypeProperty ;
+    rdfs:domain :Dimension ;
+    rdfs:range xsd:decimal .
+
+:hasDimensionStartAnchorY a owl:DatatypeProperty ;
+    rdfs:domain :Dimension ;
+    rdfs:range xsd:decimal .
+
+:hasDimensionStringValue a owl:DatatypeProperty ;
+    rdfs:comment "The specific dimensional value besides of nummeric value, for example, \"H1+H2\" , \"1/2 G\"" ;
+    rdfs:domain :Dimension ;
+    rdfs:range xsd:string .
+
+:hasDimensionType a owl:DatatypeProperty ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf [ a rdf:List ;
+                    rdf:first "diameter" ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first "horizontal" ;
+                            rdf:rest [ a rdf:List ;
+                                    rdf:first "other" ;
+                                    rdf:rest [ a rdf:List ;
+                                            rdf:first "vertical" ;
+                                            rdf:rest () ] ] ] ] ] .
+
+:hasDimensionUnit a owl:DatatypeProperty ;
+    rdfs:comment "unit of the dimension, for example, \"mm\", \"inches\", \"kg\"" ;
+    rdfs:domain :Dimension .
+
+:hasElectricalInterface a owl:ObjectProperty ;
+    rdfs:domain :Transmitter ;
+    rdfs:range :ElectricalInterface ;
+    rdfs:subPropertyOf :hasDeviceComponent .
+
+:hasModelName a owl:DatatypeProperty ;
+    rdfs:domain :DeviceComponent,
+        :FieldDevice ;
+    rdfs:range xsd:string .
+
+:hasNominalSizeDN a owl:DatatypeProperty ;
+    rdfs:comment "Nominal size of the valve, e.g. \"DN 15\", \"DN 150\"" ;
+    rdfs:domain :ValveBody ;
+    rdfs:range xsd:int .
+
+:hasValveTrim a owl:ObjectProperty ;
+    rdfs:domain :ControlValve ;
+    rdfs:range :ValveTrim ;
+    rdfs:subPropertyOf :hasDeviceComponent .
+
+:inst_actuator_3274_1111211311_0fff a :ElectrohydraulicActuatorComponent,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3274 Electrohydraulic Actuator - -11 1)/-12 1)/-13 1)/-14/-21 to -23"@en ;
+    :hasDimension :dim_inst_actuator_3274_1111211311_0fff_Height_H,
+        :dim_inst_actuator_3274_1111211311_0fff_Height_H6,
+        :dim_inst_actuator_3274_1111211311_0fff_Weight ;
+    :hasModelName "Type 3274 Actuator"^^xsd:string,
+        "Type 3274 Electrohydraulic Actuator"^^xsd:string .
+
+:inst_actuator_3274_1111211311_7004 a :ElectrohydraulicActuatorComponent,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3274 Electrohydraulic Actuator - -11 1)/-12 1)/-13 1)/-14/-21 to -23"@en ;
+    :hasDimension :dim_inst_actuator_3274_1111211311_7004_Height_H,
+        :dim_inst_actuator_3274_1111211311_7004_Height_H6,
+        :dim_inst_actuator_3274_1111211311_7004_Weight ;
+    :hasModelName "Type 3274 Actuator"^^xsd:string,
+        "Type 3274 Electrohydraulic Actuator"^^xsd:string .
+
+:inst_actuator_3274_1511611711_157a a :ElectrohydraulicActuatorComponent,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3274 Electrohydraulic Actuator - -15 1)/-16 1)/-17 1)/-18"@en ;
+    :hasDimension :dim_inst_actuator_3274_1511611711_157a_Height_H,
+        :dim_inst_actuator_3274_1511611711_157a_Height_H6,
+        :dim_inst_actuator_3274_1511611711_157a_Weight ;
+    :hasModelName "Type 3274 Actuator"^^xsd:string,
+        "Type 3274 Electrohydraulic Actuator"^^xsd:string .
+
+:inst_actuator_3274_1511611711_aebc a :ElectrohydraulicActuatorComponent,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3274 Electrohydraulic Actuator - -15 1)/-16 1)/-17 1)/-18"@en ;
+    :hasDimension :dim_inst_actuator_3274_1511611711_aebc_Height_H,
+        :dim_inst_actuator_3274_1511611711_aebc_Height_H6,
+        :dim_inst_actuator_3274_1511611711_aebc_Weight ;
+    :hasModelName "Type 3274 Actuator"^^xsd:string,
+        "Type 3274 Electrohydraulic Actuator"^^xsd:string .
+
+:inst_controlvalve_3241_3274 a :ControlValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241/3274 Electric Control Valve"@en ;
+    :hasDimension :dim_076535dc,
+        :dim_0b6e1900,
+        :dim_18562837,
+        :dim_40ce5af2,
+        :dim_516c70ca,
+        :dim_5bdbca95,
+        :dim_5e7ab545,
+        :dim_6f146424,
+        :dim_7649db24,
+        :dim_8c657554,
+        :dim_8cf5e139,
+        :dim_a24bdbbc,
+        :dim_a4794df8,
+        :dim_b318b4a6,
+        :dim_bebf9e32,
+        :dim_c36ea58e,
+        :dim_cace78c3,
+        :dim_cb9c35a8,
+        :dim_df9a2427,
+        :dim_e8373c6d,
+        :dim_f59ecf1e,
+        :dim_fa8c62b9,
+        :dim_fe47dd63 ;
+    :hasModelName "Type 3241/3274 Electric Control Valve"^^xsd:string ;
+    :hasValveActuator :inst_actuator_3274 ;
+    :hasValveBody :inst_valvebody_3241 .
+
+:inst_controlvalve_3241_3274_DN15_a8bd a :ControlValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241/3274 Electric Control Valve - DN 15"@en ;
+    :hasDimension :dim_inst_controlvalve_3241_3274_DN15_a8bd_K_coefficient_VS,
+        :dim_inst_controlvalve_3241_3274_DN15_a8bd_Seat_Ø,
+        :dim_inst_controlvalve_3241_3274_DN15_a8bd_Travel ;
+    :hasModelName "Type 3241/3274 Electric Control Valve"^^xsd:string ;
+    :hasNominalSizeDN 15 .
+
+:inst_controlvalve_3241_3274_DN20_0a3e a :ControlValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241/3274 Electric Control Valve - DN 20"@en ;
+    :hasDimension :dim_inst_controlvalve_3241_3274_DN20_0a3e_K_coefficient_VS,
+        :dim_inst_controlvalve_3241_3274_DN20_0a3e_Seat_Ø,
+        :dim_inst_controlvalve_3241_3274_DN20_0a3e_Travel ;
+    :hasModelName "Type 3241/3274 Electric Control Valve"^^xsd:string ;
+    :hasNominalSizeDN 20 .
+
+:inst_controlvalve_3244_3274 a :ControlValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244/3274 Electric Control Valve"@en ;
+    :hasDimension :dim_177e6304,
+        :dim_262c693c,
+        :dim_3377fd47,
+        :dim_3ada08bc,
+        :dim_b6f1ebcf,
+        :dim_d2e8ba6f,
+        :dim_dd5138e5,
+        :dim_e04f354b,
+        :dim_e2970fcc,
+        :dim_e6fa3810,
+        :dim_fec1664d ;
+    :hasModelName "Type 3244/3274 Electric Control Valve"^^xsd:string ;
+    :hasValveActuator :inst_actuator_3274 ;
+    :hasValveBody :inst_valvebody_3244 .
+
+:inst_controlvalve_3244_3274_DN15_6d13 a :ControlValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244/3274 Electric Control Valve - DN 15"@en ;
+    :hasDimension :dim_inst_controlvalve_3244_3274_DN15_6d13_K_coefficient,
+        :dim_inst_controlvalve_3244_3274_DN15_6d13_Seat_Ø ;
+    :hasModelName "Type 3244/3274 Electric Control Valve"^^xsd:string ;
+    :hasNominalSizeDN 15 .
+
+:inst_controlvalve_3244_3274_DN20_7104 a :ControlValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244/3274 Electric Control Valve - DN 20"@en ;
+    :hasDimension :dim_inst_controlvalve_3244_3274_DN20_7104_K_coefficient,
+        :dim_inst_controlvalve_3244_3274_DN20_7104_Seat_Ø ;
+    :hasModelName "Type 3244/3274 Electric Control Valve"^^xsd:string ;
+    :hasNominalSizeDN 20 .
+
+:inst_controlvalve_3244_3274_DN25_85dc a :ControlValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244/3274 Electric Control Valve - DN 25"@en ;
+    :hasDimension :dim_inst_controlvalve_3244_3274_DN25_85dc_K_coefficient,
+        :dim_inst_controlvalve_3244_3274_DN25_85dc_Seat_Ø ;
+    :hasModelName "Type 3244/3274 Electric Control Valve"^^xsd:string ;
+    :hasNominalSizeDN 25 .
+
+:inst_controlvalve_3244_3274_DN32_5968 a :ControlValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244/3274 Electric Control Valve - DN 32"@en ;
+    :hasDimension :dim_inst_controlvalve_3244_3274_DN32_5968_K_coefficient,
+        :dim_inst_controlvalve_3244_3274_DN32_5968_Seat_Ø ;
+    :hasModelName "Type 3244/3274 Electric Control Valve"^^xsd:string ;
+    :hasNominalSizeDN 32 .
+
+:inst_controlvalve_3244_3274_DN40_9af3 a :ControlValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244/3274 Electric Control Valve - DN 40"@en ;
+    :hasDimension :dim_inst_controlvalve_3244_3274_DN40_9af3_K_coefficient,
+        :dim_inst_controlvalve_3244_3274_DN40_9af3_Seat_Ø ;
+    :hasModelName "Type 3244/3274 Electric Control Valve"^^xsd:string ;
+    :hasNominalSizeDN 40 .
+
+:inst_controlvalve_3244_3274_DN50_ec7a a :ControlValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244/3274 Electric Control Valve - DN 50"@en ;
+    :hasDimension :dim_inst_controlvalve_3244_3274_DN50_ec7a_K_coefficient,
+        :dim_inst_controlvalve_3244_3274_DN50_ec7a_Seat_Ø ;
+    :hasModelName "Type 3244/3274 Electric Control Valve"^^xsd:string ;
+    :hasNominalSizeDN 50 .
+
+:inst_valvebody_3241_DN100_0df3 a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 100"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN100_0df3_Height_H2,
+        :dim_inst_valvebody_3241_DN100_0df3_Height_H3,
+        :dim_inst_valvebody_3241_DN100_0df3_Height_H4_fail_close,
+        :dim_inst_valvebody_3241_DN100_0df3_Length_L ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 100 .
+
+:inst_valvebody_3241_DN100_c7fa a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 100"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN100_c7fa_a,
+        :dim_inst_valvebody_3241_DN100_c7fa_b,
+        :dim_inst_valvebody_3241_DN100_c7fa_c ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 100 .
+
+:inst_valvebody_3241_DN100_f07a a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 100"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN100_f07a_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN100_f07a_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3241_DN100_f07a_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 100 .
+
+:inst_valvebody_3241_DN125_37ed a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 125"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN125_37ed_Height_H2,
+        :dim_inst_valvebody_3241_DN125_37ed_Height_H3,
+        :dim_inst_valvebody_3241_DN125_37ed_Height_H4_fail_close,
+        :dim_inst_valvebody_3241_DN125_37ed_Length_L ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 125 .
+
+:inst_valvebody_3241_DN125_72a7 a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 125"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN125_72a7_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN125_72a7_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3241_DN125_72a7_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 125 .
+
+:inst_valvebody_3241_DN150_35ff a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 150"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN150_35ff_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN150_35ff_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3241_DN150_35ff_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 150 .
+
+:inst_valvebody_3241_DN150_84eb a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 150"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN150_84eb_Height_H2,
+        :dim_inst_valvebody_3241_DN150_84eb_Height_H3,
+        :dim_inst_valvebody_3241_DN150_84eb_Height_H4_fail_close,
+        :dim_inst_valvebody_3241_DN150_84eb_Length_L ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 150 .
+
+:inst_valvebody_3241_DN15_30f3 a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 15"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN15_30f3_Height_H2,
+        :dim_inst_valvebody_3241_DN15_30f3_Height_H3,
+        :dim_inst_valvebody_3241_DN15_30f3_Height_H4_fail_close,
+        :dim_inst_valvebody_3241_DN15_30f3_Length_L ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 15 .
+
+:inst_valvebody_3241_DN15_f4ab a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 15"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN15_f4ab_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN15_f4ab_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3241_DN15_f4ab_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN15_f4ab_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 15 .
+
+:inst_valvebody_3241_DN20_a630 a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 20"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN20_a630_Height_H2,
+        :dim_inst_valvebody_3241_DN20_a630_Height_H3,
+        :dim_inst_valvebody_3241_DN20_a630_Height_H4_fail_close,
+        :dim_inst_valvebody_3241_DN20_a630_Length_L ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 20 .
+
+:inst_valvebody_3241_DN20_a7b1 a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 20"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN20_a7b1_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN20_a7b1_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3241_DN20_a7b1_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN20_a7b1_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 20 .
+
+:inst_valvebody_3241_DN25_50d0 a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 25"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN25_50d0_a,
+        :dim_inst_valvebody_3241_DN25_50d0_b,
+        :dim_inst_valvebody_3241_DN25_50d0_c ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 25 .
+
+:inst_valvebody_3241_DN25_c654 a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 25"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN25_c654_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN25_c654_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3241_DN25_c654_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN25_c654_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 25 .
+
+:inst_valvebody_3241_DN25_f48a a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 25"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN25_f48a_Height_H2,
+        :dim_inst_valvebody_3241_DN25_f48a_Height_H3,
+        :dim_inst_valvebody_3241_DN25_f48a_Height_H4_fail_close,
+        :dim_inst_valvebody_3241_DN25_f48a_Length_L ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 25 .
+
+:inst_valvebody_3241_DN32_1213 a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 32"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN32_1213_Height_H2,
+        :dim_inst_valvebody_3241_DN32_1213_Height_H3,
+        :dim_inst_valvebody_3241_DN32_1213_Height_H4_fail_close,
+        :dim_inst_valvebody_3241_DN32_1213_Length_L ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 32 .
+
+:inst_valvebody_3241_DN32_1d40 a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 32"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN32_1d40_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN32_1d40_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3241_DN32_1d40_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN32_1d40_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 32 .
+
+:inst_valvebody_3241_DN32to50_dcda a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 32 to 50"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN32to50_dcda_a,
+        :dim_inst_valvebody_3241_DN32to50_dcda_b,
+        :dim_inst_valvebody_3241_DN32to50_dcda_c ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string .
+
+:inst_valvebody_3241_DN40_3adb a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 40"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN40_3adb_Height_H2,
+        :dim_inst_valvebody_3241_DN40_3adb_Height_H3,
+        :dim_inst_valvebody_3241_DN40_3adb_Height_H4_fail_close,
+        :dim_inst_valvebody_3241_DN40_3adb_Length_L ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 40 .
+
+:inst_valvebody_3241_DN40_9d1b a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 40"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN40_9d1b_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN40_9d1b_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3241_DN40_9d1b_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN40_9d1b_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 40 .
+
+:inst_valvebody_3241_DN50_6b66 a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 50"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN50_6b66_Height_H2,
+        :dim_inst_valvebody_3241_DN50_6b66_Height_H3,
+        :dim_inst_valvebody_3241_DN50_6b66_Height_H4_fail_close,
+        :dim_inst_valvebody_3241_DN50_6b66_Length_L ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 50 .
+
+:inst_valvebody_3241_DN50_c79c a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 50"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN50_c79c_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN50_c79c_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3241_DN50_c79c_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN50_c79c_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 50 .
+
+:inst_valvebody_3241_DN65_3fc5 a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 65"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN65_3fc5_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN65_3fc5_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3241_DN65_3fc5_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN65_3fc5_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 65 .
+
+:inst_valvebody_3241_DN65_e6ff a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 65"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN65_e6ff_Height_H2,
+        :dim_inst_valvebody_3241_DN65_e6ff_Height_H3,
+        :dim_inst_valvebody_3241_DN65_e6ff_Height_H4_fail_close,
+        :dim_inst_valvebody_3241_DN65_e6ff_Length_L ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 65 .
+
+:inst_valvebody_3241_DN65to80_54ec a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 65 to 80"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN65to80_54ec_a,
+        :dim_inst_valvebody_3241_DN65to80_54ec_b,
+        :dim_inst_valvebody_3241_DN65to80_54ec_c ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string .
+
+:inst_valvebody_3241_DN80_0dab a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 80"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN80_0dab_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN80_0dab_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3241_DN80_0dab_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3241_DN80_0dab_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 80 .
+
+:inst_valvebody_3241_DN80_80c6 a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve - DN 80"@en ;
+    :hasDimension :dim_inst_valvebody_3241_DN80_80c6_Height_H2,
+        :dim_inst_valvebody_3241_DN80_80c6_Height_H3,
+        :dim_inst_valvebody_3241_DN80_80c6_Height_H4_fail_close,
+        :dim_inst_valvebody_3241_DN80_80c6_Length_L ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string ;
+    :hasNominalSizeDN 80 .
+
+:inst_valvebody_3244_DN100_33fa a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 100"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN100_33fa_Height_H2,
+        :dim_inst_valvebody_3244_DN100_33fa_Height_H3,
+        :dim_inst_valvebody_3244_DN100_33fa_Length_L,
+        :dim_inst_valvebody_3244_DN100_33fa_Length_L1 ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 100 .
+
+:inst_valvebody_3244_DN100_8615 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 100"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN100_8615_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN100_8615_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3244_DN100_8615_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 100 .
+
+:inst_valvebody_3244_DN125_5628 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 125"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN125_5628_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN125_5628_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3244_DN125_5628_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 125 .
+
+:inst_valvebody_3244_DN125_8562 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 125"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN125_8562_Height_H2,
+        :dim_inst_valvebody_3244_DN125_8562_Height_H3,
+        :dim_inst_valvebody_3244_DN125_8562_Length_L,
+        :dim_inst_valvebody_3244_DN125_8562_Length_L1 ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 125 .
+
+:inst_valvebody_3244_DN150_b9df a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 150"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN150_b9df_Height_H2,
+        :dim_inst_valvebody_3244_DN150_b9df_Height_H3,
+        :dim_inst_valvebody_3244_DN150_b9df_Length_L,
+        :dim_inst_valvebody_3244_DN150_b9df_Length_L1 ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 150 .
+
+:inst_valvebody_3244_DN150_f563 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 150"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN150_f563_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN150_f563_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3244_DN150_f563_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 150 .
+
+:inst_valvebody_3244_DN15_964e a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 15"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN15_964e_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN15_964e_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3244_DN15_964e_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN15_964e_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 15 .
+
+:inst_valvebody_3244_DN15_9d80 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 15"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN15_9d80_Height_H2,
+        :dim_inst_valvebody_3244_DN15_9d80_Height_H3,
+        :dim_inst_valvebody_3244_DN15_9d80_Length_L,
+        :dim_inst_valvebody_3244_DN15_9d80_Length_L1 ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 15 .
+
+:inst_valvebody_3244_DN20_27e3 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 20"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN20_27e3_Height_H2,
+        :dim_inst_valvebody_3244_DN20_27e3_Height_H3,
+        :dim_inst_valvebody_3244_DN20_27e3_Length_L,
+        :dim_inst_valvebody_3244_DN20_27e3_Length_L1 ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 20 .
+
+:inst_valvebody_3244_DN20_8453 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 20"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN20_8453_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN20_8453_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3244_DN20_8453_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN20_8453_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 20 .
+
+:inst_valvebody_3244_DN25_54a1 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 25"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN25_54a1_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN25_54a1_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3244_DN25_54a1_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN25_54a1_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 25 .
+
+:inst_valvebody_3244_DN25_87d4 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 25"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN25_87d4_Height_H2,
+        :dim_inst_valvebody_3244_DN25_87d4_Height_H3,
+        :dim_inst_valvebody_3244_DN25_87d4_Length_L,
+        :dim_inst_valvebody_3244_DN25_87d4_Length_L1 ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 25 .
+
+:inst_valvebody_3244_DN32_124f a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 32"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN32_124f_Height_H2,
+        :dim_inst_valvebody_3244_DN32_124f_Height_H3,
+        :dim_inst_valvebody_3244_DN32_124f_Length_L,
+        :dim_inst_valvebody_3244_DN32_124f_Length_L1 ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 32 .
+
+:inst_valvebody_3244_DN32_c848 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 32"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN32_c848_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN32_c848_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3244_DN32_c848_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN32_c848_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 32 .
+
+:inst_valvebody_3244_DN40_02ba a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 40"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN40_02ba_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN40_02ba_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3244_DN40_02ba_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN40_02ba_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 40 .
+
+:inst_valvebody_3244_DN40_7f9d a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 40"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN40_7f9d_Height_H2,
+        :dim_inst_valvebody_3244_DN40_7f9d_Height_H3,
+        :dim_inst_valvebody_3244_DN40_7f9d_Length_L,
+        :dim_inst_valvebody_3244_DN40_7f9d_Length_L1 ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 40 .
+
+:inst_valvebody_3244_DN50_1779 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 50"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN50_1779_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN50_1779_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3244_DN50_1779_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN50_1779_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 50 .
+
+:inst_valvebody_3244_DN50_69c4 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 50"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN50_69c4_Height_H2,
+        :dim_inst_valvebody_3244_DN50_69c4_Height_H3,
+        :dim_inst_valvebody_3244_DN50_69c4_Length_L,
+        :dim_inst_valvebody_3244_DN50_69c4_Length_L1 ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 50 .
+
+:inst_valvebody_3244_DN65_1fd2 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 65"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN65_1fd2_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN65_1fd2_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3244_DN65_1fd2_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN65_1fd2_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 65 .
+
+:inst_valvebody_3244_DN65_575b a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 65"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN65_575b_Height_H2,
+        :dim_inst_valvebody_3244_DN65_575b_Height_H3,
+        :dim_inst_valvebody_3244_DN65_575b_Length_L,
+        :dim_inst_valvebody_3244_DN65_575b_Length_L1 ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 65 .
+
+:inst_valvebody_3244_DN80_4339 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 80"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN80_4339_Height_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN80_4339_Height_Shortwith_bellows,
+        :dim_inst_valvebody_3244_DN80_4339_Weight_Longlong_with_bellows,
+        :dim_inst_valvebody_3244_DN80_4339_Weight_Shortwith_bellows ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 80 .
+
+:inst_valvebody_3244_DN80_b67e a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve - DN 80"@en ;
+    :hasDimension :dim_inst_valvebody_3244_DN80_b67e_Height_H2,
+        :dim_inst_valvebody_3244_DN80_b67e_Height_H3,
+        :dim_inst_valvebody_3244_DN80_b67e_Length_L,
+        :dim_inst_valvebody_3244_DN80_b67e_Length_L1 ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string ;
+    :hasNominalSizeDN 80 .
+
+skos:altLabel a owl:AnnotationProperty .
+
+:ActuatingSystem a owl:Class ;
+    rdfs:comment "FINAL CONTROL ELEMENT, Conceptual layer: represents a class of devices that can perform actions" ;
+    rdfs:subClassOf :FieldDevice ;
+    owl:disjointWith :MeasuringSystem .
+
+:Transmitter a owl:Class ;
+    rdfs:subClassOf :DeviceComponent .
+
+:dim_076535dc a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "L"@en ;
+    :hasDimensionEndAnchorX 1400.0 ;
+    :hasDimensionEndAnchorY 950.0 ;
+    :hasDimensionParameterName "L"^^xsd:string ;
+    :hasDimensionStartAnchorX 1000.0 ;
+    :hasDimensionStartAnchorY 950.0 ;
+    :hasDimensionStringValue "L"^^xsd:string ;
+    :hasDimensionType "horizontal"^^xsd:string .
+
+:dim_0b6e1900 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "H3"@en ;
+    :hasDimensionEndAnchorX 993.0 ;
+    :hasDimensionEndAnchorY 720.0 ;
+    :hasDimensionParameterName "H3"^^xsd:string ;
+    :hasDimensionStartAnchorX 993.0 ;
+    :hasDimensionStartAnchorY 560.0 ;
+    :hasDimensionStringValue "H3"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_177e6304 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "H3"@en ;
+    :hasDimensionEndAnchorX 182.0 ;
+    :hasDimensionEndAnchorY 585.0 ;
+    :hasDimensionParameterName "H3"^^xsd:string ;
+    :hasDimensionStartAnchorX 182.0 ;
+    :hasDimensionStartAnchorY 431.0 ;
+    :hasDimensionStringValue "H3"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_18562837 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "90 with 30 mm travel"@en ;
+    :hasDimensionDecimalValue 90.0 ;
+    :hasDimensionEndAnchorX 575.0 ;
+    :hasDimensionEndAnchorY 705.0 ;
+    :hasDimensionParameterName "90_travel30"^^xsd:string ;
+    :hasDimensionStartAnchorX 575.0 ;
+    :hasDimensionStartAnchorY 495.0 ;
+    :hasDimensionStringValue "90 with 30 mm travel"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_262c693c a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "H2"@en ;
+    :hasDimensionEndAnchorX 132.0 ;
+    :hasDimensionEndAnchorY 696.0 ;
+    :hasDimensionParameterName "H2"^^xsd:string ;
+    :hasDimensionStartAnchorX 132.0 ;
+    :hasDimensionStartAnchorY 383.0 ;
+    :hasDimensionStringValue "H2"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_3377fd47 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "235"@en ;
+    :hasDimensionEndAnchorX 322.0 ;
+    :hasDimensionEndAnchorY 167.0 ;
+    :hasDimensionParameterName "235"^^xsd:string ;
+    :hasDimensionStartAnchorX 157.0 ;
+    :hasDimensionStartAnchorY 167.0 ;
+    :hasDimensionStringValue "235"^^xsd:string ;
+    :hasDimensionType "horizontal"^^xsd:string .
+
+:dim_3ada08bc a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "L"@en ;
+    :hasDimensionEndAnchorX 333.0 ;
+    :hasDimensionEndAnchorY 846.0 ;
+    :hasDimensionParameterName "L"^^xsd:string ;
+    :hasDimensionStartAnchorX 171.0 ;
+    :hasDimensionStartAnchorY 846.0 ;
+    :hasDimensionStringValue "L"^^xsd:string ;
+    :hasDimensionType "horizontal"^^xsd:string .
+
+:dim_40ce5af2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "H6"@en ;
+    :hasDimensionEndAnchorX 1190.0 ;
+    :hasDimensionEndAnchorY 280.0 ;
+    :hasDimensionParameterName "H6"^^xsd:string ;
+    :hasDimensionStartAnchorX 1190.0 ;
+    :hasDimensionStartAnchorY 145.0 ;
+    :hasDimensionStringValue "H6"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_516c70ca a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "b"@en ;
+    :hasDimensionEndAnchorX 1885.0 ;
+    :hasDimensionEndAnchorY 945.0 ;
+    :hasDimensionParameterName "b"^^xsd:string ;
+    :hasDimensionStartAnchorX 1670.0 ;
+    :hasDimensionStartAnchorY 945.0 ;
+    :hasDimensionStringValue "b"^^xsd:string ;
+    :hasDimensionType "horizontal"^^xsd:string .
+
+:dim_5bdbca95 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "H1"@en ;
+    :hasDimensionEndAnchorX 1260.0 ;
+    :hasDimensionEndAnchorY 905.0 ;
+    :hasDimensionParameterName "H1"^^xsd:string ;
+    :hasDimensionStartAnchorX 1260.0 ;
+    :hasDimensionStartAnchorY 505.0 ;
+    :hasDimensionStringValue "H1"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_5e7ab545 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "125"@en ;
+    :hasDimensionDecimalValue 125.0 ;
+    :hasDimensionEndAnchorX 480.0 ;
+    :hasDimensionEndAnchorY 210.0 ;
+    :hasDimensionParameterName "125"^^xsd:string ;
+    :hasDimensionStartAnchorX 285.0 ;
+    :hasDimensionStartAnchorY 210.0 ;
+    :hasDimensionStringValue "125"^^xsd:string ;
+    :hasDimensionType "horizontal"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_6f146424 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "H5"@en ;
+    :hasDimensionEndAnchorX 1360.0 ;
+    :hasDimensionEndAnchorY 905.0 ;
+    :hasDimensionParameterName "H5"^^xsd:string ;
+    :hasDimensionStartAnchorX 1360.0 ;
+    :hasDimensionStartAnchorY 750.0 ;
+    :hasDimensionStringValue "H5"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_7649db24 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "35"@en ;
+    :hasDimensionDecimalValue 35.0 ;
+    :hasDimensionEndAnchorX 470.0 ;
+    :hasDimensionEndAnchorY 820.0 ;
+    :hasDimensionParameterName "35"^^xsd:string ;
+    :hasDimensionStartAnchorX 365.0 ;
+    :hasDimensionStartAnchorY 820.0 ;
+    :hasDimensionStringValue "35"^^xsd:string ;
+    :hasDimensionType "horizontal"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_8c657554 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "H2"@en ;
+    :hasDimensionEndAnchorX 1295.0 ;
+    :hasDimensionEndAnchorY 905.0 ;
+    :hasDimensionParameterName "H2"^^xsd:string ;
+    :hasDimensionStartAnchorX 1295.0 ;
+    :hasDimensionStartAnchorY 645.0 ;
+    :hasDimensionStringValue "H2"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_8cf5e139 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Ø16"@en ;
+    :hasDimensionDecimalValue 16.0 ;
+    :hasDimensionEndAnchorX 285.0 ;
+    :hasDimensionEndAnchorY 870.0 ;
+    :hasDimensionParameterName "d16"^^xsd:string ;
+    :hasDimensionStartAnchorX 325.0 ;
+    :hasDimensionStartAnchorY 830.0 ;
+    :hasDimensionStringValue "Ø16"^^xsd:string ;
+    :hasDimensionType "diameter"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_a24bdbbc a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "H4"@en ;
+    :hasDimensionEndAnchorX 1325.0 ;
+    :hasDimensionEndAnchorY 720.0 ;
+    :hasDimensionParameterName "H4"^^xsd:string ;
+    :hasDimensionStartAnchorX 1325.0 ;
+    :hasDimensionStartAnchorY 570.0 ;
+    :hasDimensionStringValue "H4"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_a4794df8 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "H"@en ;
+    :hasDimensionEndAnchorX 1225.0 ;
+    :hasDimensionEndAnchorY 905.0 ;
+    :hasDimensionParameterName "H"^^xsd:string ;
+    :hasDimensionStartAnchorX 1225.0 ;
+    :hasDimensionStartAnchorY 280.0 ;
+    :hasDimensionStringValue "H"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_b318b4a6 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "75"@en ;
+    :hasDimensionDecimalValue 75.0 ;
+    :hasDimensionEndAnchorX 615.0 ;
+    :hasDimensionEndAnchorY 705.0 ;
+    :hasDimensionParameterName "75_lower"^^xsd:string ;
+    :hasDimensionStartAnchorX 615.0 ;
+    :hasDimensionStartAnchorY 555.0 ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_b6f1ebcf a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "L1"@en ;
+    :hasDimensionEndAnchorX 104.0 ;
+    :hasDimensionEndAnchorY 857.0 ;
+    :hasDimensionParameterName "L1"^^xsd:string ;
+    :hasDimensionStartAnchorX 104.0 ;
+    :hasDimensionStartAnchorY 696.0 ;
+    :hasDimensionStringValue "L1"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_bebf9e32 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "235"@en ;
+    :hasDimensionDecimalValue 235.0 ;
+    :hasDimensionEndAnchorX 1200.0 ;
+    :hasDimensionEndAnchorY 210.0 ;
+    :hasDimensionParameterName "235"^^xsd:string ;
+    :hasDimensionStartAnchorX 885.0 ;
+    :hasDimensionStartAnchorY 210.0 ;
+    :hasDimensionStringValue "235"^^xsd:string ;
+    :hasDimensionType "horizontal"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_c36ea58e a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "SW24"@en ;
+    :hasDimensionDecimalValue 24.0 ;
+    :hasDimensionEndAnchorX 365.0 ;
+    :hasDimensionEndAnchorY 705.0 ;
+    :hasDimensionParameterName "SW24"^^xsd:string ;
+    :hasDimensionStartAnchorX 250.0 ;
+    :hasDimensionStartAnchorY 705.0 ;
+    :hasDimensionStringValue "SW24"^^xsd:string ;
+    :hasDimensionType "horizontal"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_cace78c3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "90"@en ;
+    :hasDimensionDecimalValue 90.0 ;
+    :hasDimensionEndAnchorX 650.0 ;
+    :hasDimensionEndAnchorY 705.0 ;
+    :hasDimensionParameterName "90_lower"^^xsd:string ;
+    :hasDimensionStartAnchorX 650.0 ;
+    :hasDimensionStartAnchorY 530.0 ;
+    :hasDimensionStringValue "90"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_cb9c35a8 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "H9"@en ;
+    :hasDimensionEndAnchorX 1595.0 ;
+    :hasDimensionEndAnchorY 820.0 ;
+    :hasDimensionParameterName "H9"^^xsd:string ;
+    :hasDimensionStartAnchorX 1595.0 ;
+    :hasDimensionStartAnchorY 250.0 ;
+    :hasDimensionStringValue "H9"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_d2e8ba6f a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H9"@en ;
+    :hasDimensionEndAnchorX 42.0 ;
+    :hasDimensionEndAnchorY 472.0 ;
+    :hasDimensionParameterName "H9"^^xsd:string ;
+    :hasDimensionStartAnchorX 42.0 ;
+    :hasDimensionStartAnchorY 35.0 ;
+    :hasDimensionStringValue "H9"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_dd5138e5 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "185"@en ;
+    :hasDimensionEndAnchorX 357.0 ;
+    :hasDimensionEndAnchorY 373.0 ;
+    :hasDimensionParameterName "185"^^xsd:string ;
+    :hasDimensionStartAnchorX 357.0 ;
+    :hasDimensionStartAnchorY 192.0 ;
+    :hasDimensionStringValue "185"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_df9a2427 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Ø11,5"@en ;
+    :hasDimensionDecimalValue 11.5 ;
+    :hasDimensionEndAnchorX 285.0 ;
+    :hasDimensionEndAnchorY 805.0 ;
+    :hasDimensionParameterName "d11.5"^^xsd:string ;
+    :hasDimensionStartAnchorX 325.0 ;
+    :hasDimensionStartAnchorY 765.0 ;
+    :hasDimensionStringValue "Ø11,5"^^xsd:string ;
+    :hasDimensionType "diameter"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_e04f354b a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "H4"@en ;
+    :hasDimensionEndAnchorX 374.0 ;
+    :hasDimensionEndAnchorY 647.0 ;
+    :hasDimensionParameterName "H4"^^xsd:string ;
+    :hasDimensionStartAnchorX 374.0 ;
+    :hasDimensionStartAnchorY 451.0 ;
+    :hasDimensionStringValue "H4"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_e2970fcc a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "H"@en ;
+    :hasDimensionEndAnchorX 98.0 ;
+    :hasDimensionEndAnchorY 512.0 ;
+    :hasDimensionParameterName "H"^^xsd:string ;
+    :hasDimensionStartAnchorX 98.0 ;
+    :hasDimensionStartAnchorY 55.0 ;
+    :hasDimensionStringValue "H"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_e6fa3810 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "H6"@en ;
+    :hasDimensionEndAnchorX 64.0 ;
+    :hasDimensionEndAnchorY 152.0 ;
+    :hasDimensionParameterName "H6"^^xsd:string ;
+    :hasDimensionStartAnchorX 64.0 ;
+    :hasDimensionStartAnchorY 55.0 ;
+    :hasDimensionStringValue "H6"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_e8373c6d a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "15"@en ;
+    :hasDimensionDecimalValue 15.0 ;
+    :hasDimensionEndAnchorX 540.0 ;
+    :hasDimensionEndAnchorY 850.0 ;
+    :hasDimensionParameterName "15"^^xsd:string ;
+    :hasDimensionStartAnchorX 470.0 ;
+    :hasDimensionStartAnchorY 850.0 ;
+    :hasDimensionStringValue "15"^^xsd:string ;
+    :hasDimensionType "horizontal"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_f59ecf1e a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "75 with 15 mm travel"@en ;
+    :hasDimensionDecimalValue 75.0 ;
+    :hasDimensionEndAnchorX 540.0 ;
+    :hasDimensionEndAnchorY 705.0 ;
+    :hasDimensionParameterName "75_travel15"^^xsd:string ;
+    :hasDimensionStartAnchorX 540.0 ;
+    :hasDimensionStartAnchorY 520.0 ;
+    :hasDimensionStringValue "75 with 15 mm travel"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_fa8c62b9 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "a"@en ;
+    :hasDimensionEndAnchorX 1795.0 ;
+    :hasDimensionEndAnchorY 885.0 ;
+    :hasDimensionParameterName "a"^^xsd:string ;
+    :hasDimensionStartAnchorX 1605.0 ;
+    :hasDimensionStartAnchorY 885.0 ;
+    :hasDimensionStringValue "a"^^xsd:string ;
+    :hasDimensionType "horizontal"^^xsd:string .
+
+:dim_fe47dd63 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "c"@en ;
+    :hasDimensionEndAnchorX 1965.0 ;
+    :hasDimensionEndAnchorY 1120.0 ;
+    :hasDimensionParameterName "c"^^xsd:string ;
+    :hasDimensionStartAnchorX 1965.0 ;
+    :hasDimensionStartAnchorY 840.0 ;
+    :hasDimensionStringValue "c"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_fec1664d a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "H1"@en ;
+    :hasDimensionEndAnchorX 53.0 ;
+    :hasDimensionEndAnchorY 817.0 ;
+    :hasDimensionParameterName "H1"^^xsd:string ;
+    :hasDimensionStartAnchorX 53.0 ;
+    :hasDimensionStartAnchorY 190.0 ;
+    :hasDimensionStringValue "H1"^^xsd:string ;
+    :hasDimensionType "vertical"^^xsd:string .
+
+:dim_inst_actuator_3274_1111211311_0fff_Height_H a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H (-11 1)/-12 1)/-13 1)/-14/-21 to -23)"@en ;
+    :hasDimensionParameterName "Height H"^^xsd:string ;
+    :hasDimensionStringValue "320"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_actuator_3274_1111211311_0fff_Height_H6 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H6 (-11 1)/-12 1)/-13 1)/-14/-21 to -23)"@en ;
+    :hasDimensionParameterName "Height H6"^^xsd:string ;
+    :hasDimensionStringValue "150"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_actuator_3274_1111211311_0fff_Weight a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight (-11 1)/-12 1)/-13 1)/-14/-21 to -23)"@en ;
+    :hasDimensionParameterName "Weight"^^xsd:string ;
+    :hasDimensionStringValue "12"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_actuator_3274_1111211311_7004_Height_H a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H (-11 1)/-12 1)/-13 1)/-14/-21 to -23)"@en ;
+    :hasDimensionParameterName "Height H"^^xsd:string ;
+    :hasDimensionStringValue "320"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_actuator_3274_1111211311_7004_Height_H6 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H6 (-11 1)/-12 1)/-13 1)/-14/-21 to -23)"@en ;
+    :hasDimensionParameterName "Height H6"^^xsd:string ;
+    :hasDimensionStringValue "150"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_actuator_3274_1111211311_7004_Weight a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight (-11 1)/-12 1)/-13 1)/-14/-21 to -23)"@en ;
+    :hasDimensionParameterName "Weight"^^xsd:string ;
+    :hasDimensionStringValue "12"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_actuator_3274_1511611711_157a_Height_H a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H (-15 1)/-16 1)/-17 1)/-18)"@en ;
+    :hasDimensionParameterName "Height H"^^xsd:string ;
+    :hasDimensionStringValue "412"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_actuator_3274_1511611711_157a_Height_H6 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H6 (-15 1)/-16 1)/-17 1)/-18)"@en ;
+    :hasDimensionParameterName "Height H6"^^xsd:string ;
+    :hasDimensionStringValue "150"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_actuator_3274_1511611711_157a_Weight a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight (-15 1)/-16 1)/-17 1)/-18)"@en ;
+    :hasDimensionParameterName "Weight"^^xsd:string ;
+    :hasDimensionStringValue "15"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_actuator_3274_1511611711_aebc_Height_H a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H (-15 1)/-16 1)/-17 1)/-18)"@en ;
+    :hasDimensionParameterName "Height H"^^xsd:string ;
+    :hasDimensionStringValue "412"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_actuator_3274_1511611711_aebc_Height_H6 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H6 (-15 1)/-16 1)/-17 1)/-18)"@en ;
+    :hasDimensionParameterName "Height H6"^^xsd:string ;
+    :hasDimensionStringValue "150"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_actuator_3274_1511611711_aebc_Weight a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight (-15 1)/-16 1)/-17 1)/-18)"@en ;
+    :hasDimensionParameterName "Weight"^^xsd:string ;
+    :hasDimensionStringValue "15"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_controlvalve_3241_3274_DN15_a8bd_K_coefficient_VS a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "K coefficient VS (DN 15)"@en ;
+    :hasDimensionParameterName "K coefficient VS"^^xsd:string ;
+    :hasDimensionStringValue "0.1"^^xsd:string .
+
+:dim_inst_controlvalve_3241_3274_DN15_a8bd_Seat_Ø a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Seat Ø (DN 15)"@en ;
+    :hasDimensionParameterName "Seat Ø"^^xsd:string ;
+    :hasDimensionStringValue "3"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_controlvalve_3241_3274_DN15_a8bd_Travel a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Travel (DN 15)"@en ;
+    :hasDimensionParameterName "Travel"^^xsd:string ;
+    :hasDimensionStringValue "15"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_controlvalve_3241_3274_DN20_0a3e_K_coefficient_VS a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "K coefficient VS (DN 20)"@en ;
+    :hasDimensionParameterName "K coefficient VS"^^xsd:string ;
+    :hasDimensionStringValue "0.1"^^xsd:string .
+
+:dim_inst_controlvalve_3241_3274_DN20_0a3e_Seat_Ø a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Seat Ø (DN 20)"@en ;
+    :hasDimensionParameterName "Seat Ø"^^xsd:string ;
+    :hasDimensionStringValue "3"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_controlvalve_3241_3274_DN20_0a3e_Travel a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Travel (DN 20)"@en ;
+    :hasDimensionParameterName "Travel"^^xsd:string ;
+    :hasDimensionStringValue "15"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_controlvalve_3244_3274_DN15_6d13_K_coefficient a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "K coefficient (DN 15)"@en ;
+    :hasDimensionParameterName "K coefficient"^^xsd:string ;
+    :hasDimensionStringValue "2"^^xsd:string .
+
+:dim_inst_controlvalve_3244_3274_DN15_6d13_Seat_Ø a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Seat Ø (DN 15)"@en ;
+    :hasDimensionParameterName "Seat Ø"^^xsd:string ;
+    :hasDimensionStringValue "24"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_controlvalve_3244_3274_DN20_7104_K_coefficient a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "K coefficient (DN 20)"@en ;
+    :hasDimensionParameterName "K coefficient"^^xsd:string ;
+    :hasDimensionStringValue "2"^^xsd:string .
+
+:dim_inst_controlvalve_3244_3274_DN20_7104_Seat_Ø a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Seat Ø (DN 20)"@en ;
+    :hasDimensionParameterName "Seat Ø"^^xsd:string ;
+    :hasDimensionStringValue "24"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_controlvalve_3244_3274_DN25_85dc_K_coefficient a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "K coefficient (DN 25)"@en ;
+    :hasDimensionParameterName "K coefficient"^^xsd:string ;
+    :hasDimensionStringValue "2"^^xsd:string .
+
+:dim_inst_controlvalve_3244_3274_DN25_85dc_Seat_Ø a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Seat Ø (DN 25)"@en ;
+    :hasDimensionParameterName "Seat Ø"^^xsd:string ;
+    :hasDimensionStringValue "24"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_controlvalve_3244_3274_DN32_5968_K_coefficient a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "K coefficient (DN 32)"@en ;
+    :hasDimensionParameterName "K coefficient"^^xsd:string ;
+    :hasDimensionStringValue "6.3"^^xsd:string .
+
+:dim_inst_controlvalve_3244_3274_DN32_5968_Seat_Ø a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Seat Ø (DN 32)"@en ;
+    :hasDimensionParameterName "Seat Ø"^^xsd:string ;
+    :hasDimensionStringValue "31"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_controlvalve_3244_3274_DN40_9af3_K_coefficient a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "K coefficient (DN 40)"@en ;
+    :hasDimensionParameterName "K coefficient"^^xsd:string ;
+    :hasDimensionStringValue "6.3"^^xsd:string .
+
+:dim_inst_controlvalve_3244_3274_DN40_9af3_Seat_Ø a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Seat Ø (DN 40)"@en ;
+    :hasDimensionParameterName "Seat Ø"^^xsd:string ;
+    :hasDimensionStringValue "31"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_controlvalve_3244_3274_DN50_ec7a_K_coefficient a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "K coefficient (DN 50)"@en ;
+    :hasDimensionParameterName "K coefficient"^^xsd:string ;
+    :hasDimensionStringValue "6.3"^^xsd:string .
+
+:dim_inst_controlvalve_3244_3274_DN50_ec7a_Seat_Ø a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Seat Ø (DN 50)"@en ;
+    :hasDimensionParameterName "Seat Ø"^^xsd:string ;
+    :hasDimensionStringValue "31"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN100_0df3_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 100)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "354"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN100_0df3_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 100)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN100_0df3_Height_H4_fail_close a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H4, fail-close (DN 100)"@en ;
+    :hasDimensionParameterName "Height H4, fail-close"^^xsd:string ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN100_0df3_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 100)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "350"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN100_c7fa_a a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "a (DN 100)"@en ;
+    :hasDimensionParameterName "a"^^xsd:string ;
+    :hasDimensionStringValue "200"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN100_c7fa_b a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "b (DN 100)"@en ;
+    :hasDimensionParameterName "b"^^xsd:string ;
+    :hasDimensionStringValue "50"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN100_c7fa_c a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "c (DN 100)"@en ;
+    :hasDimensionParameterName "c"^^xsd:string ;
+    :hasDimensionStringValue "255"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN100_f07a_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 100)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "877"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN100_f07a_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 100)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "636"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN100_f07a_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 100)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "70"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN125_37ed_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 125)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "363"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN125_37ed_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 125)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN125_37ed_Height_H4_fail_close a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H4, fail-close (DN 125)"@en ;
+    :hasDimensionParameterName "Height H4, fail-close"^^xsd:string ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN125_37ed_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 125)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "400"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN125_72a7_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 125)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "886"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN125_72a7_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 125)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "645"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN125_72a7_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 125)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "106"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN150_35ff_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 150)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "913"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN150_35ff_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 150)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "672"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN150_35ff_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 150)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "138"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN150_84eb_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 150)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "390"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN150_84eb_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 150)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN150_84eb_Height_H4_fail_close a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H4, fail-close (DN 150)"@en ;
+    :hasDimensionParameterName "Height H4, fail-close"^^xsd:string ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN150_84eb_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 150)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "480"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN15_30f3_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 15)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "222"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN15_30f3_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 15)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN15_30f3_Height_H4_fail_close a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H4, fail-close (DN 15)"@en ;
+    :hasDimensionParameterName "Height H4, fail-close"^^xsd:string ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN15_30f3_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 15)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "130"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN15_f4ab_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 15)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "713"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN15_f4ab_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 15)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "409"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN15_f4ab_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 15)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "13"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN15_f4ab_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 15)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "9"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN20_a630_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 20)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "222"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN20_a630_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 20)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN20_a630_Height_H4_fail_close a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H4, fail-close (DN 20)"@en ;
+    :hasDimensionParameterName "Height H4, fail-close"^^xsd:string ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN20_a630_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 20)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "150"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN20_a7b1_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 20)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "713"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN20_a7b1_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 20)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "409"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN20_a7b1_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 20)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "14.5"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN20_a7b1_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 20)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "10.5"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN25_50d0_a a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "a (DN 25)"@en ;
+    :hasDimensionParameterName "a"^^xsd:string ;
+    :hasDimensionStringValue "110"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN25_50d0_b a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "b (DN 25)"@en ;
+    :hasDimensionParameterName "b"^^xsd:string ;
+    :hasDimensionStringValue "15"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN25_50d0_c a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "c (DN 25)"@en ;
+    :hasDimensionParameterName "c"^^xsd:string ;
+    :hasDimensionStringValue "140"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN25_c654_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 25)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "713"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN25_c654_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 25)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "409"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN25_c654_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 25)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "15"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN25_c654_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 25)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "11"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN25_f48a_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 25)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "222"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN25_f48a_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 25)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN25_f48a_Height_H4_fail_close a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H4, fail-close (DN 25)"@en ;
+    :hasDimensionParameterName "Height H4, fail-close"^^xsd:string ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN25_f48a_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 25)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "160"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN32_1213_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 32)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "223"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN32_1213_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 32)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN32_1213_Height_H4_fail_close a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H4, fail-close (DN 32)"@en ;
+    :hasDimensionParameterName "Height H4, fail-close"^^xsd:string ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN32_1213_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 32)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "180"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN32_1d40_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 32)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "714"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN32_1d40_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 32)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "410"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN32_1d40_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 32)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "22"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN32_1d40_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 32)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "18"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN32to50_dcda_a a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "a (DN 32 to 50)"@en ;
+    :hasDimensionParameterName "a"^^xsd:string ;
+    :hasDimensionStringValue "140"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN32to50_dcda_b a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "b (DN 32 to 50)"@en ;
+    :hasDimensionParameterName "b"^^xsd:string ;
+    :hasDimensionStringValue "20"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN32to50_dcda_c a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "c (DN 32 to 50)"@en ;
+    :hasDimensionParameterName "c"^^xsd:string ;
+    :hasDimensionStringValue "170"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN40_3adb_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 40)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "223"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN40_3adb_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 40)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN40_3adb_Height_H4_fail_close a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H4, fail-close (DN 40)"@en ;
+    :hasDimensionParameterName "Height H4, fail-close"^^xsd:string ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN40_3adb_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 40)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "200"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN40_9d1b_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 40)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "714"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN40_9d1b_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 40)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "410"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN40_9d1b_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 40)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "24"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN40_9d1b_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 40)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "20"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN50_6b66_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 50)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "223"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN50_6b66_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 50)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN50_6b66_Height_H4_fail_close a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H4, fail-close (DN 50)"@en ;
+    :hasDimensionParameterName "Height H4, fail-close"^^xsd:string ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN50_6b66_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 50)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "230"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN50_c79c_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 50)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "714"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN50_c79c_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 50)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "410"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN50_c79c_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 50)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "28"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN50_c79c_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 50)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "24"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN65_3fc5_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 65)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "755"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN65_3fc5_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 65)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "451"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN65_3fc5_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 65)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "41"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN65_3fc5_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 65)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "37"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN65_e6ff_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 65)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "262"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN65_e6ff_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 65)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN65_e6ff_Height_H4_fail_close a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H4, fail-close (DN 65)"@en ;
+    :hasDimensionParameterName "Height H4, fail-close"^^xsd:string ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN65_e6ff_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 65)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "290"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN65to80_54ec_a a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "a (DN 65 to 80)"@en ;
+    :hasDimensionParameterName "a"^^xsd:string ;
+    :hasDimensionStringValue "180"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN65to80_54ec_b a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "b (DN 65 to 80)"@en ;
+    :hasDimensionParameterName "b"^^xsd:string ;
+    :hasDimensionStringValue "35"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN65to80_54ec_c a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "c (DN 65 to 80)"@en ;
+    :hasDimensionParameterName "c"^^xsd:string ;
+    :hasDimensionStringValue "215"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN80_0dab_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 80)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "755"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN80_0dab_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 80)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "451"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN80_0dab_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 80)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "46"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN80_0dab_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 80)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "42"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN80_80c6_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 80)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "262"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN80_80c6_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 80)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN80_80c6_Height_H4_fail_close a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H4, fail-close (DN 80)"@en ;
+    :hasDimensionParameterName "Height H4, fail-close"^^xsd:string ;
+    :hasDimensionStringValue "75"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3241_DN80_80c6_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 80)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "310"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN100_33fa_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 100)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "360"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN100_33fa_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 100)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN100_33fa_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 100)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "350"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN100_33fa_Length_L1 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L1 (DN 100)"@en ;
+    :hasDimensionParameterName "Length L1"^^xsd:string ;
+    :hasDimensionStringValue "150"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN100_8615_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 100)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "895"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN100_8615_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 100)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "645"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN100_8615_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 100)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "68"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN125_5628_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 125)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "900"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN125_5628_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 125)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "655"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN125_5628_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 125)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "120"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN125_8562_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 125)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "375"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN125_8562_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 125)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN125_8562_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 125)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "400"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN125_8562_Length_L1 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L1 (DN 125)"@en ;
+    :hasDimensionParameterName "Length L1"^^xsd:string ;
+    :hasDimensionStringValue "200"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN150_b9df_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 150)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "375"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN150_b9df_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 150)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN150_b9df_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 150)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "480"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN150_b9df_Length_L1 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L1 (DN 150)"@en ;
+    :hasDimensionParameterName "Length L1"^^xsd:string ;
+    :hasDimensionStringValue "210"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN150_f563_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 150)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "900"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN150_f563_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 150)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "655"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN150_f563_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 150)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "165"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN15_964e_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 15)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "725"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN15_964e_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 15)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "420"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN15_964e_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 15)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "13"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN15_964e_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 15)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "9"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN15_9d80_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 15)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "235"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN15_9d80_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 15)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN15_9d80_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 15)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "130"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN15_9d80_Length_L1 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L1 (DN 15)"@en ;
+    :hasDimensionParameterName "Length L1"^^xsd:string ;
+    :hasDimensionStringValue "70"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN20_27e3_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 20)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "235"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN20_27e3_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 20)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN20_27e3_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 20)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "150"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN20_27e3_Length_L1 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L1 (DN 20)"@en ;
+    :hasDimensionParameterName "Length L1"^^xsd:string ;
+    :hasDimensionStringValue "80"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN20_8453_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 20)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "725"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN20_8453_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 20)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "420"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN20_8453_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 20)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "14"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN20_8453_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 20)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "10"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN25_54a1_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 25)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "725"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN25_54a1_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 25)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "420"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN25_54a1_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 25)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "15"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN25_54a1_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 25)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "11"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN25_87d4_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 25)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "235"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN25_87d4_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 25)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN25_87d4_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 25)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "160"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN25_87d4_Length_L1 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L1 (DN 25)"@en ;
+    :hasDimensionParameterName "Length L1"^^xsd:string ;
+    :hasDimensionStringValue "85"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN32_124f_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 32)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "235"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN32_124f_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 32)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN32_124f_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 32)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "180"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN32_124f_Length_L1 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L1 (DN 32)"@en ;
+    :hasDimensionParameterName "Length L1"^^xsd:string ;
+    :hasDimensionStringValue "100"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN32_c848_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 32)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "725"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN32_c848_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 32)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "420"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN32_c848_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 32)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "23"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN32_c848_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 32)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "19"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN40_02ba_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 40)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "725"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN40_02ba_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 40)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "420"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN40_02ba_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 40)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "25"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN40_02ba_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 40)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "21"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN40_7f9d_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 40)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "235"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN40_7f9d_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 40)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN40_7f9d_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 40)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "200"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN40_7f9d_Length_L1 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L1 (DN 40)"@en ;
+    :hasDimensionParameterName "Length L1"^^xsd:string ;
+    :hasDimensionStringValue "105"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN50_1779_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 50)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "725"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN50_1779_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 50)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "420"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN50_1779_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 50)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "27"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN50_1779_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 50)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "23"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN50_69c4_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 50)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "235"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN50_69c4_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 50)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN50_69c4_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 50)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "230"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN50_69c4_Length_L1 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L1 (DN 50)"@en ;
+    :hasDimensionParameterName "Length L1"^^xsd:string ;
+    :hasDimensionStringValue "120"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN65_1fd2_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 65)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "760"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN65_1fd2_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 65)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "455"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN65_1fd2_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 65)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "44"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN65_1fd2_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 65)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "40"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN65_575b_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 65)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "270"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN65_575b_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 65)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN65_575b_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 65)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "290"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN65_575b_Length_L1 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L1 (DN 65)"@en ;
+    :hasDimensionParameterName "Length L1"^^xsd:string ;
+    :hasDimensionStringValue "130"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN80_4339_Height_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Long/long with bellows (DN 80)"@en ;
+    :hasDimensionParameterName "Height Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "760"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN80_4339_Height_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height Short/with bellows (DN 80)"@en ;
+    :hasDimensionParameterName "Height Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "455"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN80_4339_Weight_Longlong_with_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Long/long with bellows (DN 80)"@en ;
+    :hasDimensionParameterName "Weight Long/long with bellows"^^xsd:string ;
+    :hasDimensionStringValue "49"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN80_4339_Weight_Shortwith_bellows a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Weight Short/with bellows (DN 80)"@en ;
+    :hasDimensionParameterName "Weight Short/with bellows"^^xsd:string ;
+    :hasDimensionStringValue "45"^^xsd:string ;
+    :hasDimensionUnit "kg"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN80_b67e_Height_H2 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H2 (DN 80)"@en ;
+    :hasDimensionParameterName "Height H2"^^xsd:string ;
+    :hasDimensionStringValue "270"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN80_b67e_Height_H3 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Height H3 (DN 80)"@en ;
+    :hasDimensionParameterName "Height H3"^^xsd:string ;
+    :hasDimensionStringValue "61"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN80_b67e_Length_L a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L (DN 80)"@en ;
+    :hasDimensionParameterName "Length L"^^xsd:string ;
+    :hasDimensionStringValue "310"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:dim_inst_valvebody_3244_DN80_b67e_Length_L1 a :Dimension,
+        owl:NamedIndividual ;
+    rdfs:label "Length L1 (DN 80)"@en ;
+    :hasDimensionParameterName "Length L1"^^xsd:string ;
+    :hasDimensionStringValue "140"^^xsd:string ;
+    :hasDimensionUnit "mm"^^xsd:string .
+
+:hasCompatibleValveBody a owl:ObjectProperty ;
+    rdfs:domain :ValveBody ;
+    rdfs:range :ValveActuator .
+
+:hasValveActuator a owl:ObjectProperty ;
+    rdfs:domain :ControlValve ;
+    rdfs:range :ValveActuator ;
+    rdfs:subPropertyOf :hasDeviceComponent .
+
+:hasValveBody a owl:ObjectProperty ;
+    rdfs:domain :ControlValve ;
+    rdfs:range :ValveBody ;
+    rdfs:subPropertyOf :hasDeviceComponent .
+
+:inst_valvebody_3241 a :GlobeValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3241 Globe Valve"@en ;
+    :hasModelName "Type 3241 Globe Valve"^^xsd:string .
+
+:inst_valvebody_3244 a :ThreeWayValve,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3244 Three-way Valve"@en ;
+    :hasModelName "Type 3244 Three-way Valve"^^xsd:string .
+
+:MeasuringSystem a owl:Class ;
+    rdfs:comment "Conceptual layer: represents a type of device that can perceive" ;
+    rdfs:subClassOf :FieldDevice .
+
+:inst_actuator_3274 a :ElectrohydraulicActuatorComponent,
+        owl:NamedIndividual ;
+    rdfs:label "Type 3274 Electrohydraulic Actuator"@en ;
+    :hasModelName "Type 3274 Electrohydraulic Actuator"^^xsd:string .
+
+:ElectricalInterface a owl:Class ;
+    rdfs:subClassOf :DeviceComponent .
+
+:hasDeviceComponent a owl:ObjectProperty ;
+    rdfs:domain :FieldDevice ;
+    rdfs:range :DeviceComponent .
+
+:ElectrohydraulicActuatorComponent a owl:Class ;
+    rdfs:subClassOf :ValveActuator .
+
+:FieldDevice a owl:Class .
+
+:ValveTrim a owl:Class ;
+    rdfs:subClassOf :DeviceComponent .
+
+:ValveActuator a owl:Class ;
+    rdfs:subClassOf :DeviceComponent .
+
+:ValveBody a owl:Class ;
+    rdfs:subClassOf :DeviceComponent .
+
+:DeviceComponent a owl:Class .
+
+:ControlValve a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass :ValveActuator ;
+            owl:onProperty :hasValveActuator ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass :ValveBody ;
+            owl:onProperty :hasValveBody ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        :ActuatingSystem .
+
+:ThreeWayValve a owl:Class ;
+    rdfs:subClassOf :ValveBody .
+
+:GlobeValve a owl:Class ;
+    rdfs:subClassOf :ValveBody .
+
+:Dimension a owl:Class .
+

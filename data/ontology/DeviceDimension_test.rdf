@@ -1,0 +1,489 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#untitled-ontology-26#"
+     xml:base="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#untitled-ontology-26"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#untitled-ontology-26"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#altLabel -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#altLabel"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasCompatibleValveActuator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasCompatibleValveActuator">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasCompatibleValveBody"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasCompatibleValveBody -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasCompatibleValveBody">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDeviceComponent -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDeviceComponent">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimension -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimension">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasElectricalInterface -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasElectricalInterface">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Transmitter"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalInterface"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveActuator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveActuator">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDeviceComponent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ControlValve"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveBody -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveBody">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDeviceComponent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ControlValve"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveTrim -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveTrim">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDeviceComponent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ControlValve"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionDecimalValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionDecimalValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>The specific numerical value of the size, for example, 130, 222, 0.25, skip if it&apos;s a string.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionParameterName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionParameterName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionStringValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionStringValue">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>The specific dimensional value besides of nummeric value, for example, &quot;H1+H2&quot; , &quot;1/2 G&quot;</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionType -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionType">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:oneOf>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                        <rdf:first>diameter</rdf:first>
+                        <rdf:rest>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                <rdf:first>horizontal</rdf:first>
+                                <rdf:rest>
+                                    <rdf:Description>
+                                        <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                        <rdf:first>other</rdf:first>
+                                        <rdf:rest>
+                                            <rdf:Description>
+                                                <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#List"/>
+                                                <rdf:first>vertical</rdf:first>
+                                                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                                            </rdf:Description>
+                                        </rdf:rest>
+                                    </rdf:Description>
+                                </rdf:rest>
+                            </rdf:Description>
+                        </rdf:rest>
+                    </rdf:Description>
+                </owl:oneOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionUnit -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionUnit">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension"/>
+        <rdfs:comment>unit of the dimension, for example, &quot;mm&quot;, &quot;inches&quot;, &quot;kg&quot;</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasModelName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasModelName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasNominalSizeDN -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasNominalSizeDN">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:comment>Nominal size of the valve, e.g. &quot;DN 15&quot;, &quot;DN 150&quot;</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ActuatingSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ActuatingSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#MeasuringSystem"/>
+        <rdfs:comment>FINAL CONTROL ELEMENT, Conceptual layer: represents a class of devices that can perform actions</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#BallValve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#BallValve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Bonnet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Bonnet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ButterflyValve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ButterflyValve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#CableAssembly -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#CableAssembly">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Cage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Cage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ControlValve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ControlValve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ActuatingSystem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveActuator"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveBody"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent"/>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DiaphragmValve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DiaphragmValve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension"/>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricActuatorComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricActuatorComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalConnector -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalConnector">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalInterface"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalInterface -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalInterface">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectropneumaticActuatorComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectropneumaticActuatorComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice"/>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FlowDivider -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FlowDivider">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Flowmeter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Flowmeter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#MeasuringSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#GlobeValve -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#GlobeValve">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Housing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Housing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#MeasuringSystem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#MeasuringSystem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice"/>
+        <rdfs:comment>Conceptual layer: represents a type of device that can perceive</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Plug -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Plug">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#PneumaticActuatorComponent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#PneumaticActuatorComponent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ProcessConnection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ProcessConnection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Seal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Seal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Seat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Seat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Sensor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Sensor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Transmitter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Transmitter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

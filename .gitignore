@@ -1,0 +1,51 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.eggs/
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+bin/
+*.egg
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Virtual environment
+venv/
+.venv/
+ENV/
+env/
+build/
+develop-eggs/
+.env
+*.json
+
+# Pytest cache
+.pytest_cache/
+
+# IDE / Editor files
+.idea/
+.vscode/
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# ignore data directory
+/results/
+/samples/
+
+# ignore large model files
+models/
+*.bin
+*.pth
+*.safetensors

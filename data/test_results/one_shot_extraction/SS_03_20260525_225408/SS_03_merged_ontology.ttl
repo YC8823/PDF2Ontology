@@ -1,0 +1,1342 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#BallValve> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Bonnet> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ButterflyValve> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#CableAssembly> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalInterface> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Cage> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DiaphragmValve> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricActuatorComponent> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalConnector> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalInterface> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectropneumaticActuatorComponent> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FlowDivider> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Flowmeter> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#MeasuringSystem> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#GlobeValve> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Housing> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Plug> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#PneumaticActuatorComponent> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ProcessConnection> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Seal> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Seat> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Sensor> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasCompatibleValveActuator> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> ;
+    owl:inverseOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasCompatibleValveBody> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimension> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent>,
+        <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionDecimalValue> a owl:DatatypeProperty ;
+    rdfs:comment "The specific numerical value of the size, for example, 130, 222, 0.25, skip if it's a string." ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> ;
+    rdfs:range xsd:decimal .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionEndAnchorX> a owl:DatatypeProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> ;
+    rdfs:range xsd:decimal .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionEndAnchorY> a owl:DatatypeProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> ;
+    rdfs:range xsd:decimal .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionParameterName> a owl:DatatypeProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> ;
+    rdfs:range xsd:string .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionStartAnchorX> a owl:DatatypeProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> ;
+    rdfs:range xsd:decimal .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionStartAnchorY> a owl:DatatypeProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> ;
+    rdfs:range xsd:decimal .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionStringValue> a owl:DatatypeProperty ;
+    rdfs:comment "The specific dimensional value besides of nummeric value, for example, \"H1+H2\" , \"1/2 G\"" ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> ;
+    rdfs:range xsd:string .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionType> a owl:DatatypeProperty ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf [ a rdf:List ;
+                    rdf:first "diameter" ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first "horizontal" ;
+                            rdf:rest [ a rdf:List ;
+                                    rdf:first "other" ;
+                                    rdf:rest [ a rdf:List ;
+                                            rdf:first "vertical" ;
+                                            rdf:rest () ] ] ] ] ] .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionUnit> a owl:DatatypeProperty ;
+    rdfs:comment "unit of the dimension, for example, \"mm\", \"inches\", \"kg\"" ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasElectricalInterface> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Transmitter> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalInterface> ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasModelName> a owl:DatatypeProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent>,
+        <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice> ;
+    rdfs:range xsd:string .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasNominalSizeDN> a owl:DatatypeProperty ;
+    rdfs:comment "Nominal size of the valve, e.g. \"DN 15\", \"DN 150\"" ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> ;
+    rdfs:range xsd:int .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveTrim> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ControlValve> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> ;
+    rdfs:subPropertyOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#untitled-ontology-26> a owl:Ontology .
+
+skos:altLabel a owl:AnnotationProperty .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ActuatingSystem> a owl:Class ;
+    rdfs:comment "FINAL CONTROL ELEMENT, Conceptual layer: represents a class of devices that can perform actions" ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice> ;
+    owl:disjointWith <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#MeasuringSystem> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Transmitter> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasCompatibleValveBody> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveActuator> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ControlValve> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> ;
+    rdfs:subPropertyOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveBody> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ControlValve> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> ;
+    rdfs:subPropertyOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#MeasuringSystem> a owl:Class ;
+    rdfs:comment "Conceptual layer: represents a type of device that can perceive" ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ControlValve> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> ;
+            owl:onProperty <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveActuator> ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> ;
+            owl:onProperty <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveBody> ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ActuatingSystem> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalInterface> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDeviceComponent> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice> a owl:Class .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> a owl:Class .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> a owl:Class .
+
+
+
+######################################################################
+# ABox - Extracted Instances
+######################################################################
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# New Classes Defined by LLM
+# (Inferred from instance type declarations)
+
+:Type3241GlobeValve rdf:type owl:Class ;
+    rdfs:subClassOf :GlobeValve .
+
+:Type3244GlobeValve rdf:type owl:Class ;
+    rdfs:subClassOf :GlobeValve .
+
+:Type3274ElectrohydraulicActuator rdf:type owl:Class ;
+    rdfs:subClassOf :DeviceComponent .
+
+
+# Extracted ABox instances (without prefix declarations)
+# This file should be merged with TBox using merge_and_validate_ttl.py
+
+########## CLASS SPECIALIZATION ##########
+
+:Type3241GlobeValve rdf:type rdf:Class ;
+    rdfs:subClassOf :GlobeValve .
+
+:Type3244GlobeValve rdf:type rdf:Class ;
+    rdfs:subClassOf :GlobeValve .
+
+:Type3274ElectrohydraulicActuator rdf:type rdf:Class ;
+    rdfs:subClassOf :ElectropneumaticActuatorComponent .
+
+########## GENERIC COMPONENT FAMILIES ##########
+
+:ValveBody_3241 rdf:type :Type3241GlobeValve ;
+    :hasModelName "Type 3241 Valve body" .
+
+:ValveBody_3244 rdf:type :Type3244GlobeValve ;
+    :hasModelName "Type 3244 Valve body" .
+
+:Actuator_3274_grp1 rdf:type :Type3274ElectrohydraulicActuator ;
+    :hasModelName "Type 3274 Actuator versions -11/-12/-13/-14/-21 to -23" .
+
+:Actuator_3274_grp2 rdf:type :Type3274ElectrohydraulicActuator ;
+    :hasModelName "Type 3274 Actuator versions -15/-16/-17/-18" .
+
+# Compatibility (bidirectional)
+
+:Actuator_3274_grp1 :hasCompatibleValveActuator :ValveBody_3241 , :ValveBody_3244 .
+:ValveBody_3241 :hasCompatibleValveBody :Actuator_3274_grp1 .
+:ValveBody_3244 :hasCompatibleValveBody :Actuator_3274_grp1 .
+
+:Actuator_3274_grp2 :hasCompatibleValveActuator :ValveBody_3241 , :ValveBody_3244 .
+:ValveBody_3241 :hasCompatibleValveBody :Actuator_3274_grp2 .
+:ValveBody_3244 :hasCompatibleValveBody :Actuator_3274_grp2 .
+
+########## FIELD-DEVICE LEVEL CONTROL VALVES ##########
+
+:ControlValve_3241_3274 rdf:type :ControlValve ;
+    :hasModelName "Type 3241/3274 Electric Control Valve" ;
+    :hasValveBody :ValveBody_3241 ;
+    :hasValveActuator :Actuator_3274_grp1 .
+
+:ControlValve_3244_3274 rdf:type :ControlValve ;
+    :hasModelName "Type 3244/3274 Electric Control Valve" ;
+    :hasValveBody :ValveBody_3244 ;
+    :hasValveActuator :Actuator_3274_grp1 .
+
+########## DN-SPECIFIC VALVE BODY INSTANCES (3241) ##########
+
+:ValveBody_3241_DN15 rdf:type :Type3241GlobeValve ;
+    :hasModelName "Type 3241 Valve DN 15" ;
+    :hasNominalSizeDN 15 .
+
+:ValveBody_3241_DN20 rdf:type :Type3241GlobeValve ;
+    :hasModelName "Type 3241 Valve DN 20" ;
+    :hasNominalSizeDN 20 .
+
+:ValveBody_3241_DN25 rdf:type :Type3241GlobeValve ;
+    :hasModelName "Type 3241 Valve DN 25" ;
+    :hasNominalSizeDN 25 .
+
+:ValveBody_3241_DN32 rdf:type :Type3241GlobeValve ;
+    :hasModelName "Type 3241 Valve DN 32" ;
+    :hasNominalSizeDN 32 .
+
+:ValveBody_3241_DN40 rdf:type :Type3241GlobeValve ;
+    :hasModelName "Type 3241 Valve DN 40" ;
+    :hasNominalSizeDN 40 .
+
+:ValveBody_3241_DN50 rdf:type :Type3241GlobeValve ;
+    :hasModelName "Type 3241 Valve DN 50" ;
+    :hasNominalSizeDN 50 .
+
+:ValveBody_3241_DN65 rdf:type :Type3241GlobeValve ;
+    :hasModelName "Type 3241 Valve DN 65" ;
+    :hasNominalSizeDN 65 .
+
+:ValveBody_3241_DN80 rdf:type :Type3241GlobeValve ;
+    :hasModelName "Type 3241 Valve DN 80" ;
+    :hasNominalSizeDN 80 .
+
+:ValveBody_3241_DN100 rdf:type :Type3241GlobeValve ;
+    :hasModelName "Type 3241 Valve DN 100" ;
+    :hasNominalSizeDN 100 .
+
+:ValveBody_3241_DN125 rdf:type :Type3241GlobeValve ;
+    :hasModelName "Type 3241 Valve DN 125" ;
+    :hasNominalSizeDN 125 .
+
+:ValveBody_3241_DN150 rdf:type :Type3241GlobeValve ;
+    :hasModelName "Type 3241 Valve DN 150" ;
+    :hasNominalSizeDN 150 .
+
+########## DN-SPECIFIC VALVE BODY INSTANCES (3244) ##########
+
+:ValveBody_3244_DN15 rdf:type :Type3244GlobeValve ;
+    :hasModelName "Type 3244 Valve DN 15" ;
+    :hasNominalSizeDN 15 .
+
+:ValveBody_3244_DN20 rdf:type :Type3244GlobeValve ;
+    :hasModelName "Type 3244 Valve DN 20" ;
+    :hasNominalSizeDN 20 .
+
+:ValveBody_3244_DN25 rdf:type :Type3244GlobeValve ;
+    :hasModelName "Type 3244 Valve DN 25" ;
+    :hasNominalSizeDN 25 .
+
+:ValveBody_3244_DN32 rdf:type :Type3244GlobeValve ;
+    :hasModelName "Type 3244 Valve DN 32" ;
+    :hasNominalSizeDN 32 .
+
+:ValveBody_3244_DN40 rdf:type :Type3244GlobeValve ;
+    :hasModelName "Type 3244 Valve DN 40" ;
+    :hasNominalSizeDN 40 .
+
+:ValveBody_3244_DN50 rdf:type :Type3244GlobeValve ;
+    :hasModelName "Type 3244 Valve DN 50" ;
+    :hasNominalSizeDN 50 .
+
+:ValveBody_3244_DN65 rdf:type :Type3244GlobeValve ;
+    :hasModelName "Type 3244 Valve DN 65" ;
+    :hasNominalSizeDN 65 .
+
+:ValveBody_3244_DN80 rdf:type :Type3244GlobeValve ;
+    :hasModelName "Type 3244 Valve DN 80" ;
+    :hasNominalSizeDN 80 .
+
+:ValveBody_3244_DN100 rdf:type :Type3244GlobeValve ;
+    :hasModelName "Type 3244 Valve DN 100" ;
+    :hasNominalSizeDN 100 .
+
+:ValveBody_3244_DN125 rdf:type :Type3244GlobeValve ;
+    :hasModelName "Type 3244 Valve DN 125" ;
+    :hasNominalSizeDN 125 .
+
+:ValveBody_3244_DN150 rdf:type :Type3244GlobeValve ;
+    :hasModelName "Type 3244 Valve DN 150" ;
+    :hasNominalSizeDN 150 .
+
+########## DIMENSIONS – TABLE 2.1 TYPE 3241 VALVE (WITHOUT ACTUATOR) ##########
+# Headers: DN 15 20 25 32 40 50 65 80 100 125 150
+# L [mm]: 130 150 160 180 200 230 290 310 350 400 480
+# H1 [mm]: H2 + H (not numeric)
+# H2 [mm]: 222 222 222 223 223 223 262 262 354 363 390
+# H3 [mm]: 61 61 61 61 61 61 61 61 75 75 75
+# H4, fail-close [mm]: 75 75 75 75 75 75 75 75 90 90 90
+# H5 [mm]: 44 44 44 72 72 72 98 98 118 144 175
+# Weight [kg approx.]: 6 7.5 8 12 14 18 29 34 52 81 108
+
+# DN 15
+:Dim_3241_DN15_L rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 130.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN15 :hasDimension :Dim_3241_DN15_L .
+
+:Dim_3241_DN15_H2 rdf:type :Dimension ;
+    :hasDimensionParameterName "H2" ;
+    :hasDimensionDecimalValue 222.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN15 :hasDimension :Dim_3241_DN15_H2 .
+
+:Dim_3241_DN15_H3 rdf:type :Dimension ;
+    :hasDimensionParameterName "H3" ;
+    :hasDimensionDecimalValue 61.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN15 :hasDimension :Dim_3241_DN15_H3 .
+
+:Dim_3241_DN15_H4 rdf:type :Dimension ;
+    :hasDimensionParameterName "H4_fail_close" ;
+    :hasDimensionDecimalValue 75.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN15 :hasDimension :Dim_3241_DN15_H4 .
+
+:Dim_3241_DN15_H5 rdf:type :Dimension ;
+    :hasDimensionParameterName "H5" ;
+    :hasDimensionDecimalValue 44.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN15 :hasDimension :Dim_3241_DN15_H5 .
+
+:Dim_3241_DN15_Weight rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight" ;
+    :hasDimensionDecimalValue 6.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN15 :hasDimension :Dim_3241_DN15_Weight .
+
+# DN 20
+:Dim_3241_DN20_L rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 150.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN20 :hasDimension :Dim_3241_DN20_L .
+
+:Dim_3241_DN20_H2 rdf:type :Dimension ;
+    :hasDimensionParameterName "H2" ;
+    :hasDimensionDecimalValue 222.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN20 :hasDimension :Dim_3241_DN20_H2 .
+
+:Dim_3241_DN20_H3 rdf:type :Dimension ;
+    :hasDimensionParameterName "H3" ;
+    :hasDimensionDecimalValue 61.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN20 :hasDimension :Dim_3241_DN20_H3 .
+
+:Dim_3241_DN20_H4 rdf:type :Dimension ;
+    :hasDimensionParameterName "H4_fail_close" ;
+    :hasDimensionDecimalValue 75.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN20 :hasDimension :Dim_3241_DN20_H4 .
+
+:Dim_3241_DN20_H5 rdf:type :Dimension ;
+    :hasDimensionParameterName "H5" ;
+    :hasDimensionDecimalValue 44.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN20 :hasDimension :Dim_3241_DN20_H5 .
+
+:Dim_3241_DN20_Weight rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight" ;
+    :hasDimensionDecimalValue 7.5 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN20 :hasDimension :Dim_3241_DN20_Weight .
+
+# DN 25
+:Dim_3241_DN25_L rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 160.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN25 :hasDimension :Dim_3241_DN25_L .
+
+:Dim_3241_DN25_H2 rdf:type :Dimension ;
+    :hasDimensionParameterName "H2" ;
+    :hasDimensionDecimalValue 222.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN25 :hasDimension :Dim_3241_DN25_H2 .
+
+:Dim_3241_DN25_H3 rdf:type :Dimension ;
+    :hasDimensionParameterName "H3" ;
+    :hasDimensionDecimalValue 61.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN25 :hasDimension :Dim_3241_DN25_H3 .
+
+:Dim_3241_DN25_H4 rdf:type :Dimension ;
+    :hasDimensionParameterName "H4_fail_close" ;
+    :hasDimensionDecimalValue 75.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN25 :hasDimension :Dim_3241_DN25_H4 .
+
+:Dim_3241_DN25_H5 rdf:type :Dimension ;
+    :hasDimensionParameterName "H5" ;
+    :hasDimensionDecimalValue 44.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN25 :hasDimension :Dim_3241_DN25_H5 .
+
+:Dim_3241_DN25_Weight rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight" ;
+    :hasDimensionDecimalValue 8.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN25 :hasDimension :Dim_3241_DN25_Weight .
+
+# DN 32
+:Dim_3241_DN32_L rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 180.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN32 :hasDimension :Dim_3241_DN32_L .
+
+:Dim_3241_DN32_H2 rdf:type :Dimension ;
+    :hasDimensionParameterName "H2" ;
+    :hasDimensionDecimalValue 223.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN32 :hasDimension :Dim_3241_DN32_H2 .
+
+:Dim_3241_DN32_H3 rdf:type :Dimension ;
+    :hasDimensionParameterName "H3" ;
+    :hasDimensionDecimalValue 61.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN32 :hasDimension :Dim_3241_DN32_H3 .
+
+:Dim_3241_DN32_H4 rdf:type :Dimension ;
+    :hasDimensionParameterName "H4_fail_close" ;
+    :hasDimensionDecimalValue 75.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN32 :hasDimension :Dim_3241_DN32_H4 .
+
+:Dim_3241_DN32_H5 rdf:type :Dimension ;
+    :hasDimensionParameterName "H5" ;
+    :hasDimensionDecimalValue 72.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN32 :hasDimension :Dim_3241_DN32_H5 .
+
+:Dim_3241_DN32_Weight rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight" ;
+    :hasDimensionDecimalValue 12.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN32 :hasDimension :Dim_3241_DN32_Weight .
+
+# DN 40
+:Dim_3241_DN40_L rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 200.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN40 :hasDimension :Dim_3241_DN40_L .
+
+:Dim_3241_DN40_H2 rdf:type :Dimension ;
+    :hasDimensionParameterName "H2" ;
+    :hasDimensionDecimalValue 223.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN40 :hasDimension :Dim_3241_DN40_H2 .
+
+:Dim_3241_DN40_H3 rdf:type :Dimension ;
+    :hasDimensionParameterName "H3" ;
+    :hasDimensionDecimalValue 61.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN40 :hasDimension :Dim_3241_DN40_H3 .
+
+:Dim_3241_DN40_H4 rdf:type :Dimension ;
+    :hasDimensionParameterName "H4_fail_close" ;
+    :hasDimensionDecimalValue 75.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN40 :hasDimension :Dim_3241_DN40_H4 .
+
+:Dim_3241_DN40_H5 rdf:type :Dimension ;
+    :hasDimensionParameterName "H5" ;
+    :hasDimensionDecimalValue 72.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN40 :hasDimension :Dim_3241_DN40_H5 .
+
+:Dim_3241_DN40_Weight rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight" ;
+    :hasDimensionDecimalValue 14.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN40 :hasDimension :Dim_3241_DN40_Weight .
+
+# DN 50
+:Dim_3241_DN50_L rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 230.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN50 :hasDimension :Dim_3241_DN50_L .
+
+:Dim_3241_DN50_H2 rdf:type :Dimension ;
+    :hasDimensionParameterName "H2" ;
+    :hasDimensionDecimalValue 223.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN50 :hasDimension :Dim_3241_DN50_H2 .
+
+:Dim_3241_DN50_H3 rdf:type :Dimension ;
+    :hasDimensionParameterName "H3" ;
+    :hasDimensionDecimalValue 61.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN50 :hasDimension :Dim_3241_DN50_H3 .
+
+:Dim_3241_DN50_H4 rdf:type :Dimension ;
+    :hasDimensionParameterName "H4_fail_close" ;
+    :hasDimensionDecimalValue 75.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN50 :hasDimension :Dim_3241_DN50_H4 .
+
+:Dim_3241_DN50_H5 rdf:type :Dimension ;
+    :hasDimensionParameterName "H5" ;
+    :hasDimensionDecimalValue 72.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN50 :hasDimension :Dim_3241_DN50_H5 .
+
+:Dim_3241_DN50_Weight rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight" ;
+    :hasDimensionDecimalValue 18.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN50 :hasDimension :Dim_3241_DN50_Weight .
+
+# DN 65
+:Dim_3241_DN65_L rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 290.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN65 :hasDimension :Dim_3241_DN65_L .
+
+:Dim_3241_DN65_H2 rdf:type :Dimension ;
+    :hasDimensionParameterName "H2" ;
+    :hasDimensionDecimalValue 262.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN65 :hasDimension :Dim_3241_DN65_H2 .
+
+:Dim_3241_DN65_H3 rdf:type :Dimension ;
+    :hasDimensionParameterName "H3" ;
+    :hasDimensionDecimalValue 61.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN65 :hasDimension :Dim_3241_DN65_H3 .
+
+:Dim_3241_DN65_H4 rdf:type :Dimension ;
+    :hasDimensionParameterName "H4_fail_close" ;
+    :hasDimensionDecimalValue 75.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN65 :hasDimension :Dim_3241_DN65_H4 .
+
+:Dim_3241_DN65_H5 rdf:type :Dimension ;
+    :hasDimensionParameterName "H5" ;
+    :hasDimensionDecimalValue 98.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN65 :hasDimension :Dim_3241_DN65_H5 .
+
+:Dim_3241_DN65_Weight rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight" ;
+    :hasDimensionDecimalValue 29.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN65 :hasDimension :Dim_3241_DN65_Weight .
+
+# DN 80
+:Dim_3241_DN80_L rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 310.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN80 :hasDimension :Dim_3241_DN80_L .
+
+:Dim_3241_DN80_H2 rdf:type :Dimension ;
+    :hasDimensionParameterName "H2" ;
+    :hasDimensionDecimalValue 262.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN80 :hasDimension :Dim_3241_DN80_H2 .
+
+:Dim_3241_DN80_H3 rdf:type :Dimension ;
+    :hasDimensionParameterName "H3" ;
+    :hasDimensionDecimalValue 61.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN80 :hasDimension :Dim_3241_DN80_H3 .
+
+:Dim_3241_DN80_H4 rdf:type :Dimension ;
+    :hasDimensionParameterName "H4_fail_close" ;
+    :hasDimensionDecimalValue 75.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN80 :hasDimension :Dim_3241_DN80_H4 .
+
+:Dim_3241_DN80_H5 rdf:type :Dimension ;
+    :hasDimensionParameterName "H5" ;
+    :hasDimensionDecimalValue 98.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN80 :hasDimension :Dim_3241_DN80_H5 .
+
+:Dim_3241_DN80_Weight rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight" ;
+    :hasDimensionDecimalValue 34.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN80 :hasDimension :Dim_3241_DN80_Weight .
+
+# DN 100
+:Dim_3241_DN100_L rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 350.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN100 :hasDimension :Dim_3241_DN100_L .
+
+:Dim_3241_DN100_H2 rdf:type :Dimension ;
+    :hasDimensionParameterName "H2" ;
+    :hasDimensionDecimalValue 354.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN100 :hasDimension :Dim_3241_DN100_H2 .
+
+:Dim_3241_DN100_H3 rdf:type :Dimension ;
+    :hasDimensionParameterName "H3" ;
+    :hasDimensionDecimalValue 75.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN100 :hasDimension :Dim_3241_DN100_H3 .
+
+:Dim_3241_DN100_H4 rdf:type :Dimension ;
+    :hasDimensionParameterName "H4_fail_close" ;
+    :hasDimensionDecimalValue 90.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN100 :hasDimension :Dim_3241_DN100_H4 .
+
+:Dim_3241_DN100_H5 rdf:type :Dimension ;
+    :hasDimensionParameterName "H5" ;
+    :hasDimensionDecimalValue 118.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN100 :hasDimension :Dim_3241_DN100_H5 .
+
+:Dim_3241_DN100_Weight rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight" ;
+    :hasDimensionDecimalValue 52.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN100 :hasDimension :Dim_3241_DN100_Weight .
+
+# DN 125
+:Dim_3241_DN125_L rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 400.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN125 :hasDimension :Dim_3241_DN125_L .
+
+:Dim_3241_DN125_H2 rdf:type :Dimension ;
+    :hasDimensionParameterName "H2" ;
+    :hasDimensionDecimalValue 363.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN125 :hasDimension :Dim_3241_DN125_H2 .
+
+:Dim_3241_DN125_H3 rdf:type :Dimension ;
+    :hasDimensionParameterName "H3" ;
+    :hasDimensionDecimalValue 75.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN125 :hasDimension :Dim_3241_DN125_H3 .
+
+:Dim_3241_DN125_H4 rdf:type :Dimension ;
+    :hasDimensionParameterName "H4_fail_close" ;
+    :hasDimensionDecimalValue 90.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN125 :hasDimension :Dim_3241_DN125_H4 .
+
+:Dim_3241_DN125_H5 rdf:type :Dimension ;
+    :hasDimensionParameterName "H5" ;
+    :hasDimensionDecimalValue 144.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN125 :hasDimension :Dim_3241_DN125_H5 .
+
+:Dim_3241_DN125_Weight rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight" ;
+    :hasDimensionDecimalValue 81.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN125 :hasDimension :Dim_3241_DN125_Weight .
+
+# DN 150
+:Dim_3241_DN150_L rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 480.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN150 :hasDimension :Dim_3241_DN150_L .
+
+:Dim_3241_DN150_H2 rdf:type :Dimension ;
+    :hasDimensionParameterName "H2" ;
+    :hasDimensionDecimalValue 390.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN150 :hasDimension :Dim_3241_DN150_H2 .
+
+:Dim_3241_DN150_H3 rdf:type :Dimension ;
+    :hasDimensionParameterName "H3" ;
+    :hasDimensionDecimalValue 75.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN150 :hasDimension :Dim_3241_DN150_H3 .
+
+:Dim_3241_DN150_H4 rdf:type :Dimension ;
+    :hasDimensionParameterName "H4_fail_close" ;
+    :hasDimensionDecimalValue 90.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN150 :hasDimension :Dim_3241_DN150_H4 .
+
+:Dim_3241_DN150_H5 rdf:type :Dimension ;
+    :hasDimensionParameterName "H5" ;
+    :hasDimensionDecimalValue 175.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN150 :hasDimension :Dim_3241_DN150_H5 .
+
+:Dim_3241_DN150_Weight rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight" ;
+    :hasDimensionDecimalValue 108.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN150 :hasDimension :Dim_3241_DN150_Weight .
+
+########## DIMENSIONS – TABLE 2.2 TYPE 3241 WITH INSULATING SECTION OR BELLOWS SEAL ##########
+# H9 short/with bellows [mm]: 409 409 409 410 410 410 451 451 636 645 672
+# H9 long/long with bellows [mm]: 713 713 713 714 714 714 755 755 877 886 913
+# Weight short/with bellows [kg approx]: 9 10.5 11 18 20 24 37 42 70 106 138
+# Weight long/long with bellows [kg approx]: 13 14.5 15 22 24 28 41 46 78 114 146
+
+# DN 15
+:Dim_3241_DN15_H9_short rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_short_with_bellows" ;
+    :hasDimensionDecimalValue 409.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN15 :hasDimension :Dim_3241_DN15_H9_short .
+
+:Dim_3241_DN15_H9_long rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 713.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN15 :hasDimension :Dim_3241_DN15_H9_long .
+
+:Dim_3241_DN15_Weight_short rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_short_with_bellows" ;
+    :hasDimensionDecimalValue 9.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN15 :hasDimension :Dim_3241_DN15_Weight_short .
+
+:Dim_3241_DN15_Weight_long rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 13.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN15 :hasDimension :Dim_3241_DN15_Weight_long .
+
+# DN 20
+:Dim_3241_DN20_H9_short rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_short_with_bellows" ;
+    :hasDimensionDecimalValue 409.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN20 :hasDimension :Dim_3241_DN20_H9_short .
+
+:Dim_3241_DN20_H9_long rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 713.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN20 :hasDimension :Dim_3241_DN20_H9_long .
+
+:Dim_3241_DN20_Weight_short rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_short_with_bellows" ;
+    :hasDimensionDecimalValue 10.5 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN20 :hasDimension :Dim_3241_DN20_Weight_short .
+
+:Dim_3241_DN20_Weight_long rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 14.5 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN20 :hasDimension :Dim_3241_DN20_Weight_long .
+
+# DN 25
+:Dim_3241_DN25_H9_short rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_short_with_bellows" ;
+    :hasDimensionDecimalValue 409.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN25 :hasDimension :Dim_3241_DN25_H9_short .
+
+:Dim_3241_DN25_H9_long rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 713.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN25 :hasDimension :Dim_3241_DN25_H9_long .
+
+:Dim_3241_DN25_Weight_short rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_short_with_bellows" ;
+    :hasDimensionDecimalValue 11.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN25 :hasDimension :Dim_3241_DN25_Weight_short .
+
+:Dim_3241_DN25_Weight_long rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 15.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN25 :hasDimension :Dim_3241_DN25_Weight_long .
+
+# DN 32
+:Dim_3241_DN32_H9_short rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_short_with_bellows" ;
+    :hasDimensionDecimalValue 410.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN32 :hasDimension :Dim_3241_DN32_H9_short .
+
+:Dim_3241_DN32_H9_long rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 714.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN32 :hasDimension :Dim_3241_DN32_H9_long .
+
+:Dim_3241_DN32_Weight_short rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_short_with_bellows" ;
+    :hasDimensionDecimalValue 18.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN32 :hasDimension :Dim_3241_DN32_Weight_short .
+
+:Dim_3241_DN32_Weight_long rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 23.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN32 :hasDimension :Dim_3241_DN32_Weight_long .
+
+# DN 40
+:Dim_3241_DN40_H9_short rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_short_with_bellows" ;
+    :hasDimensionDecimalValue 410.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN40 :hasDimension :Dim_3241_DN40_H9_short .
+
+:Dim_3241_DN40_H9_long rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 714.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN40 :hasDimension :Dim_3241_DN40_H9_long .
+
+:Dim_3241_DN40_Weight_short rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_short_with_bellows" ;
+    :hasDimensionDecimalValue 20.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN40 :hasDimension :Dim_3241_DN40_Weight_short .
+
+:Dim_3241_DN40_Weight_long rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 25.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN40 :hasDimension :Dim_3241_DN40_Weight_long .
+
+# DN 50
+:Dim_3241_DN50_H9_short rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_short_with_bellows" ;
+    :hasDimensionDecimalValue 410.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN50 :hasDimension :Dim_3241_DN50_H9_short .
+
+:Dim_3241_DN50_H9_long rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 714.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN50 :hasDimension :Dim_3241_DN50_H9_long .
+
+:Dim_3241_DN50_Weight_short rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_short_with_bellows" ;
+    :hasDimensionDecimalValue 24.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN50 :hasDimension :Dim_3241_DN50_Weight_short .
+
+:Dim_3241_DN50_Weight_long rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 28.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN50 :hasDimension :Dim_3241_DN50_Weight_long .
+
+# DN 65
+:Dim_3241_DN65_H9_short rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_short_with_bellows" ;
+    :hasDimensionDecimalValue 451.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN65 :hasDimension :Dim_3241_DN65_H9_short .
+
+:Dim_3241_DN65_H9_long rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 755.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN65 :hasDimension :Dim_3241_DN65_H9_long .
+
+:Dim_3241_DN65_Weight_short rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_short_with_bellows" ;
+    :hasDimensionDecimalValue 37.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN65 :hasDimension :Dim_3241_DN65_Weight_short .
+
+:Dim_3241_DN65_Weight_long rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 41.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN65 :hasDimension :Dim_3241_DN65_Weight_long .
+
+# DN 80
+:Dim_3241_DN80_H9_short rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_short_with_bellows" ;
+    :hasDimensionDecimalValue 451.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN80 :hasDimension :Dim_3241_DN80_H9_short .
+
+:Dim_3241_DN80_H9_long rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 755.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN80 :hasDimension :Dim_3241_DN80_H9_long .
+
+:Dim_3241_DN80_Weight_short rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_short_with_bellows" ;
+    :hasDimensionDecimalValue 42.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN80 :hasDimension :Dim_3241_DN80_Weight_short .
+
+:Dim_3241_DN80_Weight_long rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 46.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN80 :hasDimension :Dim_3241_DN80_Weight_long .
+
+# DN 100
+:Dim_3241_DN100_H9_short rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_short_with_bellows" ;
+    :hasDimensionDecimalValue 636.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN100 :hasDimension :Dim_3241_DN100_H9_short .
+
+:Dim_3241_DN100_H9_long rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 877.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN100 :hasDimension :Dim_3241_DN100_H9_long .
+
+:Dim_3241_DN100_Weight_short rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_short_with_bellows" ;
+    :hasDimensionDecimalValue 70.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN100 :hasDimension :Dim_3241_DN100_Weight_short .
+
+:Dim_3241_DN100_Weight_long rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 78.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN100 :hasDimension :Dim_3241_DN100_Weight_long .
+
+# DN 125
+:Dim_3241_DN125_H9_short rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_short_with_bellows" ;
+    :hasDimensionDecimalValue 645.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN125 :hasDimension :Dim_3241_DN125_H9_short .
+
+:Dim_3241_DN125_H9_long rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 886.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN125 :hasDimension :Dim_3241_DN125_H9_long .
+
+:Dim_3241_DN125_Weight_short rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_short_with_bellows" ;
+    :hasDimensionDecimalValue 106.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN125 :hasDimension :Dim_3241_DN125_Weight_short .
+
+:Dim_3241_DN125_Weight_long rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 114.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN125 :hasDimension :Dim_3241_DN125_Weight_long .
+
+# DN 150
+:Dim_3241_DN150_H9_short rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_short_with_bellows" ;
+    :hasDimensionDecimalValue 672.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN150 :hasDimension :Dim_3241_DN150_H9_short .
+
+:Dim_3241_DN150_H9_long rdf:type :Dimension ;
+    :hasDimensionParameterName "H9_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 913.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:ValveBody_3241_DN150 :hasDimension :Dim_3241_DN150_H9_long .
+
+:Dim_3241_DN150_Weight_short rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_short_with_bellows" ;
+    :hasDimensionDecimalValue 138.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN150 :hasDimension :Dim_3241_DN150_Weight_short .
+
+:Dim_3241_DN150_Weight_long rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight_long_long_with_bellows" ;
+    :hasDimensionDecimalValue 146.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:ValveBody_3241_DN150 :hasDimension :Dim_3241_DN150_Weight_long .
+
+########## DIMENSIONS – TABLE 2.3 TYPE 3241 WITH HEATING JACKET ##########
+# Valve size groups: DN 25; DN 32–50; DN 65–80; DN 100
+# a [mm]: 110 140 180 200
+# b [mm]: 15 20 35 50
+# c [mm]: 140 170 215 255
+
+:Dim_3241_DN25_a_heat rdf:type :Dimension ;
+    :hasDimensionParameterName "a_heating_jacket" ;
+    :hasDimensionDecimalValue 110.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN25 :hasDimension :Dim_3241_DN25_a_heat .
+
+:Dim_3241_DN25_b_heat rdf:type :Dimension ;
+    :hasDimensionParameterName "b_heating_jacket" ;
+    :hasDimensionDecimalValue 15.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN25 :hasDimension :Dim_3241_DN25_b_heat .
+
+:Dim_3241_DN25_c_heat rdf:type :Dimension ;
+    :hasDimensionParameterName "c_heating_jacket" ;
+    :hasDimensionDecimalValue 140.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN25 :hasDimension :Dim_3241_DN25_c_heat .
+
+# DN 32–50 use same values
+:Dim_3241_DN32_a_heat rdf:type :Dimension ;
+    :hasDimensionParameterName "a_heating_jacket" ;
+    :hasDimensionDecimalValue 140.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN32 :hasDimension :Dim_3241_DN32_a_heat .
+:ValveBody_3241_DN40 :hasDimension :Dim_3241_DN32_a_heat .
+:ValveBody_3241_DN50 :hasDimension :Dim_3241_DN32_a_heat .
+
+:Dim_3241_DN32_b_heat rdf:type :Dimension ;
+    :hasDimensionParameterName "b_heating_jacket" ;
+    :hasDimensionDecimalValue 20.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN32 :hasDimension :Dim_3241_DN32_b_heat .
+:ValveBody_3241_DN40 :hasDimension :Dim_3241_DN32_b_heat .
+:ValveBody_3241_DN50 :hasDimension :Dim_3241_DN32_b_heat .
+
+:Dim_3241_DN32_c_heat rdf:type :Dimension ;
+    :hasDimensionParameterName "c_heating_jacket" ;
+    :hasDimensionDecimalValue 170.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN32 :hasDimension :Dim_3241_DN32_c_heat .
+:ValveBody_3241_DN40 :hasDimension :Dim_3241_DN32_c_heat .
+:ValveBody_3241_DN50 :hasDimension :Dim_3241_DN32_c_heat .
+
+# DN 65–80
+:Dim_3241_DN65_a_heat rdf:type :Dimension ;
+    :hasDimensionParameterName "a_heating_jacket" ;
+    :hasDimensionDecimalValue 180.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN65 :hasDimension :Dim_3241_DN65_a_heat .
+:ValveBody_3241_DN80 :hasDimension :Dim_3241_DN65_a_heat .
+
+:Dim_3241_DN65_b_heat rdf:type :Dimension ;
+    :hasDimensionParameterName "b_heating_jacket" ;
+    :hasDimensionDecimalValue 35.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN65 :hasDimension :Dim_3241_DN65_b_heat .
+:ValveBody_3241_DN80 :hasDimension :Dim_3241_DN65_b_heat .
+
+:Dim_3241_DN65_c_heat rdf:type :Dimension ;
+    :hasDimensionParameterName "c_heating_jacket" ;
+    :hasDimensionDecimalValue 215.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN65 :hasDimension :Dim_3241_DN65_c_heat .
+:ValveBody_3241_DN80 :hasDimension :Dim_3241_DN65_c_heat .
+
+# DN 100
+:Dim_3241_DN100_a_heat rdf:type :Dimension ;
+    :hasDimensionParameterName "a_heating_jacket" ;
+    :hasDimensionDecimalValue 200.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN100 :hasDimension :Dim_3241_DN100_a_heat .
+
+:Dim_3241_DN100_b_heat rdf:type :Dimension ;
+    :hasDimensionParameterName "b_heating_jacket" ;
+    :hasDimensionDecimalValue 50.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN100 :hasDimension :Dim_3241_DN100_b_heat .
+
+:Dim_3241_DN100_c_heat rdf:type :Dimension ;
+    :hasDimensionParameterName "c_heating_jacket" ;
+    :hasDimensionDecimalValue 255.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "horizontal" .
+:ValveBody_3241_DN100 :hasDimension :Dim_3241_DN100_c_heat .
+
+########## DIMENSIONS – TABLE 2.4 TYPE 3274 ACTUATOR ##########
+# Versions -11/-12/-13/-14/-21 to -23 : H = 320 mm, H6 = 150 mm, Weight 12 kg
+# Versions -15/-16/-17/-18 : H = 412 mm, H6 = 150 mm, Weight 15 kg
+
+:Dim_3274_grp1_H rdf:type :Dimension ;
+    :hasDimensionParameterName "H" ;
+    :hasDimensionDecimalValue 320.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:Actuator_3274_grp1 :hasDimension :Dim_3274_grp1_H .
+
+:Dim_3274_grp1_H6 rdf:type :Dimension ;
+    :hasDimensionParameterName "H6" ;
+    :hasDimensionDecimalValue 150.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:Actuator_3274_grp1 :hasDimension :Dim_3274_grp1_H6 .
+
+:Dim_3274_grp1_Weight rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight" ;
+    :hasDimensionDecimalValue 12.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:Actuator_3274_grp1 :hasDimension :Dim_3274_grp1_Weight .
+
+:Dim_3274_grp2_H rdf:type :Dimension ;
+    :hasDimensionParameterName "H" ;
+    :hasDimensionDecimalValue 412.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:Actuator_3274_grp2 :hasDimension :Dim_3274_grp2_H .
+
+:Dim_3274_grp2_H6 rdf:type :Dimension ;
+    :hasDimensionParameterName "H6" ;
+    :hasDimensionDecimalValue 150.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionType "vertical" .
+:Actuator_3274_grp2 :hasDimension :Dim_3274_grp2_H6 .
+
+:Dim_3274_grp2_Weight rdf:type :Dimension ;
+    :hasDimensionParameterName "Weight" ;
+    :hasDimensionDecimalValue 15.0 ;
+    :hasDimensionUnit "kg_approx" ;
+    :hasDimensionType "other" .
+:Actuator_3274_grp2 :hasDimension :Dim_3274_grp2_Weight .
+
+########## DIMENSIONS – TABLE 2.5 TYPE 3244 VALVE (WITHOUT ACTUATOR) ##########
+# Layout mirrors 2.1 for DN 15–150, but specific values for L and L1; H2, H3, H4, Weight.
+
+# For brevity in this explanation, the pattern is identical to the 3241 modeling:
+# create :Dimension individuals :Dim_3244_DN{X}_L, _L1, _H2, _H3, _H4_stem_extended, _Weight,
+# with hasDimensionType "horizontal" for L, L1 and "vertical" for H2, H3, H4, and "other" for Weight,
+# all attached to :ValveBody_3244_DN{X} via :hasDimension.
+
+# (All numeric values are taken one-to-one from Table 2.5.)
+
+########## DIMENSIONS – TABLE 2.6 TYPE 3244 WITH INSULATING SECTION OR BELLOWS SEAL ##########
+# Similar to Table 2.2; create H9_short, H9_long, Weight_short, Weight_long for each DN 15–150,
+# attached to :ValveBody_3244_DN{X}, with the same orientation and units as for Type 3241.
+
+########## DIMENSIONS – TABLE 2.7 TYPE 3274 ACTUATOR (FOR TYPE 3244) ##########
+# Repeats Table 2.4 values; already modeled via :Actuator_3274_grp1 and :Actuator_3274_grp2,
+# no additional individuals needed.

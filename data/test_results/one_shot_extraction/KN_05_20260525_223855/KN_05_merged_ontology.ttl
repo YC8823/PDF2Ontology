@@ -1,0 +1,619 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#BallValve> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Bonnet> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ButterflyValve> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#CableAssembly> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalInterface> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Cage> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DiaphragmValve> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricActuatorComponent> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalConnector> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalInterface> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectropneumaticActuatorComponent> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FlowDivider> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Flowmeter> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#MeasuringSystem> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#GlobeValve> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Housing> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Plug> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#PneumaticActuatorComponent> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ProcessConnection> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Seal> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Seat> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Sensor> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasCompatibleValveActuator> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> ;
+    owl:inverseOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasCompatibleValveBody> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimension> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent>,
+        <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionDecimalValue> a owl:DatatypeProperty ;
+    rdfs:comment "The specific numerical value of the size, for example, 130, 222, 0.25, skip if it's a string." ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> ;
+    rdfs:range xsd:decimal .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionEndAnchorX> a owl:DatatypeProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> ;
+    rdfs:range xsd:decimal .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionEndAnchorY> a owl:DatatypeProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> ;
+    rdfs:range xsd:decimal .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionParameterName> a owl:DatatypeProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> ;
+    rdfs:range xsd:string .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionStartAnchorX> a owl:DatatypeProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> ;
+    rdfs:range xsd:decimal .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionStartAnchorY> a owl:DatatypeProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> ;
+    rdfs:range xsd:decimal .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionStringValue> a owl:DatatypeProperty ;
+    rdfs:comment "The specific dimensional value besides of nummeric value, for example, \"H1+H2\" , \"1/2 G\"" ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> ;
+    rdfs:range xsd:string .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionType> a owl:DatatypeProperty ;
+    rdfs:range [ a rdfs:Datatype ;
+            owl:oneOf [ a rdf:List ;
+                    rdf:first "diameter" ;
+                    rdf:rest [ a rdf:List ;
+                            rdf:first "horizontal" ;
+                            rdf:rest [ a rdf:List ;
+                                    rdf:first "other" ;
+                                    rdf:rest [ a rdf:List ;
+                                            rdf:first "vertical" ;
+                                            rdf:rest () ] ] ] ] ] .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDimensionUnit> a owl:DatatypeProperty ;
+    rdfs:comment "unit of the dimension, for example, \"mm\", \"inches\", \"kg\"" ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasElectricalInterface> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Transmitter> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalInterface> ;
+    rdfs:subPropertyOf owl:topObjectProperty .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasModelName> a owl:DatatypeProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent>,
+        <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice> ;
+    rdfs:range xsd:string .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasNominalSizeDN> a owl:DatatypeProperty ;
+    rdfs:comment "Nominal size of the valve, e.g. \"DN 15\", \"DN 150\"" ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> ;
+    rdfs:range xsd:int .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveTrim> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ControlValve> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> ;
+    rdfs:subPropertyOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#untitled-ontology-26> a owl:Ontology .
+
+skos:altLabel a owl:AnnotationProperty .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ActuatingSystem> a owl:Class ;
+    rdfs:comment "FINAL CONTROL ELEMENT, Conceptual layer: represents a class of devices that can perform actions" ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice> ;
+    owl:disjointWith <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#MeasuringSystem> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Transmitter> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasCompatibleValveBody> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveActuator> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ControlValve> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> ;
+    rdfs:subPropertyOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveBody> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ControlValve> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> ;
+    rdfs:subPropertyOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#MeasuringSystem> a owl:Class ;
+    rdfs:comment "Conceptual layer: represents a type of device that can perceive" ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ControlValve> a owl:Class ;
+    rdfs:subClassOf [ a owl:Restriction ;
+            owl:onClass <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> ;
+            owl:onProperty <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveBody> ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        [ a owl:Restriction ;
+            owl:onClass <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> ;
+            owl:onProperty <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasValveActuator> ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ],
+        <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ActuatingSystem> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ElectricalInterface> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#hasDeviceComponent> a owl:ObjectProperty ;
+    rdfs:domain <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice> ;
+    rdfs:range <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#FieldDevice> a owl:Class .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveActuator> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveTrim> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#Dimension> a owl:Class .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#ValveBody> a owl:Class ;
+    rdfs:subClassOf <http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> .
+
+<http://www.semanticweb.org/yanha/ontologies/2025/7/untitled-ontology-26#DeviceComponent> a owl:Class .
+
+
+
+######################################################################
+# ABox - Extracted Instances
+######################################################################
+
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Extracted ABox instances (without prefix declarations)
+# This file should be merged with TBox using merge_and_validate_ttl.py
+
+:Device_OPTIBAR_PSM2010 rdf:type :MeasuringSystem ;
+    :hasModelName "OPTIBAR PSM 2010 Electronic pressure switch with flush welded diaphragm" ;
+    :hasDeviceComponent :Transmitter_OPTIBAR_PSM2010 ,
+                        :DisplayHousing_PSM2010 ,
+                        :ElectricalConnector_M12x1_4pin ,
+                        :CoolingFins_Accessory ,
+                        :PC_Thread_G1_2_DIN3852_Flush ,
+                        :PC_Thread_G3_4_DIN3852_Flush ,
+                        :PC_Thread_G1_DIN3852_Flush ,
+                        :PC_Thread_G1_2_DIN3852_Flush_Hygienic ,
+                        :PC_Thread_G1_DIN3852_Flush_Hygienic ,
+                        :PC_Thread_G1_Cone ,
+                        :PC_Clamp_DN25_ISO2852 ,
+                        :PC_Clamp_DN38_ISO2852 ,
+                        :PC_Clamp_DN51_ISO2852 ,
+                        :PC_Varivent_DN40_50 ;
+    :hasDimension :Dim_PSM2010_Housing_c .
+
+:Transmitter_OPTIBAR_PSM2010 rdf:type :Transmitter ;
+    :hasModelName "OPTIBAR PSM 2010 transmitter module" ;
+    :hasElectricalInterface :ElectricalConnector_M12x1_4pin .
+
+:ElectricalConnector_M12x1_4pin rdf:type :ElectricalConnector ;
+    :hasModelName "M12x1, 4-pin electrical connector, IP67" ;
+    :hasDimension :Dim_PSM2010_M12x1_a .
+
+:DisplayHousing_PSM2010 rdf:type :Housing ;
+    :hasModelName "Display and transmitter housing (OPTIBAR PSM 2010)" ;
+    :hasDimension :Dim_PSM2010_Housing_b ,
+                  :Dim_PSM2010_Housing_c ,
+                  :Dim_PSM2010_Thread_G1_2_e ,
+                  :Dim_PSM2010_Thread_G1_2_f ,
+                  :Dim_PSM2010_Thread_G3_4_e ,
+                  :Dim_PSM2010_Thread_G3_4_f ,
+                  :Dim_PSM2010_Thread_G1_e ,
+                  :Dim_PSM2010_Thread_G1_f ,
+                  :Dim_PSM2010_Thread_G1_2_Hyg_e ,
+                  :Dim_PSM2010_Thread_G1_2_Hyg_f ,
+                  :Dim_PSM2010_Thread_G1_Hyg_e ,
+                  :Dim_PSM2010_Thread_G1_Hyg_f ,
+                  :Dim_PSM2010_Gen_CoolingFins_e ,
+                  :Dim_PSM2010_Gen_CoolingFins_f ,
+                  :Dim_PSM2010_Clamp_DN25_e ,
+                  :Dim_PSM2010_Clamp_DN25_f ,
+                  :Dim_PSM2010_Clamp_DN38_e ,
+                  :Dim_PSM2010_Clamp_DN38_f ,
+                  :Dim_PSM2010_Clamp_DN51_e ,
+                  :Dim_PSM2010_Clamp_DN51_f ,
+                  :Dim_PSM2010_Varivent_e ,
+                  :Dim_PSM2010_Varivent_f .
+
+:CoolingFins_Accessory rdf:type :Housing ;
+    :hasModelName "Cooling fins (optional) for OPTIBAR PSM 2010" ;
+    :hasDimension :Dim_PSM2010_CoolingFins_r .
+
+# Process connection variants (threaded)
+:PC_Thread_G1_2_DIN3852_Flush rdf:type :ProcessConnection ;
+    :hasModelName "Thread ISO228 G1/2, DIN 3852, flush" ;
+    :hasDimension :Dim_PSM2010_Thread_G1_2_g ,
+                  :Dim_PSM2010_Thread_G1_2_h ,
+                  :Dim_PSM2010_Thread_G1_2_k ,
+                  :Dim_PSM2010_Thread_G1_2_m .
+
+:PC_Thread_G3_4_DIN3852_Flush rdf:type :ProcessConnection ;
+    :hasModelName "Thread ISO228 G3/4, DIN 3852, flush" ;
+    :hasDimension :Dim_PSM2010_Thread_G3_4_g ,
+                  :Dim_PSM2010_Thread_G3_4_h ,
+                  :Dim_PSM2010_Thread_G3_4_k ,
+                  :Dim_PSM2010_Thread_G3_4_m .
+
+:PC_Thread_G1_DIN3852_Flush rdf:type :ProcessConnection ;
+    :hasModelName "Thread ISO228 G1, DIN 3852, flush" ;
+    :hasDimension :Dim_PSM2010_Thread_G1_g ,
+                  :Dim_PSM2010_Thread_G1_h ,
+                  :Dim_PSM2010_Thread_G1_k ,
+                  :Dim_PSM2010_Thread_G1_m .
+
+:PC_Thread_G1_2_DIN3852_Flush_Hygienic rdf:type :ProcessConnection ;
+    :hasModelName "Thread ISO228 G1/2, DIN 3852, flush, hygienic design" ;
+    :hasDimension :Dim_PSM2010_Thread_G1_2_Hyg_g ,
+                  :Dim_PSM2010_Thread_G1_2_Hyg_h ,
+                  :Dim_PSM2010_Thread_G1_2_Hyg_k ,
+                  :Dim_PSM2010_Thread_G1_2_Hyg_m .
+
+:PC_Thread_G1_DIN3852_Flush_Hygienic rdf:type :ProcessConnection ;
+    :hasModelName "Thread ISO228 G1, DIN 3852, flush, hygienic design" ;
+    :hasDimension :Dim_PSM2010_Thread_G1_Hyg_g ,
+                  :Dim_PSM2010_Thread_G1_Hyg_h ,
+                  :Dim_PSM2010_Thread_G1_Hyg_k ,
+                  :Dim_PSM2010_Thread_G1_Hyg_m ,
+                  :Dim_PSM2010_Thread_G1_Hyg_n .
+
+:PC_Thread_G1_Cone rdf:type :ProcessConnection ;
+    :hasModelName "Thread ISO228 G1, cone" ;
+    :hasDimension :Dim_PSM2010_Thread_G1_Cone_g ,
+                  :Dim_PSM2010_Thread_G1_Cone_h ,
+                  :Dim_PSM2010_Thread_G1_Cone_k ,
+                  :Dim_PSM2010_Thread_G1_Cone_n .
+
+# Process connection variants (hygienic)
+:PC_Clamp_DN25_ISO2852 rdf:type :ProcessConnection ;
+    :hasModelName "Clamp DN25, ISO 2852 / DIN 32676, 3-A" ;
+    :hasDimension :Dim_PSM2010_Clamp_DN25_h ,
+                  :Dim_PSM2010_Clamp_DN25_k .
+
+:PC_Clamp_DN38_ISO2852 rdf:type :ProcessConnection ;
+    :hasModelName "Clamp DN38, ISO 2852 / DIN 32676, 3-A" ;
+    :hasDimension :Dim_PSM2010_Clamp_DN38_h ,
+                  :Dim_PSM2010_Clamp_DN38_k .
+
+:PC_Clamp_DN51_ISO2852 rdf:type :ProcessConnection ;
+    :hasModelName "Clamp DN51, ISO 2852 / DIN 32676, 3-A" ;
+    :hasDimension :Dim_PSM2010_Clamp_DN51_h ,
+                  :Dim_PSM2010_Clamp_DN51_k .
+
+:PC_Varivent_DN40_50 rdf:type :ProcessConnection ;
+    :hasModelName "Varivent DN40/50, 3-A" ;
+    :hasDimension :Dim_PSM2010_Varivent_h ,
+                  :Dim_PSM2010_Varivent_k .
+
+# -------------------------
+# Dimension instances
+# Fig. 2-1 (device head + connector)
+:Dim_PSM2010_M12x1_a rdf:type :Dimension ;
+    :hasDimensionParameterName "a" ;
+    :hasDimensionType "vertical" ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 26.0 ;
+    :hasDimensionStringValue "1.02 in" .
+
+:Dim_PSM2010_Housing_b rdf:type :Dimension ;
+    :hasDimensionParameterName "b" ;
+    :hasDimensionType "vertical" ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 35.5 ;
+    :hasDimensionStringValue "1.40 in" .
+
+:Dim_PSM2010_Housing_c rdf:type :Dimension ;
+    :hasDimensionParameterName "c" ;
+    :hasDimensionType "horizontal" ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 64.0 ;
+    :hasDimensionStringValue "2.52 in" .
+
+# Fig. 2-2 Threaded ① G1/2 DIN 3852 flush
+:Dim_PSM2010_Thread_G1_2_e rdf:type :Dimension ;
+    :hasDimensionParameterName "e" ;
+    :hasDimensionType "vertical" ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 60.0 ;
+    :hasDimensionStringValue "2.36 in" .
+
+:Dim_PSM2010_Thread_G1_2_f rdf:type :Dimension ;
+    :hasDimensionParameterName "f" ;
+    :hasDimensionType "diameter" ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 26.5 ;
+    :hasDimensionStringValue "1.04 in (Ø)" .
+
+:Dim_PSM2010_Thread_G1_2_g rdf:type :Dimension ;
+    :hasDimensionParameterName "g" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStringValue "WS27" .
+
+:Dim_PSM2010_Thread_G1_2_h rdf:type :Dimension ;
+    :hasDimensionParameterName "h" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStringValue "G1/2" .
+
+:Dim_PSM2010_Thread_G1_2_k rdf:type :Dimension ;
+    :hasDimensionParameterName "k" ;
+    :hasDimensionType "vertical" ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 18.0 ;
+    :hasDimensionStringValue "0.71 in" .
+
+:Dim_PSM2010_Thread_G1_2_m rdf:type :Dimension ;
+    :hasDimensionParameterName "m" ;
+    :hasDimensionType "vertical" ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 15.0 ;
+    :hasDimensionStringValue "0.59 in" .
+
+# Threaded ② G3/4 DIN 3852 flush
+:Dim_PSM2010_Thread_G3_4_e rdf:type :Dimension ;
+    :hasDimensionParameterName "e" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 60.0 ; :hasDimensionStringValue "2.36 in" .
+
+:Dim_PSM2010_Thread_G3_4_f rdf:type :Dimension ;
+    :hasDimensionParameterName "f" ; :hasDimensionType "diameter" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 26.5 ; :hasDimensionStringValue "1.04 in (Ø)" .
+
+:Dim_PSM2010_Thread_G3_4_g rdf:type :Dimension ;
+    :hasDimensionParameterName "g" ; :hasDimensionType "other" ;
+    :hasDimensionStringValue "WS34" .
+
+:Dim_PSM2010_Thread_G3_4_h rdf:type :Dimension ;
+    :hasDimensionParameterName "h" ; :hasDimensionType "other" ;
+    :hasDimensionStringValue "G3/4" .
+
+:Dim_PSM2010_Thread_G3_4_k rdf:type :Dimension ;
+    :hasDimensionParameterName "k" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 20.0 ; :hasDimensionStringValue "0.79 in" .
+
+:Dim_PSM2010_Thread_G3_4_m rdf:type :Dimension ;
+    :hasDimensionParameterName "m" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 17.0 ; :hasDimensionStringValue "0.67 in" .
+
+# Threaded ③ G1 DIN 3852 flush
+:Dim_PSM2010_Thread_G1_e rdf:type :Dimension ;
+    :hasDimensionParameterName "e" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 60.0 ; :hasDimensionStringValue "2.36 in" .
+
+:Dim_PSM2010_Thread_G1_f rdf:type :Dimension ;
+    :hasDimensionParameterName "f" ; :hasDimensionType "diameter" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 26.5 ; :hasDimensionStringValue "1.04 in (Ø)" .
+
+:Dim_PSM2010_Thread_G1_g rdf:type :Dimension ;
+    :hasDimensionParameterName "g" ; :hasDimensionType "other" ;
+    :hasDimensionStringValue "WS41" .
+
+:Dim_PSM2010_Thread_G1_h rdf:type :Dimension ;
+    :hasDimensionParameterName "h" ; :hasDimensionType "other" ;
+    :hasDimensionStringValue "G1" .
+
+:Dim_PSM2010_Thread_G1_k rdf:type :Dimension ;
+    :hasDimensionParameterName "k" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 22.0 ; :hasDimensionStringValue "0.87 in" .
+
+:Dim_PSM2010_Thread_G1_m rdf:type :Dimension ;
+    :hasDimensionParameterName "m" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 19.0 ; :hasDimensionStringValue "0.75 in" .
+
+# Threaded ④ G1/2 DIN 3852 flush hygienic
+:Dim_PSM2010_Thread_G1_2_Hyg_e rdf:type :Dimension ;
+    :hasDimensionParameterName "e" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 60.0 ; :hasDimensionStringValue "2.36 in" .
+
+:Dim_PSM2010_Thread_G1_2_Hyg_f rdf:type :Dimension ;
+    :hasDimensionParameterName "f" ; :hasDimensionType "diameter" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 26.5 ; :hasDimensionStringValue "1.04 in (Ø)" .
+
+:Dim_PSM2010_Thread_G1_2_Hyg_g rdf:type :Dimension ;
+    :hasDimensionParameterName "g" ; :hasDimensionType "other" ;
+    :hasDimensionStringValue "WS27" .
+
+:Dim_PSM2010_Thread_G1_2_Hyg_h rdf:type :Dimension ;
+    :hasDimensionParameterName "h" ; :hasDimensionType "other" ;
+    :hasDimensionStringValue "G1/2" .
+
+:Dim_PSM2010_Thread_G1_2_Hyg_k rdf:type :Dimension ;
+    :hasDimensionParameterName "k" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 23.5 ; :hasDimensionStringValue "0.93 in" .
+
+:Dim_PSM2010_Thread_G1_2_Hyg_m rdf:type :Dimension ;
+    :hasDimensionParameterName "m" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 20.5 ; :hasDimensionStringValue "0.81 in" .
+
+# Threaded ⑤ G1 DIN 3852 flush hygienic
+:Dim_PSM2010_Thread_G1_Hyg_e rdf:type :Dimension ;
+    :hasDimensionParameterName "e" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 60.0 ; :hasDimensionStringValue "2.36 in" .
+
+:Dim_PSM2010_Thread_G1_Hyg_f rdf:type :Dimension ;
+    :hasDimensionParameterName "f" ; :hasDimensionType "diameter" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 26.5 ; :hasDimensionStringValue "1.04 in (Ø)" .
+
+:Dim_PSM2010_Thread_G1_Hyg_g rdf:type :Dimension ;
+    :hasDimensionParameterName "g" ; :hasDimensionType "other" ;
+    :hasDimensionStringValue "WS41" .
+
+:Dim_PSM2010_Thread_G1_Hyg_h rdf:type :Dimension ;
+    :hasDimensionParameterName "h" ; :hasDimensionType "other" ;
+    :hasDimensionStringValue "G1" .
+
+:Dim_PSM2010_Thread_G1_Hyg_k rdf:type :Dimension ;
+    :hasDimensionParameterName "k" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 23.5 ; :hasDimensionStringValue "0.93 in" .
+
+:Dim_PSM2010_Thread_G1_Hyg_m rdf:type :Dimension ;
+    :hasDimensionParameterName "m" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 20.5 ; :hasDimensionStringValue "0.81 in" .
+
+:Dim_PSM2010_Thread_G1_Hyg_n rdf:type :Dimension ;
+    :hasDimensionParameterName "n" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 7.5 ; :hasDimensionStringValue "0.30 in" .
+
+# Threaded ⑥ G1 cone
+:Dim_PSM2010_Thread_G1_Cone_e rdf:type :Dimension ;
+    :hasDimensionParameterName "e" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 60.0 ; :hasDimensionStringValue "2.36 in" .
+
+:Dim_PSM2010_Thread_G1_Cone_f rdf:type :Dimension ;
+    :hasDimensionParameterName "f" ; :hasDimensionType "diameter" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 26.5 ; :hasDimensionStringValue "1.04 in (Ø)" .
+
+:Dim_PSM2010_Thread_G1_Cone_g rdf:type :Dimension ;
+    :hasDimensionParameterName "g" ; :hasDimensionType "other" ;
+    :hasDimensionStringValue "WS34" .
+
+:Dim_PSM2010_Thread_G1_Cone_h rdf:type :Dimension ;
+    :hasDimensionParameterName "h" ; :hasDimensionType "other" ;
+    :hasDimensionStringValue "G1 (cone)" .
+
+:Dim_PSM2010_Thread_G1_Cone_k rdf:type :Dimension ;
+    :hasDimensionParameterName "k" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 26.0 ; :hasDimensionStringValue "1.02 in" .
+
+:Dim_PSM2010_Thread_G1_Cone_n rdf:type :Dimension ;
+    :hasDimensionParameterName "n" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 9.0 ; :hasDimensionStringValue "0.35 in" .
+
+# Fig. 2-3 Cooling fins (①) + Clamp (②) + Varivent (③)
+# Cooling fins effect on housing
+:Dim_PSM2010_Gen_CoolingFins_e rdf:type :Dimension ;
+    :hasDimensionParameterName "e" ;
+    :hasDimensionType "vertical" ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 50.0 ;
+    :hasDimensionStringValue "1.97 in" .
+
+:Dim_PSM2010_Gen_CoolingFins_f rdf:type :Dimension ;
+    :hasDimensionParameterName "f" ;
+    :hasDimensionType "diameter" ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 26.5 ;
+    :hasDimensionStringValue "1.04 in (Ø)" .
+
+:Dim_PSM2010_CoolingFins_r rdf:type :Dimension ;
+    :hasDimensionParameterName "r" ;
+    :hasDimensionType "vertical" ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 32.0 ;
+    :hasDimensionStringValue "1.26 in" .
+
+# Clamp DN25
+:Dim_PSM2010_Clamp_DN25_e rdf:type :Dimension ;
+    :hasDimensionParameterName "e" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 50.0 ; :hasDimensionStringValue "1.97 in" .
+
+:Dim_PSM2010_Clamp_DN25_f rdf:type :Dimension ;
+    :hasDimensionParameterName "f" ; :hasDimensionType "diameter" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 26.5 ; :hasDimensionStringValue "1.04 in (Ø)" .
+
+:Dim_PSM2010_Clamp_DN25_h rdf:type :Dimension ;
+    :hasDimensionParameterName "h" ; :hasDimensionType "diameter" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 50.5 ; :hasDimensionStringValue "2.0 in (Clamp OD)" .
+
+:Dim_PSM2010_Clamp_DN25_k rdf:type :Dimension ;
+    :hasDimensionParameterName "k" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 5.0 ; :hasDimensionStringValue "0.20 in" .
+
+# Clamp DN38
+:Dim_PSM2010_Clamp_DN38_e rdf:type :Dimension ;
+    :hasDimensionParameterName "e" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 50.0 ; :hasDimensionStringValue "1.97 in" .
+
+:Dim_PSM2010_Clamp_DN38_f rdf:type :Dimension ;
+    :hasDimensionParameterName "f" ; :hasDimensionType "diameter" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 26.5 ; :hasDimensionStringValue "1.04 in (Ø)" .
+
+:Dim_PSM2010_Clamp_DN38_h rdf:type :Dimension ;
+    :hasDimensionParameterName "h" ; :hasDimensionType "diameter" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 50.5 ; :hasDimensionStringValue "2.0 in (Clamp OD)" .
+
+:Dim_PSM2010_Clamp_DN38_k rdf:type :Dimension ;
+    :hasDimensionParameterName "k" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 5.0 ; :hasDimensionStringValue "0.20 in" .
+
+# Clamp DN51
+:Dim_PSM2010_Clamp_DN51_e rdf:type :Dimension ;
+    :hasDimensionParameterName "e" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 50.0 ; :hasDimensionStringValue "1.97 in" .
+
+:Dim_PSM2010_Clamp_DN51_f rdf:type :Dimension ;
+    :hasDimensionParameterName "f" ; :hasDimensionType "diameter" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 26.5 ; :hasDimensionStringValue "1.04 in (Ø)" .
+
+:Dim_PSM2010_Clamp_DN51_h rdf:type :Dimension ;
+    :hasDimensionParameterName "h" ; :hasDimensionType "diameter" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 64.0 ; :hasDimensionStringValue "2.52 in (Clamp OD)" .
+
+:Dim_PSM2010_Clamp_DN51_k rdf:type :Dimension ;
+    :hasDimensionParameterName "k" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 5.0 ; :hasDimensionStringValue "0.20 in" .
+
+# Varivent DN40/50
+:Dim_PSM2010_Varivent_e rdf:type :Dimension ;
+    :hasDimensionParameterName "e" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 48.0 ; :hasDimensionStringValue "1.89 in" .
+
+:Dim_PSM2010_Varivent_f rdf:type :Dimension ;
+    :hasDimensionParameterName "f" ; :hasDimensionType "diameter" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 26.5 ; :hasDimensionStringValue "1.04 in (Ø)" .
+
+:Dim_PSM2010_Varivent_h rdf:type :Dimension ;
+    :hasDimensionParameterName "h" ; :hasDimensionType "diameter" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 84.0 ; :hasDimensionStringValue "3.3 in (Varivent flange Ø)" .
+
+:Dim_PSM2010_Varivent_k rdf:type :Dimension ;
+    :hasDimensionParameterName "k" ; :hasDimensionType "vertical" ; :hasDimensionUnit "mm" ;
+    :hasDimensionDecimalValue 17.0 ; :hasDimensionStringValue "0.67 in" .

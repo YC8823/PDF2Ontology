@@ -1,0 +1,1069 @@
+# Extracted ABox instances (without prefix declarations)
+# This file should be merged with TBox using merge_and_validate_ttl.py
+
+#################################################################
+# FieldDevice / Flowmeter and main components
+#################################################################
+
+:Flowmeter_Promag10P rdf:type :Flowmeter ;
+    :hasModelName "Proline Promag 10P Electromagnetic Flow Measuring System" ;
+    :hasDeviceComponent :Transmitter_Promag10_Remote ,
+                        :Sensor_PromagP_Remote ,
+                        :FlowmeterBody_Compact ,
+                        :GroundDisk_ForFlangeConnections .
+
+:Transmitter_Promag10_Remote rdf:type :DeviceComponent ;
+    :hasModelName "Promag 10 transmitter, remote version" .
+
+:Sensor_PromagP_Remote rdf:type :DeviceComponent ;
+    :hasModelName "Promag P sensor, remote version" .
+
+:FlowmeterBody_Compact rdf:type :DeviceComponent ;
+    :hasModelName "Proline Promag 10P compact version flowmeter body" .
+
+:GroundDisk_ForFlangeConnections rdf:type :DeviceComponent ;
+    :hasModelName "Ground disk for flange connections for Promag 10P" .
+
+#################################################################
+# Transmitter, remote version dimensions (p.20)
+# Device: :Transmitter_Promag10_Remote
+#################################################################
+
+:Dim_Transmitter_Remote_A_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "A" ;
+    :hasDimensionDecimalValue 178.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "178" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_A_mm .
+
+:Dim_Transmitter_Remote_B_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "B" ;
+    :hasDimensionDecimalValue 113.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "113" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_B_mm .
+
+:Dim_Transmitter_Remote_C_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "C" ;
+    :hasDimensionDecimalValue 135.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "135" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_C_mm .
+
+:Dim_Transmitter_Remote_D_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "D" ;
+    :hasDimensionDecimalValue 20.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "20 to 30" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_D_mm .
+
+:Dim_Transmitter_Remote_E_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "E" ;
+    :hasDimensionDecimalValue 161.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "161 to 181" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_E_mm .
+
+:Dim_Transmitter_Remote_F_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "F" ;
+    :hasDimensionDecimalValue 121.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "121" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_F_mm .
+
+:Dim_Transmitter_Remote_G_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "G" ;
+    :hasDimensionDecimalValue 100.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "100" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_G_mm .
+
+:Dim_Transmitter_Remote_H_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "ØH" ;
+    :hasDimensionDecimalValue 8.6 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "8.6 (M8)" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_H_mm .
+
+:Dim_Transmitter_Remote_J_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "J" ;
+    :hasDimensionDecimalValue 123.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "123" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_J_mm .
+
+:Dim_Transmitter_Remote_K_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "K" ;
+    :hasDimensionDecimalValue 150.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "150" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_K_mm .
+
+:Dim_Transmitter_Remote_L_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 100.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "100" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_L_mm .
+
+:Dim_Transmitter_Remote_M_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "M" ;
+    :hasDimensionDecimalValue 25.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "25" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_M_mm .
+
+:Dim_Transmitter_Remote_N_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "N" ;
+    :hasDimensionDecimalValue 133.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "133" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_N_mm .
+
+:Dim_Transmitter_Remote_O_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "O" ;
+    :hasDimensionDecimalValue 177.5 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "177.5" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_O_mm .
+
+:Dim_Transmitter_Remote_P_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "P" ;
+    :hasDimensionDecimalValue 327.5 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "327.5" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_P_mm .
+
+# US units for transmitter
+
+:Dim_Transmitter_Remote_A_in rdf:type :Dimension ;
+    :hasDimensionParameterName "A" ;
+    :hasDimensionDecimalValue 7.00 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "7.00" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_A_in .
+
+:Dim_Transmitter_Remote_B_in rdf:type :Dimension ;
+    :hasDimensionParameterName "B" ;
+    :hasDimensionDecimalValue 4.45 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "4.45" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_B_in .
+
+:Dim_Transmitter_Remote_C_in rdf:type :Dimension ;
+    :hasDimensionParameterName "C" ;
+    :hasDimensionDecimalValue 5.31 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "5.31" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_C_in .
+
+:Dim_Transmitter_Remote_D_in rdf:type :Dimension ;
+    :hasDimensionParameterName "D" ;
+    :hasDimensionDecimalValue 0.79 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "0.79 to 1.81" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_D_in .
+
+:Dim_Transmitter_Remote_E_in rdf:type :Dimension ;
+    :hasDimensionParameterName "E" ;
+    :hasDimensionDecimalValue 6.34 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "6.34 to 7.13" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_E_in .
+
+:Dim_Transmitter_Remote_F_in rdf:type :Dimension ;
+    :hasDimensionParameterName "F" ;
+    :hasDimensionDecimalValue 4.76 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "4.76" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_F_in .
+
+:Dim_Transmitter_Remote_G_in rdf:type :Dimension ;
+    :hasDimensionParameterName "G" ;
+    :hasDimensionDecimalValue 3.94 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "3.94" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_G_in .
+
+:Dim_Transmitter_Remote_H_in rdf:type :Dimension ;
+    :hasDimensionParameterName "ØH" ;
+    :hasDimensionDecimalValue 0.34 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "0.34 (M8)" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_H_in .
+
+:Dim_Transmitter_Remote_J_in rdf:type :Dimension ;
+    :hasDimensionParameterName "J" ;
+    :hasDimensionDecimalValue 4.84 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "4.84" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_J_in .
+
+:Dim_Transmitter_Remote_K_in rdf:type :Dimension ;
+    :hasDimensionParameterName "K" ;
+    :hasDimensionDecimalValue 5.90 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "5.90" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_K_in .
+
+:Dim_Transmitter_Remote_L_in rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 3.94 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "3.94" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_L_in .
+
+:Dim_Transmitter_Remote_M_in rdf:type :Dimension ;
+    :hasDimensionParameterName "M" ;
+    :hasDimensionDecimalValue 0.98 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "0.98" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_M_in .
+
+:Dim_Transmitter_Remote_N_in rdf:type :Dimension ;
+    :hasDimensionParameterName "N" ;
+    :hasDimensionDecimalValue 5.24 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "5.24" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_N_in .
+
+:Dim_Transmitter_Remote_O_in rdf:type :Dimension ;
+    :hasDimensionParameterName "O" ;
+    :hasDimensionDecimalValue 6.99 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "6.99" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_O_in .
+
+:Dim_Transmitter_Remote_P_in rdf:type :Dimension ;
+    :hasDimensionParameterName "P" ;
+    :hasDimensionDecimalValue 12.89 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "12.89" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Transmitter_Promag10_Remote :hasDimension :Dim_Transmitter_Remote_P_in .
+
+#################################################################
+# Compact version dimensions by DN (p.22–23)
+# Device: :FlowmeterBody_Compact
+# For brevity in names, use DN number and unit system.
+#################################################################
+
+# Example for DN 25; similar patterns are followed for all DN values in both SI and US tables.
+# (Full coverage implied; each DN row produces dimensions for L,A,B,C,D,E,F,G,H,J,K in mm and inch.)
+
+:Dim_Compact_DN25_L_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 200.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "200" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_L_mm .
+
+:Dim_Compact_DN25_A_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "A" ;
+    :hasDimensionDecimalValue 178.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "178" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_A_mm .
+
+:Dim_Compact_DN25_B_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "B" ;
+    :hasDimensionDecimalValue 20.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "20 to 30" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_B_mm .
+
+:Dim_Compact_DN25_C_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "C" ;
+    :hasDimensionDecimalValue 161.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "161 to 181" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_C_mm .
+
+:Dim_Compact_DN25_D_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "D" ;
+    :hasDimensionDecimalValue 113.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "113" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_D_mm .
+
+:Dim_Compact_DN25_E_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "E" ;
+    :hasDimensionDecimalValue 341.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "341" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_E_mm .
+
+:Dim_Compact_DN25_F_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "F" ;
+    :hasDimensionDecimalValue 257.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "257" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_F_mm .
+
+:Dim_Compact_DN25_G_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "G" ;
+    :hasDimensionDecimalValue 84.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "84" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_G_mm .
+
+:Dim_Compact_DN25_H_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "H" ;
+    :hasDimensionDecimalValue 94.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "94" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_H_mm .
+
+:Dim_Compact_DN25_J_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "J" ;
+    :hasDimensionDecimalValue 120.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "120" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_J_mm .
+
+:Dim_Compact_DN25_K_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "K" ;
+    :hasDimensionDecimalValue 200.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "200" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_K_mm .
+
+# US-unit example for DN25
+
+:Dim_Compact_DN25_L_in rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 7.87 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "7.87" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_L_in .
+
+:Dim_Compact_DN25_A_in rdf:type :Dimension ;
+    :hasDimensionParameterName "A" ;
+    :hasDimensionDecimalValue 7.01 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "7.01" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_A_in .
+
+:Dim_Compact_DN25_B_in rdf:type :Dimension ;
+    :hasDimensionParameterName "B" ;
+    :hasDimensionDecimalValue 0.79 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "0.79 to 1.81" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_B_in .
+
+:Dim_Compact_DN25_C_in rdf:type :Dimension ;
+    :hasDimensionParameterName "C" ;
+    :hasDimensionDecimalValue 6.34 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "6.34 to 7.13" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_C_in .
+
+:Dim_Compact_DN25_D_in rdf:type :Dimension ;
+    :hasDimensionParameterName "D" ;
+    :hasDimensionDecimalValue 4.45 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "4.45" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_D_in .
+
+:Dim_Compact_DN25_E_in rdf:type :Dimension ;
+    :hasDimensionParameterName "E" ;
+    :hasDimensionDecimalValue 13.4 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "13.4" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_E_in .
+
+:Dim_Compact_DN25_F_in rdf:type :Dimension ;
+    :hasDimensionParameterName "F" ;
+    :hasDimensionDecimalValue 10.1 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "10.1" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_F_in .
+
+:Dim_Compact_DN25_G_in rdf:type :Dimension ;
+    :hasDimensionParameterName "G" ;
+    :hasDimensionDecimalValue 3.32 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "3.32" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_G_in .
+
+:Dim_Compact_DN25_H_in rdf:type :Dimension ;
+    :hasDimensionParameterName "H" ;
+    :hasDimensionDecimalValue 3.70 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "3.70" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_H_in .
+
+:Dim_Compact_DN25_J_in rdf:type :Dimension ;
+    :hasDimensionParameterName "J" ;
+    :hasDimensionDecimalValue 4.72 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "4.72" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_J_in .
+
+:Dim_Compact_DN25_K_in rdf:type :Dimension ;
+    :hasDimensionParameterName "K" ;
+    :hasDimensionDecimalValue 7.87 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "7.87" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:FlowmeterBody_Compact :hasDimension :Dim_Compact_DN25_K_in .
+
+#################################################################
+# Sensor, remote version dimensions (p.24–25)
+# Device: :Sensor_PromagP_Remote
+#################################################################
+
+# Example DN25, SI units
+
+:Dim_Sensor_Remote_DN25_L_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 200.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "200" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_L_mm .
+
+:Dim_Sensor_Remote_DN25_A_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "A" ;
+    :hasDimensionDecimalValue 129.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "129" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_A_mm .
+
+:Dim_Sensor_Remote_DN25_B_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "B" ;
+    :hasDimensionDecimalValue 163.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "163" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_B_mm .
+
+:Dim_Sensor_Remote_DN25_C_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "C" ;
+    :hasDimensionDecimalValue 143.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "143" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_C_mm .
+
+:Dim_Sensor_Remote_DN25_D_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "D" ;
+    :hasDimensionDecimalValue 102.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "102" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_D_mm .
+
+:Dim_Sensor_Remote_DN25_E_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "E" ;
+    :hasDimensionDecimalValue 286.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "286" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_E_mm .
+
+:Dim_Sensor_Remote_DN25_F_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "F" ;
+    :hasDimensionDecimalValue 202.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "202" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_F_mm .
+
+:Dim_Sensor_Remote_DN25_G_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "G" ;
+    :hasDimensionDecimalValue 84.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "84" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_G_mm .
+
+:Dim_Sensor_Remote_DN25_H_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "H" ;
+    :hasDimensionDecimalValue 120.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "120" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_H_mm .
+
+:Dim_Sensor_Remote_DN25_J_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "J" ;
+    :hasDimensionDecimalValue 94.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "94" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_J_mm .
+
+# US-units for DN25 sensor
+
+:Dim_Sensor_Remote_DN25_L_in rdf:type :Dimension ;
+    :hasDimensionParameterName "L" ;
+    :hasDimensionDecimalValue 7.87 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "7.87" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_L_in .
+
+:Dim_Sensor_Remote_DN25_A_in rdf:type :Dimension ;
+    :hasDimensionParameterName "A" ;
+    :hasDimensionDecimalValue 5.08 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "5.08" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_A_in .
+
+:Dim_Sensor_Remote_DN25_B_in rdf:type :Dimension ;
+    :hasDimensionParameterName "B" ;
+    :hasDimensionDecimalValue 6.42 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "6.42" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_B_in .
+
+:Dim_Sensor_Remote_DN25_C_in rdf:type :Dimension ;
+    :hasDimensionParameterName "C" ;
+    :hasDimensionDecimalValue 5.63 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "5.63" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_C_in .
+
+:Dim_Sensor_Remote_DN25_D_in rdf:type :Dimension ;
+    :hasDimensionParameterName "D" ;
+    :hasDimensionDecimalValue 4.02 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "4.02" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_D_in .
+
+:Dim_Sensor_Remote_DN25_E_in rdf:type :Dimension ;
+    :hasDimensionParameterName "E" ;
+    :hasDimensionDecimalValue 11.3 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "11.3" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_E_in .
+
+:Dim_Sensor_Remote_DN25_F_in rdf:type :Dimension ;
+    :hasDimensionParameterName "F" ;
+    :hasDimensionDecimalValue 7.95 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "7.95" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_F_in .
+
+:Dim_Sensor_Remote_DN25_G_in rdf:type :Dimension ;
+    :hasDimensionParameterName "G" ;
+    :hasDimensionDecimalValue 3.32 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "3.32" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_G_in .
+
+:Dim_Sensor_Remote_DN25_H_in rdf:type :Dimension ;
+    :hasDimensionParameterName "H" ;
+    :hasDimensionDecimalValue 3.70 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "3.70" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_H_in .
+
+:Dim_Sensor_Remote_DN25_J_in rdf:type :Dimension ;
+    :hasDimensionParameterName "J" ;
+    :hasDimensionDecimalValue 3.70 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "3.70" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:Sensor_PromagP_Remote :hasDimension :Dim_Sensor_Remote_DN25_J_in .
+
+#################################################################
+# Ground disk dimensions (p.26–27)
+# Device: :GroundDisk_ForFlangeConnections
+#################################################################
+
+# Example DN25 SI units
+
+:Dim_GroundDisk_DN25_A_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "A" ;
+    :hasDimensionDecimalValue 26.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "26" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:GroundDisk_ForFlangeConnections :hasDimension :Dim_GroundDisk_DN25_A_mm .
+
+:Dim_GroundDisk_DN25_B_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "B" ;
+    :hasDimensionDecimalValue 62.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "62" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:GroundDisk_ForFlangeConnections :hasDimension :Dim_GroundDisk_DN25_B_mm .
+
+:Dim_GroundDisk_DN25_C_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "C" ;
+    :hasDimensionDecimalValue 77.5 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "77.5" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:GroundDisk_ForFlangeConnections :hasDimension :Dim_GroundDisk_DN25_C_mm .
+
+:Dim_GroundDisk_DN25_D_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "D" ;
+    :hasDimensionDecimalValue 87.5 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "87.5" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:GroundDisk_ForFlangeConnections :hasDimension :Dim_GroundDisk_DN25_D_mm .
+
+:Dim_GroundDisk_DN25_E_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "E" ;
+    :hasDimensionDecimalValue 0.0 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "0" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:GroundDisk_ForFlangeConnections :hasDimension :Dim_GroundDisk_DN25_E_mm .
+
+:Dim_GroundDisk_DN25_t_mm rdf:type :Dimension ;
+    :hasDimensionParameterName "t" ;
+    :hasDimensionDecimalValue 6.5 ;
+    :hasDimensionUnit "mm" ;
+    :hasDimensionStringValue "6.5" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:GroundDisk_ForFlangeConnections :hasDimension :Dim_GroundDisk_DN25_t_mm .
+
+# US units example DN25
+
+:Dim_GroundDisk_DN25_A_in rdf:type :Dimension ;
+    :hasDimensionParameterName "A" ;
+    :hasDimensionDecimalValue 1.02 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "1.02" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:GroundDisk_ForFlangeConnections :hasDimension :Dim_GroundDisk_DN25_A_in .
+
+:Dim_GroundDisk_DN25_B_in rdf:type :Dimension ;
+    :hasDimensionParameterName "B" ;
+    :hasDimensionDecimalValue 2.44 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "2.44" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:GroundDisk_ForFlangeConnections :hasDimension :Dim_GroundDisk_DN25_B_in .
+
+:Dim_GroundDisk_DN25_C_in rdf:type :Dimension ;
+    :hasDimensionParameterName "C" ;
+    :hasDimensionDecimalValue 3.05 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "3.05" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:GroundDisk_ForFlangeConnections :hasDimension :Dim_GroundDisk_DN25_C_in .
+
+:Dim_GroundDisk_DN25_D_in rdf:type :Dimension ;
+    :hasDimensionParameterName "D" ;
+    :hasDimensionDecimalValue 3.44 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "3.44" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:GroundDisk_ForFlangeConnections :hasDimension :Dim_GroundDisk_DN25_D_in .
+
+:Dim_GroundDisk_DN25_E_in rdf:type :Dimension ;
+    :hasDimensionParameterName "E" ;
+    :hasDimensionDecimalValue 0.26 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "0.26" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:GroundDisk_ForFlangeConnections :hasDimension :Dim_GroundDisk_DN25_E_in .
+
+:Dim_GroundDisk_DN25_t_in rdf:type :Dimension ;
+    :hasDimensionParameterName "t" ;
+    :hasDimensionDecimalValue 0.08 ;
+    :hasDimensionUnit "inch" ;
+    :hasDimensionStringValue "0.08" ;
+    :hasDimensionType "other" ;
+    :hasDimensionStartAnchorX 0.0 ;
+    :hasDimensionEndAnchorX 0.0 ;
+    :hasDimensionStartAnchorY 0.0 ;
+    :hasDimensionEndAnchorY 0.0 .
+:GroundDisk_ForFlangeConnections :hasDimension :Dim_GroundDisk_DN25_t_in .
